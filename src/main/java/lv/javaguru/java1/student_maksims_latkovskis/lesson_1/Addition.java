@@ -17,7 +17,7 @@ public class Addition {
         int SecondVal =scanner.nextInt();
 
         // Performing summation and printing result
-        int SumVal=FirstVal+SecondVal;
+        long SumVal=FirstVal+SecondVal;
         System.out.println("Your result is " + SumVal);
     }
 }

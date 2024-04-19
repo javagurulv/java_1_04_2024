@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_deniss_boltunovs.lesson_1;
+package lv.javaguru.java1.student_deniss_boltunovs.lesson_1.level_5;
 
 public class HelloWorld {
 

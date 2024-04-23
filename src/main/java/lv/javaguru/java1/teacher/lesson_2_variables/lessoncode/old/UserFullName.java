@@ -1,4 +1,4 @@
-package lv.javaguru.java1.teacher.lesson_2_variables.lessoncode;
+package lv.javaguru.java1.teacher.lesson_2_variables.lessoncode.old;
 
 import java.util.Scanner;
 

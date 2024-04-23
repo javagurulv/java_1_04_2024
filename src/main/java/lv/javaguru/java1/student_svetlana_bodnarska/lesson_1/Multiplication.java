@@ -4,8 +4,8 @@ public class Multiplication {
     public static void main(String[] args) {
         int n=50;
         int k=3;
-        int m=n*k;
-        System.out.println (m);
+        int p=n*k;
+        System.out.println (p);
 
     }
 }

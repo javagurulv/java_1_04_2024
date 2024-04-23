@@ -1,6 +1,7 @@
 package lv.javaguru.java1.student_maksims_latkovskis.lesson2;
 
 import java.util.Scanner;
+import java.lang.Math;
 
 public class TriangleArea {
 
@@ -16,8 +17,8 @@ public class TriangleArea {
 
         double HalfPerimeter = (double) (FirstSide+SecondSide+ThirdSide)/2; // Compute Half of perimeter
         // Use half-perimeter formula
-        double TriangleArea=(HalfPerimeter-FirstSide)*(HalfPerimeter-SecondSide)*(HalfPerimeter-ThirdSide);
-
+        double TriangleArea=(HalfPerimeter*(HalfPerimeter-FirstSide)*(HalfPerimeter-SecondSide)*(HalfPerimeter-ThirdSide));
+        TriangleArea=Math.sqrt(TriangleArea);
         System.out.println("Area of triangle is: "+ TriangleArea);
 
     }

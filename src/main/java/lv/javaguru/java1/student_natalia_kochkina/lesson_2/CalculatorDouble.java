@@ -1,17 +1,17 @@
 package lv.javaguru.java1.student_natalia_kochkina.lesson_2;
 
-public class Calculator {
+public class CalculatorDouble {
 
     public static void main(String[] args) {
 
 
-        int number1 = 100;
-        int number2 = 200;
+        double number1 = 0.5;
+        double number2 = 0.25;
 
-        int additionResult = number1 + number2;
-        int subtractionResult = number1 - number2;
-        int multiplicationResult = number1 * number2;
-        double divisionResult = ((double) number1) / number2;
+        double additionResult = number1 + number2;
+        double subtractionResult = number1 - number2;
+        double multiplicationResult = number1 * number2;
+        double divisionResult = number1 / number2;
 
         System.out.println("additionResult = " + additionResult);
         System.out.println("subtractionResult = " + subtractionResult);

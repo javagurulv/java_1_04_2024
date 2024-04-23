@@ -4,10 +4,7 @@ import java.util.Scanner;
 
 public class QuadraticEquationSolver {
     public static void main(String[] args){
-
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter (ax^2 + bx + c = 0):");
 
         System.out.print("Enter a: ");
         double a = scanner.nextDouble();

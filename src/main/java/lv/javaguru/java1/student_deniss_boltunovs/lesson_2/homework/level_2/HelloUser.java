@@ -9,7 +9,7 @@ import  java.util.Scanner;
 Hello имя пользователя!
  */
 
-public class helloUser {
+public class HelloUser {
 
        public static void main(String[] args) {
 

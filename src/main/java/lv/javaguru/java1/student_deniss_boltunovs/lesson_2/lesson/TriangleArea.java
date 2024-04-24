@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_deniss_boltunovs.lesson_2;
+package lv.javaguru.java1.student_deniss_boltunovs.lesson_2.lesson;
 
 // alt + enter short key to import package
 import java.util.Scanner ;

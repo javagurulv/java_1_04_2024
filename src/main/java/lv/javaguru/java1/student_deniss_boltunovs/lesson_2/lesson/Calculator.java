@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_deniss_boltunovs.lesson_2;
+package lv.javaguru.java1.student_deniss_boltunovs.lesson_2.lesson;
 
 public class Calculator {
       // can type ps + enter will return public static void

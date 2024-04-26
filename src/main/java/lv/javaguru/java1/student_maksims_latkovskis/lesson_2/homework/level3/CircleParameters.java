@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_maksims_latkovskis.lesson_1.homework.level3;
+package lv.javaguru.java1.student_maksims_latkovskis.lesson_2.homework.level3;
 
 import java.util.Scanner;
 import java.lang.Math;

@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_maksims_latkovskis.lesson2;
+package lv.javaguru.java1.student_maksims_latkovskis.lesson_2;
 
 public class Arithmetics {
 

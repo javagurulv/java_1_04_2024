@@ -8,10 +8,6 @@ public class HelloWorld
         System.out.println("Maksims");
         System.out.println("Latkovskis");
 
-
-
-
-
     }
 
 }

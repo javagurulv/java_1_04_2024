@@ -1,6 +1,8 @@
-package lv.javaguru.java1.student_pavels_zuriha.lesson_2.homework.level_3;
+package lv.javaguru.java1.student_pavels_zuriha.lesson_2.homework.level_3.task_2;
 
 import java.util.Scanner;
+
+import static java.lang.Math.*;
 
 public class Task_2 {
 
@@ -11,9 +13,9 @@ public class Task_2 {
         System.out.println("Enter radius: ");
         double radius = scanner.nextDouble();
 
-        double pi = 3.14159265358979323846264338327950288419716939937510;
-        double p = 2 * pi * radius;
-        double area = pi * radius * radius;
+
+        double p = 2 * PI * radius;
+        double area = PI * radius * radius;
 
         System.out.println("Perimeter is: " + p);
         System.out.println("Area is: " + area);

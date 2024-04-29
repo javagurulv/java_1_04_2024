@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_pavels_zuriha.lesson_2.homework.level_2;
+package lv.javaguru.java1.student_pavels_zuriha.lesson_2.homework.level_2.task_2;
 
 import java.util.Scanner;
 

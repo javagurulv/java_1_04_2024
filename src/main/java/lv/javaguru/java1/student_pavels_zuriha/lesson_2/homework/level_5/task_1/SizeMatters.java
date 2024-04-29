@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_pavels_zuriha.lesson_2.homework.level_5;
+package lv.javaguru.java1.student_pavels_zuriha.lesson_2.homework.level_5.task_1;
 
 public class SizeMatters {
 

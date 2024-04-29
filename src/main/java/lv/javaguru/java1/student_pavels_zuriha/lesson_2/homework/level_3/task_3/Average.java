@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_pavels_zuriha.lesson_2.homework.level_3.task_3
 
 import java.util.Scanner;
 
-public class Task_3 {
+public class Average {
 
     public static void main(String[] args) {
 

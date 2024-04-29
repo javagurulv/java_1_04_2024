@@ -14,8 +14,7 @@ public class Task_1 {
 
         int i = 0;
         while(i <=10) {
-            int j = number * i;
-            System.out.println(number + " x " + i + " = " + j);
+            System.out.println(number + " x " + i + " = " + number * i);
             i++;
         }
     }

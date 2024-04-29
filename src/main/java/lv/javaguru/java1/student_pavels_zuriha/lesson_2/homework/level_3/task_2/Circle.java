@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import static java.lang.Math.*;
 
-public class Task_2 {
+public class Circle {
 
     public static void main(String[] args) {
 

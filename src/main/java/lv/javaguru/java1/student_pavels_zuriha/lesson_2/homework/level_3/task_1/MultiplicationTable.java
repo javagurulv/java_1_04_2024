@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_pavels_zuriha.lesson_2.homework.level_3.task_1
 
 import java.util.Scanner;
 
-public class Task_1 {
+public class MultiplicationTable {
 
     public static void main(String[] args) {
 
@@ -14,8 +14,7 @@ public class Task_1 {
 
         int i = 0;
         while(i <=10) {
-            int j = number * i;
-            System.out.println(number + " x " + i + " = " + j);
+            System.out.println(number + " x " + i + " = " + number * i);
             i++;
         }
     }

@@ -29,8 +29,11 @@ class BankAccountApplication {
         BankAccount bankAccount8 = new BankAccount(owner, money);
 
         String owner1 = bankAccount8.getOwner();
-        System.out.println("Owner: " + owner1);
+        System.out.println("BA 8 Owner: " + owner1);
 
+        System.out.println("BA 1 Owner: " + bankAccount1.getOwner());
+        System.out.println("BA 2 Owner: " + bankAccount2.getOwner());
+        System.out.println("BA 3 Owner: " + bankAccount3.getOwner());
     }
 
 }

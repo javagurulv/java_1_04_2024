@@ -24,8 +24,8 @@ public class BankAccountApp {
 
         System.out.println("Please Enter the bank Account Name:");
         String accountName = scanner.nextLine();
-        System.out.println("Name is: " + accountName.getOwner());
-        System.out.println("Balance is: " + accountName.getBalance());
+        System.out.println("Name is: " + accountName);
+        System.out.println("Balance is: " + accountName);
 
     }
 

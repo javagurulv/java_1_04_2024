@@ -35,4 +35,8 @@ class BankAccount {
         this.money = this.money + money;
     }
 
+    public void subMoney(int money) {
+        this.money = this.money - money;
+    }
+
 }

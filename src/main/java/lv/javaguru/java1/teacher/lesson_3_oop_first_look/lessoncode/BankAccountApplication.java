@@ -46,6 +46,16 @@ class BankAccountApplication {
         System.out.println("BA 3 Money: " + bankAccount3.getMoney());
         System.out.println("BA 5 Money: " + bankAccount5.getMoney());
 
+
+        BankAccount bankAccount9 = new BankAccount(200);
+        bankAccount9.addMoney(300);
+        System.out.println("BA 9 Money: " + bankAccount9.getMoney());
+
+
+        BankAccount bankAccount10 = new BankAccount(200);
+        bankAccount10.subMoney(100);
+        System.out.println("BA 10 Money: " + bankAccount10.getMoney());
+
     }
 
 }

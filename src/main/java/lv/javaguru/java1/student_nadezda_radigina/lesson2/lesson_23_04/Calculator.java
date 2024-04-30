@@ -1,11 +1,9 @@
-package lv.javaguru.java1.student_artem_galustan.lesson1;
+package lv.javaguru.java1.student_nadezda_radigina.lesson2.lesson_23_04;
 
-public class Calculators {
-    public static void main(String[] args) {
-
-        int number1 = 900;
-        int number2 = 600;
-
+public class Calculator {
+    public static void main(String[] args){
+        int number1 = 100;
+        int number2 = 200;
         int sum = number1 + number2;
         int multiply = number1 * number2;
         int divide = number1 / number2;
@@ -16,8 +14,6 @@ public class Calculators {
         System.out.println("Divide = " + divide);
         System.out.println("Subtraction = " + subtraction);
 
-        }
+
     }
-
-
-
+}

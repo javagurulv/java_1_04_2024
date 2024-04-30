@@ -39,6 +39,11 @@ class BankAccountApplication {
         System.out.println("BA 2 Money: " + bankAccount2.getMoney());
         System.out.println("BA 1 Money: " + bankAccount1.getMoney());
 
+        bankAccount3.setMoney(18765);
+        bankAccount5.setMoney(99999);
+        System.out.println("BA 3 Money: " + bankAccount3.getMoney());
+        System.out.println("BA 5 Money: " + bankAccount5.getMoney());
+
     }
 
 }

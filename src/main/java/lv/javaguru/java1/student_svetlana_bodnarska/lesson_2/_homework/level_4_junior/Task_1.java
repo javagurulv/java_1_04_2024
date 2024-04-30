@@ -1,8 +1,8 @@
-package lv.javaguru.java1.student_svetlana_bodnarska.lesson_2._homework.level4;
+package lv.javaguru.java1.student_svetlana_bodnarska.lesson_2._homework.level_4_junior;
 
 import java.util.Scanner;
 
-public class Task1 {
+public class Task_1 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

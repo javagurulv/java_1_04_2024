@@ -31,4 +31,8 @@ class BankAccount {
         this.money = money;
     }
 
+    public void addMoney(int money) {
+        this.money = this.money + money;
+    }
+
 }

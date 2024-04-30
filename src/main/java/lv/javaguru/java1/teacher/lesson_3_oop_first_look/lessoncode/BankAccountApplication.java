@@ -1,5 +1,7 @@
 package lv.javaguru.java1.teacher.lesson_3_oop_first_look.lessoncode;
 
+import java.util.Scanner;
+
 class BankAccountApplication {
 
     // Runtime
@@ -14,6 +16,17 @@ class BankAccountApplication {
 
         BankAccount bankAccount6 = new BankAccount(100);
         BankAccount bankAccount7 = new BankAccount(200);
+
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter owner: ");
+        String owner = scanner.nextLine();
+
+        System.out.println("Enter money: ");
+        int money = scanner.nextInt();
+
+        BankAccount bankAccount8 = new BankAccount(owner, money);
 
     }
 

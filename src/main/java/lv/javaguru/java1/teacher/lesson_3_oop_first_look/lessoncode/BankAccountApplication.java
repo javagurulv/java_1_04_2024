@@ -34,6 +34,11 @@ class BankAccountApplication {
         System.out.println("BA 1 Owner: " + bankAccount1.getOwner());
         System.out.println("BA 2 Owner: " + bankAccount2.getOwner());
         System.out.println("BA 3 Owner: " + bankAccount3.getOwner());
+
+        System.out.println("BA 3 Money: " + bankAccount3.getMoney());
+        System.out.println("BA 2 Money: " + bankAccount2.getMoney());
+        System.out.println("BA 1 Money: " + bankAccount1.getMoney());
+
     }
 
 }

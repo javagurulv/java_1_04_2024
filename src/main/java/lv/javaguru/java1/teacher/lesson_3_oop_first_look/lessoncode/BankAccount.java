@@ -23,4 +23,8 @@ class BankAccount {
         return this.owner;
     }
 
+    public int getMoney() {
+        return this.money;
+    }
+
 }

@@ -19,4 +19,8 @@ class BankAccount {
         this.money = money;
     }
 
+    public String getOwner() {
+        return this.owner;
+    }
+
 }

@@ -24,7 +24,7 @@ class BankAccountApplication {
         String owner = scanner.nextLine();
 
         System.out.println("Enter money: ");
-        int money = scanner.nextInt();
+        int money = Integer.parseInt(scanner.nextLine());
 
         BankAccount bankAccount8 = new BankAccount(owner, money);
 

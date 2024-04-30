@@ -22,10 +22,20 @@ public class BankAccountApp {
 
         BankAccount bankAccount6 = new BankAccount(owner, balance);
 
-        System.out.println("Please Enter the bank Account Name:");
-        String accountName = scanner.nextLine();
-        System.out.println("Name is: " + accountName);
-        System.out.println("Balance is: " + accountName);
+        System.out.println("Name is: " + bankAccount6.getOwner());
+        System.out.println("Balance is: " + bankAccount6.getBalance());
+
+       // System.out.println("Please Enter the bank Account Name:");
+       // String accountName = scanner.nextLine();
+       // System.out.println("Name is: " + accountName.getOwner());
+       // System.out.println("Balance is: " + accountName.getBalance());
+
+        bankAccount6.setBalance(9999);
+        bankAccount5.setBalance(1111);
+        System.out.println("Balance is: " + bankAccount5.getBalance());
+        System.out.println("Balance is: " + bankAccount6.getBalance());
+
+
 
     }
 

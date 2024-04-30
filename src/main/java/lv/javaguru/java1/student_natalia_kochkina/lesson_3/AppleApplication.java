@@ -1,11 +1,12 @@
-package lv.javaguru.java1.teacher.lesson_3_oop_first_look.lessoncode;
+package lv.javaguru.java1.student_natalia_kochkina.lesson_3;
 
 class AppleApplication {
 
     public static void main(String[] args) {
-        Apple apple1 = new Apple("Антоновка", "green", 700);
-        Apple apple2 = new Apple("Антоновка", "red", 500);
-        Apple apple3 = new Apple("Антоновка", "yellow", 300);
+
+        Apple apple1 = new Apple("Antonovka", "red", 400);
+        Apple apple2 = new Apple("Antonovka", "green", 300);
+        Apple apple3 = new Apple("Antonovka", "yellow", 300);
 
         System.out.println("Apple 1 type " + apple1.getType());
         System.out.println("Apple 2 type " + apple2.getType());
@@ -20,5 +21,4 @@ class AppleApplication {
         System.out.println("Apple 3 weight " + apple3.getWeight());
 
     }
-
 }

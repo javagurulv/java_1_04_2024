@@ -1,12 +1,15 @@
-package lv.javaguru.java1.teacher.lesson_3_oop_first_look.lessoncode;
+package lv.javaguru.java1.student_pavels_zuriha.lesson_3.lessoncode;
 
 class BankAccount {
 
     private String owner;
+    private String owner2;
     private int money;
 
-    public BankAccount(int money) {
+    public BankAccount(String owner, int money) {
+        this.owner = owner;
         this.money = money;
+
     }
 
     public BankAccount(String owner) {
@@ -14,8 +17,7 @@ class BankAccount {
         this.money = 0;
     }
 
-    public BankAccount(String owner, int money) {
-        this.owner = owner;
+    public BankAccount(int money) {
         this.money = money;
     }
 

@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_natalia_kochkina.lesson_2.homework.level_2;
 
-public class LoginService {
+class LoginService {
     //Task_1
 
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_natalia_kochkina.lesson_2;
 
-public class StringConcat {
+class StringConcat {
 
     public static void main(String[] args) {
 

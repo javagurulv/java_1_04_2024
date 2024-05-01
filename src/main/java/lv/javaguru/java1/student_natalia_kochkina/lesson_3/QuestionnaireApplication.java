@@ -5,11 +5,13 @@ class QuestionnaireApplication {
     //Task_13
 
     public static void main(String[] args) {
+        Form form1 = new Form("Погода хорошая?", true);
+        Form form2 = new Form("Гулять пойдем?", false);
+        Questionnaire questionnaire1 = new Questionnaire("Vasja", form1, form2);
 
-        Questionnaire questionnaire1 = new Questionnaire("Vasja", "Погода хорошая?",
-                true, "Гулять пойдем?", false);
-        Questionnaire questionnaire2 = new Questionnaire("Dasha", "Погода хорошая?",
-                false, "Гулять пойдем?", true);
+        Form form3 = new Form("Сегодня пятница?", true);
+        Form form4 = new Form("Выпьем вина?", true);
+        Questionnaire questionnaire2 = new Questionnaire("Petja", form3, form4);
 
     }
 }

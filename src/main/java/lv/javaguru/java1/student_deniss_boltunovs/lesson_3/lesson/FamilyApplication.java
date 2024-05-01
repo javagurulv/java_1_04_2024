@@ -19,7 +19,6 @@ public class FamilyApplication {
         ///////// mother information
         FamilyMember mother1 = family.getMother();
         String motherName = mother1.getName();
-        String motherSurname = mother1.getSurname();
         int motherAge = mother1.getAge();
 
         //////// second child

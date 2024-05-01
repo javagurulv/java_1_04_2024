@@ -22,6 +22,8 @@ class BankAccountApplication {
         System.out.println(account1.getMoney());
         account1.addMoney(450) ;
         System.out.println(account1.getMoney());
+        account1.deductMoney(15) ;
+        System.out.println(account1.getMoney());
 
         System.out.println(account1.getOwner());
         System.out.println(account2.getOwner());

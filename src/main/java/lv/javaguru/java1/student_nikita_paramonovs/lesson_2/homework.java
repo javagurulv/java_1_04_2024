@@ -2,6 +2,7 @@ package lv.javaguru.java1.student_nikita_paramonovs.lesson_2;
 
 import java.util.Scanner;
 
+//CODE_REVIEW: use big first letter in the class name, better: Homework
 public class homework {
     public static void main(String[] args){
 

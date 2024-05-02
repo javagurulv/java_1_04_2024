@@ -2,6 +2,7 @@ package lv.javaguru.java1.student_nikita_paramonovs.lesson_2;
 
 import java.util.Scanner;
 
+//CODE_REVIEW: use big first letter in the class name, better: Averages
 public class averages {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);

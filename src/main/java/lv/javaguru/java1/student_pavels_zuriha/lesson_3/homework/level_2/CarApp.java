@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_pavels_zuriha.lesson_3.homework.level_2;
 
-public class CarApp {
+class CarApp {
 
     public static void main(String[] args){
         Car car1= new Car("Brand1", "Blue", 1000);

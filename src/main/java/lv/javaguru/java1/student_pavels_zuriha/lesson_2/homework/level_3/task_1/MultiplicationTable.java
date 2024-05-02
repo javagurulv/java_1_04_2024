@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_pavels_zuriha.lesson_2.homework.level_3.task_1
 
 import java.util.Scanner;
 
-public class MultiplicationTable {
+class MultiplicationTable {
 
     public static void main(String[] args) {
 

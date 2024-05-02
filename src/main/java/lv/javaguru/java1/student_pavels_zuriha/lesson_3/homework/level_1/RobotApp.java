@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_pavels_zuriha.lesson_3.homework.level_1;
 
-public class RobotApp {
+class RobotApp {
 
     public static void main(String[] args) {
 

@@ -9,4 +9,11 @@ class Chapter {
         this.chapterText = chapterText;
     }
 
+    public String getChapterTitle() {
+        return this.chapterTitle;
+    }
+    public String getChapterText() {
+        return this.chapterText;
+    }
+
 }

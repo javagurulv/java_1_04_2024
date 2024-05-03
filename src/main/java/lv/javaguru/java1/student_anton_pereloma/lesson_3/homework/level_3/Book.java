@@ -18,5 +18,18 @@ class Book {
         this.chapter1 = chapter1;
         this.chapter2 = chapter2;
     }
+
+
+    public String getTitle() {
+        return this.title;
+    }
+    public Chapter getChapter1() {
+        return this.chapter1;
+    }
+    public Chapter getChapter2() {
+        return this.chapter2;
+    }
+
+
 }
 

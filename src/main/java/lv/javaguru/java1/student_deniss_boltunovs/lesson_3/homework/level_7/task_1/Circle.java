@@ -10,9 +10,7 @@ class Circle {
 
     public double calculateArea() {
         double PI = Math.PI;
-        double area = PI * Math.pow(this.radius, 2);
-
-        return area;
+        return PI * Math.pow(this.radius, 2);
     }
 
 }

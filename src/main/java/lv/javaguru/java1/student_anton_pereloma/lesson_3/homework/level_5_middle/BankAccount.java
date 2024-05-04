@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_5;
+package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_5_middle;
 
 class BankAccount {
 

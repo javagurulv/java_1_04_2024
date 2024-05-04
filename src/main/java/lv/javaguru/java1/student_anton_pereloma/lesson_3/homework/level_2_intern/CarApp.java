@@ -1,10 +1,10 @@
-package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_2;
+package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_2_intern;
 
-public class CarApp {
+class CarApp {
     public static void main(String[] args) {
-        Car car1 = new Car("Chery", "Red",12000);
-        Car car2 = new Car("Geely", "White",14000);
-        Car car3 = new Car("Dongfeng", "Orange",15000);
+        Car car1 = new Car("Chery", "Red", 12000);
+        Car car2 = new Car("Geely", "White", 14000);
+        Car car3 = new Car("Dongfeng", "Orange", 15000);
 
         System.out.println("Car: " + car1.getMake() + "\nColor: " + car1.getColor() + "\nPrice: " + car1.getPrice() + " Euro");
         System.out.println("Car: " + car2.getMake() + "\nColor: " + car2.getColor() + "\nPrice: " + car2.getPrice() + " Euro");

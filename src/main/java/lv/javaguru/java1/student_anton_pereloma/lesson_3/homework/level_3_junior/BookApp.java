@@ -1,6 +1,6 @@
-package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_3;
+package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_3_junior;
 
-public class BookApp {
+class BookApp {
     public static void main(String[] args) {
         Book book1 = new Book(
                 "Count Monte Christo",
@@ -35,7 +35,7 @@ public class BookApp {
                 )
 
         );
-        System.out.println("");
+        System.out.println();
         System.out.println("Chapter 1: " + book2.getChapter1().getChapterTitle());
         System.out.println("Chapter Text: \n" + book2.getChapter1().getChapterText());
 

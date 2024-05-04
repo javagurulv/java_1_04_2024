@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_4;
+package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_4_junior;
 
 class DoctorTimetable {
     private String firstName;
@@ -19,23 +19,23 @@ class DoctorTimetable {
         this.visitSlot2 = visitSlot2;
     }
 
-    public String getDoctorFirstName() {
+    String getDoctorFirstName() {
         return this.firstName;
     }
 
-    public String getDoctorLastName() {
+    String getDoctorLastName() {
         return this.lastName;
     }
 
-    public String getDoctorSpecialization() {
+    String getDoctorSpecialization() {
         return this.specialization;
     }
 
-    public PatientVisit getVisitSlot1() {
+    PatientVisit getVisitSlot1() {
         return this.visitSlot1;
     }
 
-    public PatientVisit getVisitSlot2() {
+    PatientVisit getVisitSlot2() {
         return this.visitSlot2;
     }
 }

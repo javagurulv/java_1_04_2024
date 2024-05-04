@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_4;
+package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_4_junior;
 
 class PatientVisit {
     private String firstName;
@@ -18,28 +18,25 @@ class PatientVisit {
         this.diagnosis = diagnosis;
         this.visitCharge = visitCharge;
         this.visitTime = visitTime;
-
-
     }
-    public String getPatientFirstName() {
+
+    String getPatientFirstName() {
         return this.firstName;
     }
 
-    public String getPatientLastName() {
+    String getPatientLastName() {
         return this.lastName;
     }
 
-    public String getPatientDiagnosis() {
+    String getPatientDiagnosis() {
         return this.diagnosis;
     }
 
-    public int getPatientVisitCharge() {
+    int getPatientVisitCharge() {
         return this.visitCharge;
     }
 
-    public String getPatientVisitTime() {
+    String getPatientVisitTime() {
         return this.visitTime;
     }
-
-
 }

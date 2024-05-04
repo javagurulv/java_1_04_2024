@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_3;
+package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_3_junior;
 
 class Chapter {
     private String chapterTitle;
@@ -9,10 +9,11 @@ class Chapter {
         this.chapterText = chapterText;
     }
 
-    public String getChapterTitle() {
+    String getChapterTitle() {
         return this.chapterTitle;
     }
-    public String getChapterText() {
+
+    String getChapterText() {
         return this.chapterText;
     }
 

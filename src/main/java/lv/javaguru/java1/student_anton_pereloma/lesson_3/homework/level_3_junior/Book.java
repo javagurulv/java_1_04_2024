@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_3;
+package lv.javaguru.java1.student_anton_pereloma.lesson_3.homework.level_3_junior;
 
 class Book {
     private String title;
@@ -7,7 +7,7 @@ class Book {
     private Chapter chapter1;
     private Chapter chapter2;
 
-    public Book(String title,
+    Book(String title,
                 String author,
                 int publishedYear,
                 Chapter chapter1,
@@ -20,13 +20,15 @@ class Book {
     }
 
 
-    public String getTitle() {
+    String getTitle() {
         return this.title;
     }
-    public Chapter getChapter1() {
+
+    Chapter getChapter1() {
         return this.chapter1;
     }
-    public Chapter getChapter2() {
+
+    Chapter getChapter2() {
         return this.chapter2;
     }
 

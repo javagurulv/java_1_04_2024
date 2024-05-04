@@ -11,7 +11,7 @@ public class OddEvenApp {
         System.out.println("Please input whole number");
         int number = scanner.nextInt();
 
-        String message = "";
+        String message;
 
         if (number % 2 == 0) {
             message = number + " - this is even number";

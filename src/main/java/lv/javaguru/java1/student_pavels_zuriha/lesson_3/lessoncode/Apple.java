@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_pavels_zuriha.lesson_3.lessoncode;
 
-public class Apple {
+class Apple {
 
     private String type;
     private String color;

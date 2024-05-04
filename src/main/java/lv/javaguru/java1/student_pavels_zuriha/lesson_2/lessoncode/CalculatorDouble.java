@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_pavels_zuriha.lesson_2.lessoncode;
 
-public class CalculatorDouble {
+class CalculatorDouble {
 
     public static void main(String[] args) {
 

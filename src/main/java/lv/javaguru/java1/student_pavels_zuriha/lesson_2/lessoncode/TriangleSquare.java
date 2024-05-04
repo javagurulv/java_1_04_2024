@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_pavels_zuriha.lesson_2.lessoncode;
 
 import java.util.Scanner;
 
-public class TriangleSquare {
+class TriangleSquare {
 
     public static void main(String[] args) {
 

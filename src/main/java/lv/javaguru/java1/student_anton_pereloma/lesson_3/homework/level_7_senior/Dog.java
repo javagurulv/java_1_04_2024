@@ -20,7 +20,7 @@ class Dog {
         }
     }
 
-    public void happyBirthday() {
+    void happyBirthday() {
         this.age ++;
     }
 }

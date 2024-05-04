@@ -14,7 +14,7 @@ public class WeekDayApp {
 
         // determine day of the week
         if (number == 1) {
-            weekday = "Monday" + number;
+            weekday = "Monday";
         } else if (number == 2) {
             weekday = "Tuesday";
         } else if (number == 3) {

@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_sergejs_temcenko.lesson_3_oop_first_look.homework.level_1;
+package lv.javaguru.java1.student_sergejs_temcenko.lesson_3_oop_first_look.homework.level_1_inter;
 
 public class RobotApp {
 

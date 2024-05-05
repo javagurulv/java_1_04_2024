@@ -22,7 +22,7 @@ class Bank {
 
     public void commissionCalculate(int withdrawalAmount) {
 
-        int commissionRate = 0;
+        int commissionRate;
 
         if (withdrawalAmount >= 5000) {
             commissionRate = 5;

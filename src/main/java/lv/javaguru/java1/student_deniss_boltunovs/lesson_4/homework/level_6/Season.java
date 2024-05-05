@@ -11,24 +11,13 @@ class Season {
        System.out.println("Please input number between 1 and 12!");
        int month = scanner.nextInt();
 
-       String season;
+       String season = "";
 
        switch (month) {
-           case 12, 1, 2:
-               season = "Winter";
-               break;
-           case 3, 4, 5:
-               season = "Spring";
-               break;
-           case 6, 7, 8:
-               season = "Summer";
-               break;
-           case 9, 10, 11:
-               season = "Autumn";
-               break;
-           default:
-               season = "No season";
-               break;
+           case 12,1,2 -> season = "Winter";
+           case 3,4,5 -> season = "Spring";
+           case 6,7,8 -> season = "Summer";
+           case 9,10,11 -> season = "Autumn";
        }
 
        System.out.println("season: " + season);

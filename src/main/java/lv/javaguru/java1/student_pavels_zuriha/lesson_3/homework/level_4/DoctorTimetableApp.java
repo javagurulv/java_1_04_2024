@@ -7,6 +7,8 @@ class DoctorTimetableApp {
     public static void main(String[] args) {
 
 
+
+
         Appointment appointment1 = new Appointment("Patient 1", "Diagnosis1", 100);
         Appointment appointment2 = new Appointment("Patient 2", "Diagnosis2", 200);
         Doctor doctor1 = new Doctor("Vasya Pupkin", "Therapist", new Date("12/12/12"), appointment1, appointment2);

@@ -2,12 +2,18 @@ package lv.javaguru.java1.student_artem_galustan.lesson3;
 
 public class SecRobot {
 
-    private String Name;
+    public String Name;
 
-    private int work;
+    public int work;
 
     public SecRobot(String Name, int work) {
         this.Name = Name;
         this.work = work;
+    }
+    public String getName() {
+        return this.Name;
+    }
+    public void set(String newName) {
+        this.Name = newName;
     }
 }

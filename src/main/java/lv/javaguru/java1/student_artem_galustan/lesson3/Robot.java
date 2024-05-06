@@ -9,4 +9,11 @@ public class Robot {
         this.Name = Name;
         this.work = work;
     }
+    public String getName() {
+        return this.Name;
 }
+    public void set(String newName)
+    {
+        this.Name = newName;
+    }
+    }

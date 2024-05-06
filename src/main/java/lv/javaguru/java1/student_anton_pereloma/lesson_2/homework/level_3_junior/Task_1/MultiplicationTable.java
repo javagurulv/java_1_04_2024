@@ -3,6 +3,8 @@ package lv.javaguru.java1.student_anton_pereloma.lesson_2.homework.level_3_junio
 import java.util.Scanner;
 
 public class MultiplicationTable {
+
+    //CODE_REVIEW: please fix code formatting
     public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Enter your number: ");

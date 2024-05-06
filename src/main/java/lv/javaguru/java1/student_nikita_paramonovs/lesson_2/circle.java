@@ -3,6 +3,7 @@ package lv.javaguru.java1.student_nikita_paramonovs.lesson_2;
 import java.util.Locale;
 import java.util.Scanner;
 
+//CODE_REVIEW: use big first letter in the class name, better: Circle
 public class circle {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in).useLocale(Locale.US);

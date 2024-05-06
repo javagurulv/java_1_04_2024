@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_natalia_kochkina.lesson_1;
 
-public class HelloWorld {
+class HelloWorld {
 
 
     public static void main(String[] args) {

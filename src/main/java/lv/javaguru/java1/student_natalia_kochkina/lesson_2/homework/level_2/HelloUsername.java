@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_natalia_kochkina.lesson_2.homework.level_2;
 
 import java.util.Scanner;
 
-public class HelloUsername {
+class HelloUsername {
 
     //Task_2
 

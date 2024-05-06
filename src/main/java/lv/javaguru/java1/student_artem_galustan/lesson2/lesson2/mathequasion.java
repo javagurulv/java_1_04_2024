@@ -3,6 +3,7 @@ package lv.javaguru.java1.student_artem_galustan.lesson2.lesson2;
 
 import java.util.Scanner;
 
+// CODE_REVIEW: use camel case notation for class name, better: MathEquasion
 public class mathequasion {
     public static void main(String[] args) {
 

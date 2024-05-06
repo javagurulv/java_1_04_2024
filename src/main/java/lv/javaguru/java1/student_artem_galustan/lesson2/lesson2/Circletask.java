@@ -3,6 +3,7 @@ package lv.javaguru.java1.student_artem_galustan.lesson2.lesson2;
 import java.util.Locale;
 import java.util.Scanner;
 
+// CODE_REVIEW: use camel case notation for class name, better: CircleTask
 public class Circletask {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useLocale(Locale.US);

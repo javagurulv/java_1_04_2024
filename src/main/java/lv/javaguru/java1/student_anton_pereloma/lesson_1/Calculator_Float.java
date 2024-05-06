@@ -1,5 +1,6 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_1;
 
+// CODE_REVIEW: please remove _ from class name, better CalculatorFloat
 public class Calculator_Float {
     public static void main(String[] args) {
         double number1 = 100;

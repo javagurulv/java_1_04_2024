@@ -11,7 +11,7 @@ class DayOfWeek {
         System.out.println("Please enter number between 1 and 7.");
         int number = scanner.nextInt();
 
-        String dayOfWeek = "";
+        String dayOfWeek;
 
         switch (number) {
             case 1 -> dayOfWeek = "Monday";

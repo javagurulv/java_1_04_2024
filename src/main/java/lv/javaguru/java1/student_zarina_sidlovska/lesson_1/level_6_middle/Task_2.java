@@ -6,6 +6,6 @@ public class Task_2 {
         int nr2 = 3;
         int result = nr1 * nr2;
 
-        System.out.println(result);
+        System.out.println("result is " + result);
     }
 }

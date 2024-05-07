@@ -6,6 +6,8 @@ public class Task_1 {
         int secondnumber = 36;
         int result = firstnumber + secondnumber;
 
-        System.out.println(result);
+        String output = "My result is: ";
+        System.out.println(output + result);
+
     }
 }

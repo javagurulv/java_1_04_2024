@@ -25,7 +25,7 @@ public class StudentMark {
             else if(mark>69) {
                 grade = "C";
             }
-             else if(mark>69) {
+             else if(mark>59) {
                 grade = "D";
             }
             else{

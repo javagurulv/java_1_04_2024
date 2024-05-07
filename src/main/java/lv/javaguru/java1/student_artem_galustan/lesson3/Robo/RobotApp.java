@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_artem_galustan.lesson3;
+package lv.javaguru.java1.student_artem_galustan.lesson3.Robo;
 
 public class RobotApp {
     public static void main(String[] args) {

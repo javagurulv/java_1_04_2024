@@ -29,6 +29,8 @@ class DoctorTimetableApp {
         System.out.println("Doctor last name = " + timetable.getDoctorLastName());
         System.out.println("Doctor speciality = " + timetable.getDoctorSpeciality());
         System.out.println("Appointment date = " + timetable.getAppointmentDate());
+
+        System.out.println("Appointment 1 diagnose = " + timetable.getAppointment1().getDiagnosis());
     }
 
 }

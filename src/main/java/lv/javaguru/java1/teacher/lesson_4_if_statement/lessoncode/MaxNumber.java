@@ -22,6 +22,13 @@ class MaxNumber {
             System.out.println("Numbers are equals!");
         }
 
+
+        if (number1 > number2) {
+            System.out.println("Biggest number is 1!");
+        } else {
+            System.out.println("Biggest number is NOT 1!");
+        }
+
     }
 
 }

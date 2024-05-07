@@ -49,9 +49,9 @@ class StudentGradeTest {
         String realGrade = studentGrade.calculateGrade(mark);
 
         if (expectedGrade.equals(realGrade)) {
-            System.out.println("TEST 1 = OK");
+            System.out.println("TEST 3 = OK");
         } else {
-            System.out.println("TEST 1 = FAIL");
+            System.out.println("TEST 3 = FAIL");
         }
     }
 
@@ -63,9 +63,9 @@ class StudentGradeTest {
         String realGrade = studentGrade.calculateGrade(mark);
 
         if (expectedGrade.equals(realGrade)) {
-            System.out.println("TEST 1 = OK");
+            System.out.println("TEST 4 = OK");
         } else {
-            System.out.println("TEST 1 = FAIL");
+            System.out.println("TEST 4 = FAIL");
         }
     }
 
@@ -77,9 +77,9 @@ class StudentGradeTest {
         String realGrade = studentGrade.calculateGrade(mark);
 
         if (expectedGrade.equals(realGrade)) {
-            System.out.println("TEST 1 = OK");
+            System.out.println("TEST 5 = OK");
         } else {
-            System.out.println("TEST 1 = FAIL");
+            System.out.println("TEST 5 = FAIL");
         }
     }
 
@@ -91,9 +91,9 @@ class StudentGradeTest {
         String realGrade = studentGrade.calculateGrade(mark);
 
         if (expectedGrade.equals(realGrade)) {
-            System.out.println("TEST 1 = OK");
+            System.out.println("TEST 6 = OK");
         } else {
-            System.out.println("TEST 1 = FAIL");
+            System.out.println("TEST 6 = FAIL");
         }
     }
 

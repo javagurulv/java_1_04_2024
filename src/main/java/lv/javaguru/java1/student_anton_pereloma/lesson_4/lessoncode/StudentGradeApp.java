@@ -1,4 +1,4 @@
-package lv.javaguru.java1.teacher.lesson_4_if_statement.lessoncode;
+package lv.javaguru.java1.student_anton_pereloma.lesson_4.lessoncode;
 
 import java.util.Scanner;
 

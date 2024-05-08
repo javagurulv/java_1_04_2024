@@ -1,4 +1,4 @@
-package lv.javaguru.java1.teacher.lesson_4_if_statement.lessoncode;
+package lv.javaguru.java1.student_anton_pereloma.lesson_4.lessoncode;
 
 class StudentGradeTest {
 
@@ -23,8 +23,8 @@ class StudentGradeTest {
     }
 
     public void test2() {
-        int mark = 85;
-        String expectedGrade = "B";
+        int mark = 1000;
+        String expectedGrade = "unknown grade";
 
         StudentGrade studentGrade = new StudentGrade();
         String realGrade = studentGrade.calculateGrade(mark);
@@ -35,5 +35,6 @@ class StudentGradeTest {
             System.out.println("TEST 2 = FAIL");
         }
     }
+
 
 }

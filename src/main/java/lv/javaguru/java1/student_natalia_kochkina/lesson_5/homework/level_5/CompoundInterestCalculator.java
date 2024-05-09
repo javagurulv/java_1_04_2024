@@ -9,7 +9,6 @@ class CompoundInterestCalculator {
     S- ПОЛУЧАЕМАЯ СУММА.
      */
     public double calculate(double investment, double interestRate, int years){
-        double sum = investment * Math.pow(1 + (interestRate / 100), years);
-        return sum;
+        return investment * Math.pow(1 + (interestRate / 100), years);
     }
 }

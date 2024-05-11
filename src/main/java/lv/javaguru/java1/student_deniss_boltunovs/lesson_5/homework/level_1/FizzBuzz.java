@@ -11,7 +11,7 @@ class FizzBuzz {
      }
 
     public String calculateFizzBuzz(int number) {
-         String result = " " ;
+         String result;
 
          if (dividedByThree(number) && dividedByFive(number)) {
              result = "FizzBuzz";

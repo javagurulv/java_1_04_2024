@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_anton_pereloma.lesson_4.homework.level_6_middl
 
 import java.util.Scanner;
 
-public class WhatSeasonApp {
+class WhatSeasonApp {
     public static void main(String[] args) {
         WhatSeason season = new WhatSeason();
         Scanner scanner = new Scanner(System.in);

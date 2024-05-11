@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_4.homework.level_4_junior;
 
-public class StockApp {
+class StockApp {
     public static void main(String[] args) {
 //        Stock google = new Stock("Google", 1000);
 

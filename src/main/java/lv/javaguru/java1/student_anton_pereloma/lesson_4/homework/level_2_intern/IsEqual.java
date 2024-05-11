@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_anton_pereloma.lesson_4.homework.level_2_inter
 
 import java.util.Scanner;
 
-public class IsEqual {
+class IsEqual {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter first number: ");

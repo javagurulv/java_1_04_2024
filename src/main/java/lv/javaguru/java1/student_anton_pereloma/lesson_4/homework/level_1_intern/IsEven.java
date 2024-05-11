@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_anton_pereloma.lesson_4.homework.level_1_inter
 
 import java.util.Scanner;
 
-public class IsEven {
+class IsEven {
     public static void main(String[] args) {
 
 

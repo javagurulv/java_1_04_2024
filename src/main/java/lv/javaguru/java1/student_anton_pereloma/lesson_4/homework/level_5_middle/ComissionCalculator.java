@@ -7,7 +7,7 @@ class CommissionCalculator {
         this.withdrawal = withdrawal;
     }
 
-    public double getPercentage() {
+    double getPercentage() {
         int percentage = 0;
         if (withdrawal < 1000) {
             percentage = 3;

@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_anton_pereloma.lesson_4.homework.level_3_junio
 
 import java.util.Scanner;
 
-public class GreaterOfThree {
+class GreaterOfThree {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the first variable X:");

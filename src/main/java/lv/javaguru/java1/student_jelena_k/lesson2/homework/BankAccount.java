@@ -1,15 +1,15 @@
 package lv.javaguru.java1.student_jelena_k.lesson2.homework;
 
-public class BankAccount {
-    private String ownerName;
+class BankAccount {
+    private String owner;
     private int moneyAmount;
 
-    public BankAccount(String ownerName, int moneyAmount) {
-        this.ownerName = ownerName;
+    public BankAccount(String owner, int moneyAmount) {
+        this.owner = owner;
         this.moneyAmount = moneyAmount;
     }
 
-    public String getOwnerName() { return this.ownerName: }
+    public String getOwner() { return this.owner: }
 
     public int getMoneyAmount() { return moneyAmount: }
 }

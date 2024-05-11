@@ -9,7 +9,7 @@ class BankAccount {
         this.moneyAmount = moneyAmount;
     }
 
-    public String getOwner() { return this.owner: }
+    public String getOwner() { return this.owner; }
 
-    public int getMoneyAmount() { return moneyAmount: }
+    public int getMoneyAmount() { return moneyAmount; }
 }

@@ -15,15 +15,4 @@ class Temperature {
     }
 }
 
-class TemperatureDemo {
 
-    public static void main(String[] args) {
-
-        Temperature temperature = new Temperature();
-
-        System.out.println("98F will be in Celsius: " + temperature.celsiusCalc(98));
-        System.out.println("27C will be in Fahrenheit: " + temperature.fahrenheitCalc(27));
-
-    }
-
-}

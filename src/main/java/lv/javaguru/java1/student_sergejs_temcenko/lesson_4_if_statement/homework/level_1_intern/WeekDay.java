@@ -1,7 +1,5 @@
 package lv.javaguru.java1.student_sergejs_temcenko.lesson_4_if_statement.homework.level_1_intern;
 
-import lv.javaguru.java1.teacher.lesson_6_unit_testing.homework.level_6_middle.SalaryTaxCalculatorApp;
-
 import java.util.Scanner;
 
 class WeekDay {

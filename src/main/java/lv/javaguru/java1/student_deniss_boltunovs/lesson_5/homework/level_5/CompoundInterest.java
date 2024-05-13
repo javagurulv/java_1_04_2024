@@ -14,14 +14,13 @@ class CompoundInterest {
 
      double compoundRate = 1 + rate / frequency;
      double compoundPeriods = frequency * period;
-     double finaAmount = principal * Math.pow(compoundRate, compoundPeriods);
-     double totalInterests = finaAmount - principal;
+     double finalAmount = principal * Math.pow(compoundRate, compoundPeriods);
+     double totalInterest = finalAmount - principal;
 
      System.out.println("Invested amount: " + principal);
-     System.out.println("Final amount: " + finaAmount);
-     System.out.println("Total interests: " + totalInterests + "\n");
+     System.out.println("Final amount: " + finalAmount);
+     System.out.println("Total interest: " + totalInterest + "\n");
 
    }
-
 
 }

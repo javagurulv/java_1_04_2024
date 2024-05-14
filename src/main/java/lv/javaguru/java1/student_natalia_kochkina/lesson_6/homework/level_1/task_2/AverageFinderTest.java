@@ -10,47 +10,32 @@ class AverageFinderTest {
     }
 
     public void test1() {
-        int num1 = 5;
-        int num2 = 7;
-        double expectedAverage = 6;
-
         AverageFinder averageFinder = new AverageFinder();
-        double realAverage = averageFinder.findAverage(num1, num2);
-
-        if (expectedAverage == realAverage) {
-            System.out.println("TEST1 = OK");
-        } else {
-            System.out.println("TEST1 = FAIL");
-        }
+        double realAverage = averageFinder.findAverage(5, 7);
+        checkResult(realAverage, 6,
+                "AverageNumberTest1 ");
     }
 
     public void test2() {
-        int num1 = 15;
-        int num2 = 2;
-        double expectedAverage = 8.5;
-
         AverageFinder averageFinder = new AverageFinder();
-        double realAverage = averageFinder.findAverage(num1, num2);
-
-        if (expectedAverage == realAverage) {
-            System.out.println("TEST2 = OK");
-        } else {
-            System.out.println("TEST2 = FAIL");
-        }
+        double realAverage = averageFinder.findAverage(15, 2);
+        checkResult(realAverage, 8.5,
+                "AverageNumberTest2 ");
     }
 
     public void test3() {
-        int num1 = 0;
-        int num2 = 16;
-        double expectedAverage = 8;
-
         AverageFinder averageFinder = new AverageFinder();
-        double realAverage = averageFinder.findAverage(num1, num2);
+        double realAverage = averageFinder.findAverage(0, 16);
+        checkResult(realAverage, 8,
+                "AverageNumberTest3 ");
+    }
 
-        if (expectedAverage == realAverage) {
-            System.out.println("TEST3 = OK");
+    private void checkResult(double realResult, double expectedResult,
+                             String testScenarioName) {
+        if (realResult == expectedResult) {
+            System.out.println(testScenarioName + "TEST = OK");
         } else {
-            System.out.println("TEST3 = FAIL");
+            System.out.println(testScenarioName + "TEST = FAIL");
         }
     }
 

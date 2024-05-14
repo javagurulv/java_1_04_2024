@@ -13,98 +13,53 @@ class TriangleSquareTest {
     }
 
     public void test1() {
-        int a = 20;
-        int b = 16;
-        int c = 12;
-        double expectedSquare = 96;
-
         TriangleSquare triangleSquare = new TriangleSquare();
-        double realSquare = triangleSquare.calculateSquare(a, b, c);
-
-        if (expectedSquare == realSquare) {
-            System.out.println("TEST1 = OK");
-        } else {
-            System.out.println("TEST1 = FAIL");
-        }
+        double realSquare = triangleSquare.calculateSquare(20, 16, 12);
+        checkResult(realSquare, 96,
+                "SquareTest1 ");
     }
 
     public void test2() {
-        int a = 13;
-        int b = 14;
-        int c = 15;
-        double expectedSquare = 84;
-
         TriangleSquare triangleSquare = new TriangleSquare();
-        double realSquare = triangleSquare.calculateSquare(a, b, c);
-
-        if (expectedSquare == realSquare) {
-            System.out.println("TEST2 = OK");
-        } else {
-            System.out.println("TEST2 = FAIL");
-        }
+        double realSquare = triangleSquare.calculateSquare(13, 14, 15);
+        checkResult(realSquare, 84,
+                "SquareTest2 ");
     }
 
     public void test3() {
-        int a = 28;
-        int b = 26;
-        int c = 30;
-        double expectedSquare = 336;
-
         TriangleSquare triangleSquare = new TriangleSquare();
-        double realSquare = triangleSquare.calculateSquare(a, b, c);
-
-        if (expectedSquare == realSquare) {
-            System.out.println("TEST3 = OK");
-        } else {
-            System.out.println("TEST3 = FAIL");
-        }
+        double realSquare = triangleSquare.calculateSquare(28, 26, 30);
+        checkResult(realSquare, 336,
+                "SquareTest3 ");
     }
 
     public void test4() {
-        int a = 28;
-        int b = 46;
-        int c = 51;
-        double expectedSemiPerimeter = 62.5;
-
         TriangleSquare triangleSquare = new TriangleSquare();
-        double realSemiPerimeter = triangleSquare.calculateSemiPerimeter(a, b, c);
-
-        if (expectedSemiPerimeter == realSemiPerimeter) {
-            System.out.println("TEST4 = OK");
-        } else {
-            System.out.println("TEST4 = FAIL");
-        }
+        double realSemiPerimeter = triangleSquare.calculateSemiPerimeter(28, 46, 51);
+        checkResult(realSemiPerimeter, 62.5,
+                "SemiPerimeterTest1 ");
     }
 
     public void test5() {
-        int a = 23;
-        int b = 23;
-        int c = 23;
-        double expectedSemiPerimeter = 34.5;
-
         TriangleSquare triangleSquare = new TriangleSquare();
-        double realSemiPerimeter = triangleSquare.calculateSemiPerimeter(a, b, c);
-
-        if (expectedSemiPerimeter == realSemiPerimeter) {
-            System.out.println("TEST5 = OK");
-        } else {
-            System.out.println("TEST5 = FAIL");
-        }
+        double realSemiPerimeter = triangleSquare.calculateSemiPerimeter(23, 23, 23);
+        checkResult(realSemiPerimeter, 34.5,
+                "SemiPerimeterTest2 ");
     }
 
     public void test6() {
-        int a = 14;
-        int b = 14;
-        int c = 9;
-        double expectedSemiPerimeter = 18.5;
-
         TriangleSquare triangleSquare = new TriangleSquare();
-        double realSemiPerimeter = triangleSquare.calculateSemiPerimeter(a, b, c);
+        double realSemiPerimeter = triangleSquare.calculateSemiPerimeter(14, 14, 9);
+        checkResult(realSemiPerimeter, 18.5,
+                "SemiPerimeterTest3 ");
+    }
 
-        if (expectedSemiPerimeter == realSemiPerimeter) {
-            System.out.println("TEST6 = OK");
+    private void checkResult(double realResult, double expectedResult,
+                             String testScenarioName) {
+        if (realResult == expectedResult) {
+            System.out.println(testScenarioName + "TEST = OK");
         } else {
-            System.out.println("TEST6 = FAIL");
+            System.out.println(testScenarioName + "TEST = FAIL");
         }
     }
 }

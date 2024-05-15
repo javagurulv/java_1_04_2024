@@ -11,46 +11,35 @@ class PalindromeCheckerTest {
     }
 
     public void test1() {
-        String text = "cucumber";
         PalindromeChecker palindromeChecker = new PalindromeChecker();
-        boolean result = palindromeChecker.isPalindrome(text);
-        if (!result) {
-            System.out.println("TEST1 = OK");
-        } else {
-            System.out.println("TEST1 = FAIL");
-        }
+        boolean realResult = palindromeChecker.isPalindrome("cucumber");
+        checkResult(realResult, false, "notPalindromeTest1 ");
     }
 
     public void test2() {
-        String text = "level";
         PalindromeChecker palindromeChecker = new PalindromeChecker();
-        boolean result = palindromeChecker.isPalindrome(text);
-        if (result) {
-            System.out.println("TEST2 = OK");
-        } else {
-            System.out.println("TEST2 = FAIL");
-        }
+        boolean realResult = palindromeChecker.isPalindrome("level");
+        checkResult(realResult, true, "palindromeTest1 ");
     }
 
     public void test3() {
-        String text = "tequila";
         PalindromeChecker palindromeChecker = new PalindromeChecker();
-        boolean result = palindromeChecker.isPalindrome(text);
-        if (!result) {
-            System.out.println("TEST3 = OK");
-        } else {
-            System.out.println("TEST3 = FAIL");
-        }
+        boolean realResult = palindromeChecker.isPalindrome("tequila");
+        checkResult(realResult, false, "notPalindromeTest2 ");
     }
 
     public void test4() {
-        String text = "noon";
         PalindromeChecker palindromeChecker = new PalindromeChecker();
-        boolean result = palindromeChecker.isPalindrome(text);
-        if (result) {
-            System.out.println("TEST4 = OK");
+        boolean realResult = palindromeChecker.isPalindrome("noon");
+        checkResult(realResult, true, "palindromeTest2 ");
+    }
+
+    private void checkResult(boolean realResult, boolean expectedResult,
+                             String testScenarioName) {
+        if (realResult == expectedResult) {
+            System.out.println(testScenarioName + "TEST = OK");
         } else {
-            System.out.println("TEST4 = FAIL");
+            System.out.println(testScenarioName + "TEST = FAIL");
         }
     }
 }

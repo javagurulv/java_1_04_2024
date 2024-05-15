@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_deniss_boltunovs.lesson_5.homework.level_6;
+package lv.javaguru.java1.student_deniss_boltunovs.lesson_5.homework.level_6.solution_1;
 
 class StudentAssessmentApp {
 
@@ -7,12 +7,12 @@ class StudentAssessmentApp {
         StudentAssessment assessment1 = new StudentAssessment("John",
                                                            "Dow",
                                                             new String[]{"Math", "Sport", "Art", "English"},
-                                                            new int[]{7, 9, 6, 8} );
+                                                            new int[]{7, 9, 6, 8});
 
         StudentAssessment assessment2 = new StudentAssessment("Michael",
                                                             "Brown",
                                                             new String[]{"Spanish", "Economics", "History"},
-                                                            new int[]{6, 4, 8} );
+                                                            new int[]{6, 4, 8});
 
         System.out.println("1.Student");
         System.out.println("   Name: " + assessment1.getStudentName());

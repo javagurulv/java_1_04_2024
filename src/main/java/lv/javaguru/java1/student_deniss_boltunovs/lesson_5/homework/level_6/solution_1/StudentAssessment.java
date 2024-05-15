@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_deniss_boltunovs.lesson_5.homework.level_6;
+package lv.javaguru.java1.student_deniss_boltunovs.lesson_5.homework.level_6.solution_1;
 
 class StudentAssessment {
 

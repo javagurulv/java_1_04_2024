@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_anton_pereloma.lesson_5.homework.level_1_junior;
+package lv.javaguru.java1.student_anton_pereloma.lesson_5.homework.level_1_intern;
 
 class FizzBuzzApp {
     public static void main(String[] args) {

@@ -1,8 +1,8 @@
-package lv.javaguru.java1.student_maksims_latkovskis.lesson_1_introduction;
+package lv.javaguru.java1.student_maksims_latkovskis.lesson_1_introduction.homework;
 
 import java.util.Scanner;
 
-public class Multiplication {
+class Multiplication {
 
     public static void main(String[] args){
 

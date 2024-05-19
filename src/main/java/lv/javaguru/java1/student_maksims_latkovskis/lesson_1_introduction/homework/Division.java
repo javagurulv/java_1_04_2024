@@ -1,8 +1,8 @@
-package lv.javaguru.java1.student_maksims_latkovskis.lesson_1_introduction;
+package lv.javaguru.java1.student_maksims_latkovskis.lesson_1_introduction.homework;
 
 import java.util.Scanner;
 
-public class Division {
+class Division {
     public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in); // Enables input from terminal

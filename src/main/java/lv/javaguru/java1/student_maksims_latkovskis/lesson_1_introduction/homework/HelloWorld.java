@@ -1,7 +1,7 @@
-package lv.javaguru.java1.student_maksims_latkovskis.lesson_1_introduction;
+package lv.javaguru.java1.student_maksims_latkovskis.lesson_1_introduction.homework;
 
 //CODE_REVIEW: please use { in the end of line, better: HelloWorld {
-public class HelloWorld
+class HelloWorld
 {
 
     public static void main(String[] args)

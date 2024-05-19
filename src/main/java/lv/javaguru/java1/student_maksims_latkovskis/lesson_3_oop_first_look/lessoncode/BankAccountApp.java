@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_maksims_latkovskis.lesson_3_oop_first_look.les
 
 import java.util.Scanner;
 
-public class BankAccountApp {
+class BankAccountApp {
 
     public static void main(String[] args){
 
@@ -25,17 +25,13 @@ public class BankAccountApp {
         System.out.println("Name is: " + bankAccount6.getOwner());
         System.out.println("Balance is: " + bankAccount6.getBalance());
 
-       // System.out.println("Please Enter the bank Account Name:");
-       // String accountName = scanner.nextLine();
-       // System.out.println("Name is: " + accountName.getOwner());
-       // System.out.println("Balance is: " + accountName.getBalance());
+        bankAccount6.addBalance(9999);
 
-        bankAccount6.setBalance(9999);
-        bankAccount5.setBalance(1111);
+        bankAccount5.subtBalance(1111);
         System.out.println("Balance is: " + bankAccount5.getBalance());
         System.out.println("Balance is: " + bankAccount6.getBalance());
 
-        //
+
 
     }
 

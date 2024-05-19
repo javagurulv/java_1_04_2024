@@ -23,14 +23,17 @@ class BankAccount {
     public String getOwner(){
         return this.owner;
     }
-
     //Returns account balance
     public int getBalance(){
         return this.balance;
     }
-
-    public void setBalance(int balance){
-        this.balance = balance;
+    public void addBalance(int balance){
+        this.balance = this.balance + balance;
     }
-
+    public void subtBalance(int balance){
+        if(this.balance<balance){}
+        else {
+            this.balance = this.balance - balance;
+        }
+    }
 }

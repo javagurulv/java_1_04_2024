@@ -13,6 +13,15 @@ class Apple {
         this.weight = weight;
     }
 
+    public String getKind(){
+        return this.kind;
+    }
+    public String getColour(){
+        return this.colour;
+    }
+    public double getWeight(){
+        return this.weight;
+    }
 
 
 

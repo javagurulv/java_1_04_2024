@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_jelena_k.lesson2.homework;
 
 public class BookA {
     public static void main(String[] args) {
-        Book book1 = new Book( "Cindarella" , "CharlesPerrault" , 1697 , "godMother" , "ball");
+        /*Book book1 = new Book( "Cindarella" , "CharlesPerrault" , 1697 , "godMother" , "ball");
 
         System.out.println("bookTitle: " + book1.getTitle());
         System.out.println("bookAuthor: " + book1.getAuthor());
@@ -13,7 +13,7 @@ public class BookA {
 
 
 
-
+*/
 
     }
 }

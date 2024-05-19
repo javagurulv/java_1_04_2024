@@ -2,9 +2,6 @@ package lv.javaguru.java1.student_maksims_latkovskis.lesson_4_if_statement.homew
 
 import java.util.Scanner;
 
-
-    import java.util.Scanner;
-
     class ParityCheck {
 
         public static void main(String[] args) {

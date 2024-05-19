@@ -4,7 +4,7 @@ package lv.javaguru.java1.student_nadezda_radigina.lesson_5.level_3_junior;
      public static void main(String[] args){
          Tax tax = new Tax();
          System.out.println(tax.taxRate(1000));
-         System.out.println(tax.taxRate(20000));
+         System.out.println(tax.taxRate(23456));
          System.out.println(tax.taxRate(35000));
          System.out.println(tax.taxRate(60000));
          System.out.println(tax.taxRate(-30));

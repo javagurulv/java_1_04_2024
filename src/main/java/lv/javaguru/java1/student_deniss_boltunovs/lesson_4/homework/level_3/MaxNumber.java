@@ -3,7 +3,7 @@ package lv.javaguru.java1.student_deniss_boltunovs.lesson_4.homework.level_3;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class MaxNumber {
+class MaxNumber {
 
     public static void main(String[] args) {
 

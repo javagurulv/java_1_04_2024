@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_deniss_boltunovs.lesson_4.homework.level_4;
 
-public class StockApp {
+class StockApp {
 
     public static void main(String[] args) {
 

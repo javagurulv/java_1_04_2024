@@ -22,5 +22,20 @@ class Calculator {
             return number2;
         }
     }
+    public int maxOfThree(int number1, int number2, int number3){
+       int result;
 
+        if(number1>number2) {
+            result = number1;
+        }
+        else {
+            result = number2;
+        }
+        if(result>number3){
+            return result;
+        }
+        else{
+            return number3;
+        }
+    }
 }

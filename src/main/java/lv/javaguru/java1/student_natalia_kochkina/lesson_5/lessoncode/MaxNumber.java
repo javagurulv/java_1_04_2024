@@ -6,7 +6,7 @@ class MaxNumber {
         return number1 > number2 ? number1 : number2;
     }
 
-    public int findMaxOfThreeNumbers(int number1, int number2, int number3) {
+    int findMaxOfThreeNumbers(int number1, int number2, int number3) {
         int maxNumber = findMaxNumber(number1, number2);
         maxNumber = findMaxNumber(maxNumber, number3);
         return maxNumber;

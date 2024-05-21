@@ -1,8 +1,8 @@
-package lv.javaguru.java1.student_natalia_kochkina.lesson_5.homework.level_1;
+package lv.javaguru.java1.student_natalia_kochkina.lesson_5.homework.level_1.task_2;
 
 class ColorDetector {
 
-    public String color(int wavelength) {
+    String defineColor(int wavelength) {
         if ((wavelength >= 380) && (wavelength <= 449)) {
             return "Violet";
         } else if ((wavelength >= 450) && (wavelength <= 494)) {
@@ -19,5 +19,6 @@ class ColorDetector {
             return "Invisible Light";
         }
     }
+
 
 }

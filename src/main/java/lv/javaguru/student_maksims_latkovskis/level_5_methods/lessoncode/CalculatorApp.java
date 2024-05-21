@@ -12,12 +12,13 @@ class CalculatorApp {
         boolean odd = calculator.isOdd(number);
         double average = calculator.averageOfTwo(number, number2);
         double max = calculator.maxOfTwo(number, number2);
+        int max3 = calculator.maxOfThree(5,4,7);
 
         System.out.println("The number is even?: " + even);
         System.out.println("The number is odd?: " + odd);
         System.out.println("Average is: " + average);
-        System.out.println("Max is: " + max);
-
+        System.out.println("Max of 2 is: " + max);
+        System.out.println("Max of 3 is: " + max3);
 
     }
 }

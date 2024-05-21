@@ -2,22 +2,19 @@ package lv.javaguru.java1.student_maksims_latkovskis.lesson_4_if_statement.homew
 
 import java.util.Scanner;
 
-    class ParityCheck {
+class ParityCheck {
+    public static void main(String[] args) {
 
-        public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-            Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the integer:");
+        int inputNumber = scanner.nextInt();
+        boolean isEven = (inputNumber % 2 == 0);
 
-            System.out.println("Please enter the integer:");
-            int inputNumber = scanner.nextInt();
-            boolean isEven = (inputNumber%2 ==0);
-
-            if (isEven){
-                System.out.println("Number is even");
-            }
-
-            else{
-                System.out.println("Number is odd");
-            }
+        if (isEven) {
+            System.out.println("Number is even");
+        } else {
+            System.out.println("Number is odd");
         }
     }
+}

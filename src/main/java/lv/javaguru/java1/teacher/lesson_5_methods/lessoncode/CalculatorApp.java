@@ -9,9 +9,11 @@ class CalculatorApp {
         int number = scanner.nextInt();
 
         Calculator calculator = new Calculator();
-        boolean result = calculator.isEven(number);
+        boolean evenResult = calculator.isEven(number);
+        boolean oddResult = calculator.isOdd(number);
 
-        System.out.println("Result = " + result);
+        System.out.println("Is even = " + evenResult);
+        System.out.println("Is odd = " + oddResult);
     }
 
 }

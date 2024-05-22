@@ -7,7 +7,9 @@ class CalculateGradeAverage {
     }
 
     double findGradeAverage() {
-        double allGradeSum = gradeAverage.getMathFinalGrade() + gradeAverage.getLatvianFinalGrade() + gradeAverage.getEnglishFinalGrade() + gradeAverage.getScienceFinalGrade();
+        double allGradeSum =
+                gradeAverage.getMathFinalGrade() + gradeAverage.getLatvianFinalGrade() +
+                gradeAverage.getEnglishFinalGrade() + gradeAverage.getScienceFinalGrade();
         return allGradeSum/4;
     }
 

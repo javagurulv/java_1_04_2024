@@ -1,6 +1,7 @@
 package lv.javaguru.java1.student_natalia_kochkina.lesson_5.homework.level_3;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 class TaxCalculator {
 
@@ -23,8 +24,7 @@ class TaxCalculator {
                     new BigDecimal("0.5")).add(new BigDecimal("19000"));
         }
 
-        tax.setScale(2,BigDecimal.ROUND_CEILING);
-        return tax;
+        return tax.setScale(2, RoundingMode.HALF_UP);
     }
 
 

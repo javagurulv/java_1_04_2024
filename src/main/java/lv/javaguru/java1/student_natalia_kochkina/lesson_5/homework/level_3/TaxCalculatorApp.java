@@ -9,7 +9,7 @@ class TaxCalculatorApp {
         TaxCalculator taxCalculator = new TaxCalculator();
         System.out.println(taxCalculator.calculateTax(new BigDecimal("9000")));
         System.out.println(taxCalculator.calculateTax(new BigDecimal("30000")));
-        System.out.println(taxCalculator.calculateTax(new BigDecimal("60555")));
+        System.out.println(taxCalculator.calculateTax(new BigDecimal("60555.555")));
         System.out.println(taxCalculator.calculateTax(BigDecimal.ZERO));
     }
 }

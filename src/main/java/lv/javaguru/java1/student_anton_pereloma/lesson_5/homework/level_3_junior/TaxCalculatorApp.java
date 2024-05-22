@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_5.homework.level_3_junior;
 
-public class TaxCalculatorApp {
+class TaxCalculatorApp {
     public static void main(String[] args) {
         TaxCalculator calculator = new TaxCalculator();
         System.out.println("Tax Rates:");

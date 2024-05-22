@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_5.homework.level_2_intern;
 
-public class LeapYearCalculator {
+class LeapYearCalculator {
     String isLeapYear(int year) {
         String leapYear;
         if ((year % 4 == 0) && (year % 100 != 0) && (year % 5 == 0)) {

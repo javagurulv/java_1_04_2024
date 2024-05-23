@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_anton_pereloma.lesson_5.homework.level_5_middl
 
 import java.util.Arrays;
 
-public class CompoundInterestCalculatorApp {
+class CompoundInterestCalculatorApp {
     public static void main(String[] args) {
         CompoundInterest interest = new CompoundInterest();
         System.out.println("Examples of compound interest if 10000 is invested with 10% interest over 5 time periods");

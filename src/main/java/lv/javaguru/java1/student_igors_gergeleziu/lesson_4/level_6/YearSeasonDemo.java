@@ -8,6 +8,6 @@ class YearSeasonDemo {
         YearSeason yearSeason = new YearSeason();
         System.out.println("Enter your number: ");
         int number = scanner.nextInt();
-        System.out.println("Your month number is " + yearSeason.checkSeason(number));
+        System.out.println("Your month number is " + yearSeason.convertNumberToYearSeason(number));
     }
 }

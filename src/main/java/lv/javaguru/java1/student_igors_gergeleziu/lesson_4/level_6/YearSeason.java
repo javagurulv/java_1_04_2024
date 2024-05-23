@@ -1,7 +1,7 @@
 package lv.javaguru.java1.student_igors_gergeleziu.lesson_4.level_6;
 
 class YearSeason {
-    String checkSeason(int number) {
+    String convertNumberToYearSeason(int number) {
         switch (number) {
             case 1:
                 return "Winter";

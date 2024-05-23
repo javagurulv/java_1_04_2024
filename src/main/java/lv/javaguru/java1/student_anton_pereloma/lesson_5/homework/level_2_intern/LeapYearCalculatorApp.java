@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_5.homework.level_2_intern;
 
-public class LeapYearCalculatorApp {
+class LeapYearCalculatorApp {
     public static void main(String[] args) {
         LeapYearCalculator year = new LeapYearCalculator();
         System.out.println(year.isLeapYear(1993));

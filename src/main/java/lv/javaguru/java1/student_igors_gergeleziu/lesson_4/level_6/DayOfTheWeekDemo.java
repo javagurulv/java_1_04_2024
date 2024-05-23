@@ -8,6 +8,6 @@ class DayOfTheWeekDemo {
         DayOfTheWeek dayOfTheWeek = new DayOfTheWeek();
         System.out.println("Enter your number: ");
         int number = scanner.nextInt();
-        System.out.println("Your day " + number + " is " + dayOfTheWeek.checkDay(number));
+        System.out.println("Your day " + number + " is " + dayOfTheWeek.convertNumberToDayOfWeek(number));
     }
 }

@@ -53,7 +53,7 @@ class CashReceiptCalculatorTest {
         CashReceipt[] receipts = {};
         double realResult = calculator.calculateAverageCost(receipts);
         checkResults(realResult, 0,
-                "AverageCostTestWithEmptyArray ");
+                "AverageCost3 ");
     }
 
     public void test6() {
@@ -61,7 +61,7 @@ class CashReceiptCalculatorTest {
         CashReceipt[] receipts = {};
         double realResult = calculator.calculateSalesAmount(receipts);
         checkResults(realResult, 0,
-                "SalesAmountTestWithEmptyArray ");
+                "SalesAmountTest3 ");
     }
 
     private void checkResults(double realResult, double expectedResult,

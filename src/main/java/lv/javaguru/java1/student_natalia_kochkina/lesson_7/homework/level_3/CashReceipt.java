@@ -10,11 +10,11 @@ class CashReceipt {
         this.purchaseAmount = purchaseAmount;
     }
 
-    public int getCheckNumber() {
+    int getCheckNumber() {
         return checkNumber;
     }
 
-    public double getPurchaseAmount() {
+    double getPurchaseAmount() {
         return purchaseAmount;
     }
 }

@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_5.homework.level_1_intern;
 
-public class ColorDetectorApp {
+class ColorDetectorApp {
     public static void main(String[] args) {
         ColorDetector whatColor = new ColorDetector();
 

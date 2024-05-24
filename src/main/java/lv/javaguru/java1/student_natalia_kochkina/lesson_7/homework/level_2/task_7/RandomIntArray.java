@@ -4,7 +4,7 @@ import java.util.Random;
 
 class RandomIntArray {
 
-    public int[] createArray() {
+    int[] createArray() {
         int[] array = new int[10];
 
         Random random = new Random();
@@ -15,7 +15,7 @@ class RandomIntArray {
         return array;
     }
 
-    public void printArray(int[] array) {
+    void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }

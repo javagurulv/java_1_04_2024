@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_5.homework.level_3_junior;
 
-public class TaxCalculator {
+class TaxCalculator {
     int taxRate(int amount) {
         int rate = 0;
         if (amount > 0) {

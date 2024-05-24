@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_maksims_latkovskis.lesson_2_variables.lessoncode;
 
-public class Arithmetics {
+class Arithmetics {
 
     public static void main(String[] args){
 

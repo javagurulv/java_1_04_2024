@@ -1,8 +1,7 @@
 package lv.javaguru.java1.student_maksims_latkovskis.lesson_2_variables.homework.level_2_intern;
 
 import java.util.Scanner;
-
-public class HelloUser {
+class HelloUser {
 
     public static void main(String[] args){
 

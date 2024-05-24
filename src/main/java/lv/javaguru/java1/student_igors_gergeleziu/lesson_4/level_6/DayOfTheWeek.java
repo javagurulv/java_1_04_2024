@@ -1,7 +1,7 @@
 package lv.javaguru.java1.student_igors_gergeleziu.lesson_4.level_6;
 
 class DayOfTheWeek {
-    String checkDay(int number) {
+    String convertNumberToDayOfWeek(int number) {
         switch (number) {
             case 1:
                 return "Monday";

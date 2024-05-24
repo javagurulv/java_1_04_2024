@@ -22,7 +22,7 @@ public class BiggestNumber {
             System.out.println("Biggest number is: " + number2);
         }
         else{
-            System.out.println("Biggest number is: " + number1);
+            System.out.println("Numbers are equal");
         }
 
     }

@@ -6,38 +6,33 @@ class AverageMarkApp {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int studentCount = getStudentCount(scanner);
-        String[] students = getStudentsArray(studentCount);
-        students = getStudentName(scanner, studentCount, students);
-        double[] grades = getStudentGrade(scanner, studentCount, students);
-        double averageGrade = getAverageGrade(grades, studentCount);
-        writeStudentsWithHighestGrade(averageGrade, studentCount, grades, students);
 
-
-        System.out.println("Программа завершена.");
+        String[] students = getStudentsList(scanner);
+        double[] grades = getStudentsGrades(scanner, students);
+        printAverage(grades);
+        printBestStudents(students, grades);
+        exitProgram();
     }
 
-    private static int getStudentCount(Scanner scanner) {
+    private static String[] getStudentsList(Scanner scanner) {
         System.out.print("Введите количество студентов: ");
-        return Integer.parseInt(scanner.nextLine());
-    }
+        int studentCount = Integer.parseInt(scanner.nextLine());
 
-    private static String[] getStudentsArray(int studentCount) {
-        return new String[studentCount];
-    }
+        String[] students = new String[studentCount];
 
-    private static String[] getStudentName(Scanner scanner, int studentCount, String[] students) {
         for (int i = 0; i < studentCount; i++) {
             System.out.print("Введите имя студента " + (i + 1) + ": ");
             String studentName = scanner.nextLine();
             students[i] = studentName;
         }
+
         return students;
     }
 
-    private static double[] getStudentGrade(Scanner scanner, int studentCount, String[] students) {
-        double[] grades = new double[studentCount];
-        for (int i = 0; i < studentCount; i++) {
+    private static double[] getStudentsGrades(Scanner scanner, String[] students) {
+        double[] grades = new double[students.length];
+
+        for (int i = 0; i < grades.length; i++) {
             System.out.print("Введите оценку для студента " + students[i] + ": ");
             double grade = Double.parseDouble(scanner.nextLine());
             grades[i] = grade;
@@ -45,25 +40,24 @@ class AverageMarkApp {
         return grades;
     }
 
-    private static double getAverageGrade(double[] grades, int studentCount) {
-        double sum = 0.0;
-        for (double grade : grades) {
-            sum += grade;
-        }
-        double average = sum / studentCount;
-        System.out.println("Средний балл: " + average);
-        return average;
+    private static void printAverage(double[] grades) {
+        AverageMarkCalculator averageMarkCalculator = new AverageMarkCalculator();
+        System.out.println("Средний балл: " + averageMarkCalculator.getAverage(grades));
     }
 
-    private static void writeStudentsWithHighestGrade(double average, int studentCount,
-                                                      double[] grades, String[] students) {
+    private static void printBestStudents(String[] students, double[] grades) {
         System.out.println("Студенты со средним баллом выше среднего:");
-        for (int i = 0; i < studentCount; i++) {
-            if (grades[i] > average) {
+
+        AverageMarkCalculator averageMarkCalculator = new AverageMarkCalculator();
+
+        for (int i = 0; i < grades.length; i++) {
+            if (grades[i] > averageMarkCalculator.getAverage(grades)) {
                 System.out.println(students[i] + ": " + grades[i]);
             }
         }
-
     }
 
+    private static void exitProgram() {
+        System.out.println("Программа завершена.");
+    }
 }

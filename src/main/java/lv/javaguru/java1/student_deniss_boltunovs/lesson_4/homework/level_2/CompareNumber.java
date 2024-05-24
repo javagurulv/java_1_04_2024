@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_deniss_boltunovs.lesson_4.homework.level_2;
 
 import java.util.Scanner;
 
-public class CompareNumber {
+class CompareNumber {
 
     public static void main(String[] args) {
 

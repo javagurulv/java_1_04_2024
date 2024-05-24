@@ -4,9 +4,12 @@ import java.util.Scanner;
 
 class WeekDay {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter number from 1 to 7:");
+
         int dayNumber = scanner.nextInt();
+
         if (dayNumber == 1) {
             System.out.println("Monday");
         } else if (dayNumber == 2) {

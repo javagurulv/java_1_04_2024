@@ -1,7 +1,7 @@
 package lv.javaguru.java1.student_maksims_latkovskis.lesson_4_if_statement.homework.level_5_middle;
 
 import java.util.Scanner;
-class ComissionFee {
+class CommissionFee {
 
     public static void main(String[] args) {
 

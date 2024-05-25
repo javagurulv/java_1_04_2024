@@ -4,48 +4,44 @@ class AverageFinderTest {
 
     public static void main(String[] args) {
         AverageFinderTest test = new AverageFinderTest();
-        test.test1AverageWholeNumber();
-        test.test2AverageDecimalNumber();
-        test.test3AverageDecimalNumber();
+        test.test1();
+        test.test2();
+        test.test3();
     }
 
-    // input  - 8,6
-    // output - 7
-    public void test1AverageWholeNumber(){
+    // num1 = 8, num2 = 6, result = 7
+    public void test1(){
          AverageFinder finder = new AverageFinder();
          double result = finder.findAverage(8,6);
          double expectedResult = 7;
-         if (result == expectedResult){
-             System.out.println("TEST 1 averageWholeNumber: OK");
-         } else {
-             System.out.println("TEST 1 averageWholeNumber: FAILED (expected " + expectedResult + ", result " + result + ")");
-         }
+         checkResult(result, expectedResult, "test1");
     }
 
-    // input  - 8,7
-    // output - 7.5
-    public void test2AverageDecimalNumber(){
+    // num1 = 8, num2 = 7, result = 7.5
+    public void test2(){
         AverageFinder finder = new AverageFinder();
         double result = finder.findAverage(8,7);
         double expectedResult = 7.5;
-        if (result == expectedResult){
-            System.out.println("TEST 2 averageDecimalNumber: OK");
+        checkResult(result, expectedResult, "test2");
+    }
+
+    // num1 = 6, num2 = -1, result = 2.5
+    public void test3(){
+        AverageFinder finder = new AverageFinder();
+        double result = finder.findAverage(6,-1);
+        double expectedResult = 2.5;
+        checkResult(result, expectedResult, "test3");
+    }
+
+    public void checkResult(double realResult,
+                            double expectedResult,
+                            String testName) {
+        if (realResult == expectedResult){
+            System.out.println(testName + " : OK");
         } else {
-            System.out.println("TEST 2 averageDecimalNumber: FAILED (expected " + expectedResult + ", result " + result + ")");
+            System.out.println(testName + " : FAILED" + " (result " + realResult + ", expected " + expectedResult + ")");
         }
     }
 
-    // input  - 6,133
-    // output - 69.5
-    public void test3AverageDecimalNumber(){
-        AverageFinder finder = new AverageFinder();
-        double result = finder.findAverage(6,133);
-        double expectedResult = 69.5;
-        if (result == expectedResult){
-            System.out.println("TEST 3 averageDecimalNumber: OK");
-        } else {
-            System.out.println("TEST 3 averageDecimalNumber: FAILED (expected " + expectedResult + ", result " + result + ")");
-        }
-    }
 
 }

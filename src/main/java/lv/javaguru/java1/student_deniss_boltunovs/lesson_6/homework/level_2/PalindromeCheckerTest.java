@@ -4,48 +4,41 @@ class PalindromeCheckerTest {
 
     public static void main(String[] args) {
         PalindromeCheckerTest test = new PalindromeCheckerTest();
-        test.testNotPalindromeMonday();
-        test.testIsPalindromeRefer();
-        test.testIsPalindromeKayak();
+        test.test1();
+        test.test2();
+        test.test3();
     }
 
-    // input - "Monday"
-    // output - false
-    public void testNotPalindromeMonday(){
+    // text = "Monday", result = false
+    public void test1(){
         PalindromeChecker checker = new PalindromeChecker();
         boolean result = checker.isPalindrome("Monday");
-        if (result == false){
-            System.out.println("TEST 1 notPalindromeMonday: OK");
-        } else {
-            System.out.println("TEST 1 notPalindromeMonday: FALSE (expected false, received true)");
-        }
+        boolean expectedResult = false;
+        checkResult(result, expectedResult, "test1");
     }
 
-
-    // input - "Refer"
-    // output - true
-    public void testIsPalindromeRefer(){
+    // text = "Refer", result = true
+    public void test2(){
         PalindromeChecker checker = new PalindromeChecker();
         boolean result = checker.isPalindrome("Refer");
-        if (result == true){
-            System.out.println("TEST 2 isPalindromeRefer: OK");
-        } else {
-            System.out.println("TEST 2 isPalindromeRefer: FALSE (expected true, received false)");
-        }
+        boolean expectedResult = true;
+        checkResult(result, expectedResult, "test2");
     }
 
-
-    // input - "kayak"
-    // output - true
-    public void testIsPalindromeKayak(){
+    // text = "kayak", result = true
+    public void test3(){
         PalindromeChecker checker = new PalindromeChecker();
         boolean result = checker.isPalindrome("kayak");
-        if (result == true){
-            System.out.println("TEST 3 isPalindromeKayak: OK");
-        } else {
-            System.out.println("TEST 3 isPalindromeKayak: FALSE (expected true, received false)");
-        }
+        boolean expectedResult = true;
+        checkResult(result, expectedResult, "test3");
     }
 
+    public void checkResult(boolean realResult, boolean expectedResult, String testName){
+        if (realResult == expectedResult) {
+            System.out.println(testName + " : OK");
+        } else {
+            System.out.println(testName + " : FAILED" + " (result " + realResult + ", expected " + expectedResult + ")");
+        }
+    }
 
 }

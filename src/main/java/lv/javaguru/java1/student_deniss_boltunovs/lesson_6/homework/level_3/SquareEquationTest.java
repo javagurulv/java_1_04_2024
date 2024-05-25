@@ -5,182 +5,147 @@ class SquareEquationTest {
     public static void main(String[] args) {
         SquareEquationTest test = new SquareEquationTest();
 
-        System.out.println("(No Roots) - Tests");
-        test.testNoRootsDiscriminant();
-        test.testNoRootsIsSquareRoot();
-        test.testNoRootsFirstRoot();
-        test.testNoRootsSecondRoot();
+        System.out.println("TESTS where Discriminant > 0");
+        test.test1Discriminant();
+        test.test1IsSquareRoot();
+        test.test1FirstRoot();
+        test.test1SecondRoot();
 
-        System.out.println("(One Root) - Tests");
-        test.testOneRootDiscriminant();
-        test.testOneRootIsSquareRoot();
-        test.testOneRootFirstRoot();
-        test.testOneRootSecondRoot();
+        System.out.println("TESTS where Discriminant = 0");
+        test.test2Discriminant();
+        test.test2IsSquareRoot();
+        test.test2FirstRoot();
+        test.test2SecondRoot();
 
-        System.out.println("(Two Roots) - Tests");
-        test.testTwoRootsDiscriminant();
-        test.testTwoRootsIsSquareRoot();
-        test.testTwoRootsFirstRoot();
-        test.testTwoRootsSecondRoot();
-
+        System.out.println("TESTS where Discriminant < 0");
+        test.test3Discriminant();
+        test.test3IsSquareRoot();
+        test.test3FirstRoot();
+        test.test3SecondRoot();
     }
 
-    //////////// (No Roots) - Tests
+    /////////////// TESTS where Discriminant > 0
 
-    // input  : 3,-4,5
-    // output : -44
-    public void testNoRootsDiscriminant() {
-        SquareEquation equation = new SquareEquation();
-        double result = equation.discriminant(3,-4,5);
-        double expectedResult = -44;
-        if (result == expectedResult) {
-            System.out.println("TEST Discriminant: OK");
-        } else {
-            System.out.println("TEST Discriminant: FAILED (expected " + expectedResult + ", received " + result + ")");
-        }
-    }
-
-    // input  : 3,-4,5
-    // output : false
-    public void testNoRootsIsSquareRoot() {
-        SquareEquation equation = new SquareEquation();
-        boolean result = equation.isSquareRoot(3,-4,5);
-        if (result == false) {
-            System.out.println("TEST isSquareRoot: OK");
-        } else {
-            System.out.println("TEST isSquareRoot: FAILED (expected false, received true)");
-        }
-    }
-
-    // input  : 3,-4,5
-    // output : NaN
-    public void testNoRootsFirstRoot() {
-        SquareEquation equation = new SquareEquation();
-        double result = equation.firstRoot(3,-4,5);
-        if (Double.isNaN(result)) {
-            System.out.println("TEST firstRoot: OK");
-        } else {
-            System.out.println("TEST firstRoot: FAILED (expected NaN, received " + result + ")");
-        }
-    }
-
-    // input  : 3,-4,5
-    // output : NaN
-    public void testNoRootsSecondRoot() {
-        SquareEquation equation = new SquareEquation();
-        double result = equation.secondRoot(3,-4,5);
-        if (Double.isNaN(result)) {
-            System.out.println("TEST secondRoot: OK");
-        } else {
-            System.out.println("TEST secondRoot: FAILED (expected NaN, received " + result + ")");
-        }
-    }
-
-
-    //////////// (One Root) - Tests
-
-    // input  : 2,-8,8
-    // output : 0
-    public void testOneRootDiscriminant() {
-        SquareEquation equation = new SquareEquation();
-        double result = equation.discriminant(2,-8,8);
-        double expectedResult = 0;
-        if (result == expectedResult) {
-            System.out.println("TEST Discriminant: OK");
-        } else {
-            System.out.println("TEST Discriminant: FAILED (expected " + expectedResult + ", received " + result + ")");
-        }
-    }
-
-    // input  : 2,-8,8
-    // output : true
-    public void testOneRootIsSquareRoot() {
-        SquareEquation equation = new SquareEquation();
-        boolean result = equation.isSquareRoot(2,-8,8);
-        if (result == true) {
-            System.out.println("TEST isSquareRoot: OK");
-        } else {
-            System.out.println("TEST isSquareRoot: FAILED (expected true, received false)");
-        }
-    }
-
-    // input  : 2,-8,8
-    // output : 2
-    public void testOneRootFirstRoot() {
-        SquareEquation equation = new SquareEquation();
-        double result = equation.firstRoot(2,-8,8);
-        double expectedResult = 2;
-        if (result == expectedResult) {
-            System.out.println("TEST firstRoot: OK");
-        } else {
-            System.out.println("TEST firstRoot: FAILED (expected " + expectedResult + ", received " + result + ")");
-        }
-    }
-
-    // input  : 2,-8,8
-    // output : 2
-    public void testOneRootSecondRoot() {
-        SquareEquation equation = new SquareEquation();
-        double result = equation.secondRoot(2,-8,8);
-        double expectedResult = 2;
-        if (result == expectedResult) {
-            System.out.println("TEST secondRoot: OK");
-        } else {
-            System.out.println("TEST secondRoot: FAILED (expected " + expectedResult + ", received " + result + ")");
-        }
-    }
-
-
-    //////////// (Two Roots) - Tests
-
-    // input  : 1,-3,2
-    // output : 1
-    public void testTwoRootsDiscriminant() {
+    // a = 1, b = -3, c = 2 , result = 1
+    public void test1Discriminant() {
         SquareEquation equation = new SquareEquation();
         double result = equation.discriminant(1,-3,2);
         double expectedResult = 1;
-        if (result == expectedResult) {
-            System.out.println("TEST Discriminant: OK");
-        } else {
-            System.out.println("TEST Discriminant: FAILED (expected " + expectedResult + ", received " + result + ")");
-        }
+        checkResultNumber(result, expectedResult, "test1Discriminant");
     }
 
-    // input  : 1,-3,2
-    // output : true
-    public void testTwoRootsIsSquareRoot() {
+    // a = 1, b = -3, c = 2 , result = true
+    public void test1IsSquareRoot() {
         SquareEquation equation = new SquareEquation();
         boolean result = equation.isSquareRoot(1,-3,2);
-        if (result == true) {
-            System.out.println("TEST isSquareRoot: OK");
-        } else {
-            System.out.println("TEST isSquareRoot: FAILED (expected true, received false)");
-        }
+        boolean expectedResult = true;
+        checkResultBoolean(result, expectedResult, "test1IsSquareRoot");
     }
 
-    // input  : 1,-3,2
-    // output : 1
-    public void testTwoRootsFirstRoot() {
+    // a = 1, b = -3, c = 2 , result = 1
+    public void test1FirstRoot() {
         SquareEquation equation = new SquareEquation();
         double result = equation.firstRoot(1,-3,2);
         double expectedResult = 1;
-        if (result == expectedResult) {
-            System.out.println("TEST firstRoot: OK");
-        } else {
-            System.out.println("TEST firstRoot: FAILED (expected " + expectedResult + ", received " + result + ")");
-        }
+        checkResultNumber(result, expectedResult, "test1FirstRoot" );
     }
 
-    // input  : 1,-3,2
-    // output : 2
-    public void testTwoRootsSecondRoot() {
+    // a = 1, b = -3, c = 2 , result = 2
+    public void test1SecondRoot() {
         SquareEquation equation = new SquareEquation();
         double result = equation.secondRoot(1,-3,2);
         double expectedResult = 2;
-        if (result == expectedResult) {
-            System.out.println("TEST secondRoot: OK");
+        checkResultNumber(result, expectedResult, "test1SecondRoot");
+    }
+
+
+    /////////////// TESTS where Discriminant = 0
+
+    // a = 2, b = -8, c = 8 , result = 0
+    public void test2Discriminant() {
+        SquareEquation equation = new SquareEquation();
+        double result = equation.discriminant(2,-8,8);
+        double expectedResult = 0;
+        checkResultNumber(result, expectedResult, "test2Discriminant");
+    }
+
+    // a = 2, b = -8, c = 8 , result = true
+    public void test2IsSquareRoot() {
+        SquareEquation equation = new SquareEquation();
+        boolean result = equation.isSquareRoot(2,-8,8);
+        boolean expectedResult = true;
+        checkResultBoolean(result, expectedResult, "test2IsSquareRoot");
+    }
+
+    // a = 2, b = -8, c = 8 , result = 2
+    public void test2FirstRoot() {
+        SquareEquation equation = new SquareEquation();
+        double result = equation.firstRoot(2,-8,8);
+        double expectedResult = 2;
+        checkResultNumber(result, expectedResult, "test2FirstRoot");
+    }
+
+    // a = 2, b = -8, c = 8 , result = 2
+    public void test2SecondRoot() {
+        SquareEquation equation = new SquareEquation();
+        double result = equation.secondRoot(2,-8,8);
+        double expectedResult = 2;
+        checkResultNumber(result, expectedResult, "test2SecondRoot");
+    }
+
+
+    /////////////// TESTS where Discriminant < 0
+
+    // a = 3, b = -4, c = 5 , result = -44
+    public void test3Discriminant() {
+        SquareEquation equation = new SquareEquation();
+        double result = equation.discriminant(3,-4,5);
+        double expectedResult = -44;
+        checkResultNumber(result, expectedResult, "test3Discriminant");
+    }
+
+    // a = 3, b = -4, c = 5 , result = false
+    public void test3IsSquareRoot() {
+        SquareEquation equation = new SquareEquation();
+        boolean result = equation.isSquareRoot(3,-4,5);
+        boolean expectedResult = false;
+        checkResultBoolean(result, expectedResult, "test3IsSquareRoot");
+    }
+
+    // a = 3, b = -4, c = 5 , result = NaN
+    public void test3FirstRoot() {
+        SquareEquation equation = new SquareEquation();
+        boolean result = Double.isNaN(equation.firstRoot(3,-4,5));
+        boolean expectedResult = true;
+        checkResultBoolean(result, expectedResult, "test3FirstRoot");
+    }
+
+    // a = 3, b = -4, c = 5 , result = NaN
+    public void test3SecondRoot() {
+        SquareEquation equation = new SquareEquation();
+        boolean result = Double.isNaN(equation.secondRoot(3,-4,5));
+        boolean expectedResult = true;
+        checkResultBoolean(result, expectedResult, "test3SecondRoot");
+    }
+
+
+    public void checkResultNumber(double realResult,
+                                  double expectedResult,
+                                  String testName) {
+        if (realResult == expectedResult) {
+            System.out.println(testName + " : OK");
         } else {
-            System.out.println("TEST secondRoot: FAILED (expected " + expectedResult + ", received " + result + ")");
+            System.out.println(testName + " : FAILED" + " (result " + realResult + ", expected " + expectedResult + ")");
+        }
+    }
+
+    public void checkResultBoolean(boolean realResult,
+                                   boolean expectedResult,
+                                   String testName) {
+        if (realResult == expectedResult) {
+            System.out.println(testName + " : OK");
+        } else {
+            System.out.println(testName + " : FAILED" + " (result " + realResult + ", expected " + expectedResult + ")");
         }
     }
 

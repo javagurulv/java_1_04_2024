@@ -9,9 +9,9 @@ class DivideOn3And5V2App {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter number: ");
-        int a = scanner.nextInt();
+        int number = scanner.nextInt();
 
-        System.out.println(division.scan(a));
+        System.out.println(division.scan(number));
 
     }
 

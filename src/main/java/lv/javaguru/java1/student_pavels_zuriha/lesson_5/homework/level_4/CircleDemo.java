@@ -6,7 +6,7 @@ class CircleDemo {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Circle circle = new Circle();
+        CircleCalculator circle = new CircleCalculator();
 
         System.out.println("Enter radius: ");
         double radiusCircle = scanner.nextDouble();

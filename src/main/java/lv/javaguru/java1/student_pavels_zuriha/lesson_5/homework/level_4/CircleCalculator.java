@@ -4,7 +4,7 @@ package lv.javaguru.java1.student_pavels_zuriha.lesson_5.homework.level_4;
 
 import static java.lang.Math.PI;
 
-class Circle {
+class CircleCalculator {
 
     double calculateArea(double radiusCircle) {
         return PI * radiusCircle * radiusCircle;

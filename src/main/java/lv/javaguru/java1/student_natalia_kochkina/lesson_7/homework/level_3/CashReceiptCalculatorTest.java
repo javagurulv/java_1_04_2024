@@ -53,7 +53,7 @@ class CashReceiptCalculatorTest {
         CashReceipt[] receipts = {};
         double realResult = calculator.calculateAverageCost(receipts);
         checkResults(realResult, 0,
-                "AverageCost3 ");
+                "AverageCostTest3 ");
     }
 
     public void test6() {

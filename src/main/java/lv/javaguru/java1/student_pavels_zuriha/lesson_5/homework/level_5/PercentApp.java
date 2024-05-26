@@ -6,7 +6,7 @@ class PercentApp {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Percent difficultPercent = new Percent();
+        DifficultPercentCalculator difficultPercent = new DifficultPercentCalculator();
 
         System.out.println("Enter Start Sum: ");
         double startSum = scanner.nextDouble();

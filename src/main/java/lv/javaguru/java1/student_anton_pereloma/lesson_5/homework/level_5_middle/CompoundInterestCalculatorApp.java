@@ -1,6 +1,5 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_5.homework.level_5_middle;
 
-import java.util.Arrays;
 
 class CompoundInterestCalculatorApp {
     public static void main(String[] args) {

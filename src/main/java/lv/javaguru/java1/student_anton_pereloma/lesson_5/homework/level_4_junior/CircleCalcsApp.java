@@ -7,5 +7,11 @@ class CircleCalcsApp {
         System.out.println("Perimeter = " + circle.findPerimeter(1));
         System.out.println("Area = " + circle.findArea(1));
 
+        System.out.println("Perimeter = " + circle.findPerimeter(5));
+        System.out.println("Area = " + circle.findArea(5));
+
+        System.out.println("Perimeter = " + circle.findPerimeter(99));
+        System.out.println("Area = " + circle.findArea(99));
+
     }
 }

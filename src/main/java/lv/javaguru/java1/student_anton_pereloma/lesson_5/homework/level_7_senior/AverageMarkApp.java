@@ -7,6 +7,8 @@
 //        public static void main(String[] args) {
 //            Scanner scanner = new Scanner(System.in);
 //
+////            set array length
+//
 //            System.out.print("Введите количество студентов: ");
 //            int studentCount = Integer.parseInt(scanner.nextLine());
 //

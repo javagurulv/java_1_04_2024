@@ -14,6 +14,26 @@ public class Stock {
             this.MaxPrice = MaxPrice;
             this.MinPrice = MinPrice;
 
+
+
         }
+
+    public Stock(String Name) {
+        this.Name = Name;
+
     }
+    public Stock(int MaxPrice){
+        this.MaxPrice = MaxPrice;
+
+
+
+
+
+
+        }
+
+    }
+
+
+
 

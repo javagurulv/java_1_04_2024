@@ -1,6 +1,6 @@
 package lv.javaguru.java1.teacher.lesson_6_unit_testing.homework.level_3_junior;
 
-class QuadraticEquation {
+class SquareEquation {
 
     public double discriminant(int a, int b, int c) {
         return b * b - 4 * a * c;

@@ -1,4 +1,4 @@
-package lv.javaguru.java1.teacher.lesson_6_unit_testing.homework.level_3_junior;
+package lv.javaguru.java1.student_anton_pereloma.lesson_6.homework.level_3_junior;
 
 public class QuadraticEquationTest {
     public static void main(String[] args) {

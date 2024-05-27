@@ -5,7 +5,7 @@ class CashReceipt {
     private int checkNumber;
     private double purchaseAmount;
 
-    public CashReceipt(int checkNumber, double purchaseAmount) {
+    CashReceipt(int checkNumber, double purchaseAmount) {
         this.checkNumber = checkNumber;
         this.purchaseAmount = purchaseAmount;
     }

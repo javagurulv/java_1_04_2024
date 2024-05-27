@@ -5,16 +5,16 @@ class Transaction {
     private Trader trader;
     private int amount;
 
-    public Transaction(Trader trader, int amount) {
+    Transaction(Trader trader, int amount) {
         this.trader = trader;
         this.amount = amount;
     }
 
-    public Trader getTrader() {
+    Trader getTrader() {
         return trader;
     }
 
-    public int getAmount() {
+    int getAmount() {
         return amount;
     }
 

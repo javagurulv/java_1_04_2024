@@ -5,16 +5,16 @@ class Trader {
     private String fullName;
     private String city;
 
-    public Trader(String fullName, String city) {
+    Trader(String fullName, String city) {
         this.fullName = fullName;
         this.city = city;
     }
 
-    public String getFullName() {
+    String getFullName() {
         return fullName;
     }
 
-    public String getCity() {
+    String getCity() {
         return city;
     }
 

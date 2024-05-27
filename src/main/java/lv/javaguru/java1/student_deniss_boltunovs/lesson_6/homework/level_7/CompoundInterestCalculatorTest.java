@@ -7,7 +7,7 @@ class CompoundInterestCalculatorTest {
 
         test.testParameterSumZero();
         test.testParameterInterestZero();
-        test.testParameterYearZero();
+        test.testParameterYearsZero();
         test.testAllParametersNonZero();
     }
 
@@ -29,11 +29,11 @@ class CompoundInterestCalculatorTest {
     }
 
     // sum = 1000 , interest = 5 , year = 0, result = 1000
-    public void testParameterYearZero() {
+    public void testParameterYearsZero() {
         CompoundInterestCalculator interest = new CompoundInterestCalculator();
         double realResult = interest.compoundInterest(1000,5,0);
         double expectedResult = 1000;
-        checkResult(realResult, expectedResult, "testParameterYearZero");
+        checkResult(realResult, expectedResult, "testParameterYearsZero");
     }
 
     // sum = 1000 , interest = 5 , year = 6, result = 1340.095640625

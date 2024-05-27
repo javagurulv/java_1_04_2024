@@ -36,7 +36,7 @@ class SalaryTaxCalculatorTest {
         checkResult(realResult,expectedResult, "testSalaryTill50k");
     }
 
-    // salary = 57500 , result = 13000
+    // salary = 57500 , result = 22750
     public void testSalaryAbove50k() {
         SalaryTaxCalculator tax = new SalaryTaxCalculator();
         double realResult = tax.calculate(57500);

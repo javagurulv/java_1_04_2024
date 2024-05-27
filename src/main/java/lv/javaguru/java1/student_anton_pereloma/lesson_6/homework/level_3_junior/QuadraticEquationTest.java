@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_6.homework.level_3_junior;
 
-public class QuadraticEquationTest {
+class QuadraticEquationTest {
     public static void main(String[] args) {
     QuadraticEquationTest test = new QuadraticEquationTest();
     test.positiveDiscriminantFinderCheck();

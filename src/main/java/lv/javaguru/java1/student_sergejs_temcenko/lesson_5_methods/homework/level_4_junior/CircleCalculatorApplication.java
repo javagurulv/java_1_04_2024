@@ -4,7 +4,7 @@ class CircleCalculatorApplication {
 
     public static void main(String[] args) {
 
-        CircleCalculator circleCalculator = new CircleCalculator(3);
+        CircleCalculator circleCalculator = new CircleCalculator(5);
 
         double area = circleCalculator.calculateArea();
         System.out.println(area);
@@ -12,7 +12,7 @@ class CircleCalculatorApplication {
         double perimeter = circleCalculator.calculatePerimeter();
         System.out.println(perimeter);
 
-        circleCalculator.setRadius(8);
+        circleCalculator.setRadius();
         System.out.println("CircleArea radius 8: " + circleCalculator.calculateArea());
         System.out.println("CirclePerimeter radius 8: " + circleCalculator.calculatePerimeter());
 

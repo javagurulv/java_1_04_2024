@@ -9,7 +9,7 @@ public class CarApp {
         Cars NewCar3 = new Cars("Subaru", "Black", 3600);
 
 
-         System.out.println("Get method name is " + NewCar.getCarName());
+        System.out.println("Get method name is " + NewCar.getCarName());
         System.out.println("Get method name is " + NewCar2.getCarName());
         System.out.println("Get method name is " + NewCar3.getCarName());
 

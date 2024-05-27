@@ -9,42 +9,35 @@ class MaxOfThreeNumbersTest {
         test.testThirdNumberMax();
     }
 
-   // input  - 10, 7, 3
-   // output - 10
+    // num1 = 10, num2 = 7, num3 = 3, result = 10
    public void testFirstNumberMax(){
         MaxOfThreeNumbers numbers = new MaxOfThreeNumbers();
         int result = numbers.findMax(10,7,3);
         int expectedResult = 10;
-        if (result == expectedResult) {
-            System.out.println("TEST 1 firstNumberMax: OK");
-        } else {
-            System.out.println("TEST 1 firstNumberMax: FAILED (expected " + expectedResult + ", received " + result + ")");
-        }
+        checkResult(result, expectedResult, "testFirstNumberMax");
    }
 
-    // input  - 7, 10, 3
-    // output - 10
+    // num1 = 7, num2 = 10, num3 = 3, result = 10
     public void testSecondNumberMax(){
         MaxOfThreeNumbers numbers = new MaxOfThreeNumbers();
         int result = numbers.findMax(7,10,3);
         int expectedResult = 10;
-        if (result == expectedResult) {
-            System.out.println("TEST 2 secondNumberMax: OK");
-        } else {
-            System.out.println("TEST 2 secondNumberMax: FAILED (expected " + expectedResult + ", received " + result + ")");
-        }
+        checkResult(result, expectedResult, "testSecondNumberMax");
     }
 
-    // input  - 7, 3, 10
-    // output - 10
+    // num1 = 7, num2 = 3, num3 = 10, result = 10
     public void testThirdNumberMax(){
         MaxOfThreeNumbers numbers = new MaxOfThreeNumbers();
         int result = numbers.findMax(7,3,10);
         int expectedResult = 10;
-        if (result == expectedResult) {
-            System.out.println("TEST 3 thirdNumberMax: OK");
+        checkResult(result, expectedResult, "testSecondNumberMax");
+    }
+
+    public void checkResult(int realResult, int expectedResult, String testName){
+        if (realResult == expectedResult) {
+            System.out.println(testName + " : OK");
         } else {
-            System.out.println("TEST 3 thirdNumberMax: FAILED (expected " + expectedResult + ", received " + result + ")");
+            System.out.println(testName + " : FAILED" + " (result " + realResult + ", expected " + expectedResult + ")");
         }
     }
 

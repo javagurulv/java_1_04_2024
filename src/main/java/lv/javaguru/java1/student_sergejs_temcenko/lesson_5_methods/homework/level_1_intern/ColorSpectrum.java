@@ -1,7 +1,7 @@
 package lv.javaguru.java1.student_sergejs_temcenko.lesson_5_methods.homework.level_1_intern;
 
 class ColorSpectrum {
-    public String colorSpectrumWaveLength(int waveLength) {
+    String colorSpectrumWaveLength(int waveLength) {
         if (waveLength >= 380 && waveLength <= 449) {
             return "Violet";
         } else if (waveLength >= 450 && waveLength <= 494) {

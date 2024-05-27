@@ -3,13 +3,13 @@ package lv.javaguru.java1.student_igors_gergeleziu.lesson_5.level_6;
 import java.util.Scanner;
 
 class ReportCard {
-    String name;
-    String surname;
-    int math;
-    int biology;
-    int geography;
-    int physicalEducation;
-    int physics;
+    private String name;
+    private String surname;
+    private int math;
+    private int biology;
+    private int geography;
+    private int physicalEducation;
+    private int physics;
 
     ReportCard(String name, String surname) {
         this.name = name;
@@ -38,7 +38,7 @@ class ReportCard {
     public String toString() {
         return "ReportCard{" +
                 "Student: '" + name +
-                " "+ surname + '\'' +
+                " " + surname + '\'' +
                 ", math: " + math +
                 ", biology: " + biology +
                 ", geography: " + geography +

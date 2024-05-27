@@ -14,5 +14,5 @@ package lv.javaguru.java1.student_nadezda_radigina.lesson_5.level_4_junior;
          System.out.println(circle.circlePerimeter(6));
          System.out.println(circle.circlePerimeter(4));
      }
-     
+
 }

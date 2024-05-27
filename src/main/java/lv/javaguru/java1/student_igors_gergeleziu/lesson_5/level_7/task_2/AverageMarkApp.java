@@ -4,22 +4,23 @@ import java.util.Scanner;
 
 class AverageMarkApp {
     public static void main(String[] args) {
+        AverageMarkApp app = new AverageMarkApp();
         Scanner scanner = new Scanner(System.in);
-        int studentCount = getStudentCount(scanner);
-        String[] students = getStudentNames(scanner, studentCount);
-        double[] grades = getStudentGrades(scanner, studentCount, students);
-        double average = calculateAverageStudentGrade(studentCount, grades);
+        int studentCount = app.getStudentCount(scanner);
+        String[] students = app.getStudentNames(scanner, studentCount);
+        double[] grades = app.getStudentGrades(scanner, studentCount, students);
+        double average = app.calculateAverageStudentGrade(studentCount, grades);
         System.out.println("Average grade: " + average);
-        findStudentsWithGradeAboveAverage(studentCount, grades, students, average);
+        app.findStudentsWithGradeAboveAverage(studentCount, grades, students, average);
         System.out.println("The program is completed.");
     }
 
-    private static int getStudentCount(Scanner scanner) {
+    private int getStudentCount(Scanner scanner) {
         System.out.print("Enter students count: ");
         return Integer.parseInt(scanner.nextLine());
     }
 
-    private static void findStudentsWithGradeAboveAverage(int studentCount, double[] grades, String[] students, double average) {
+    private void findStudentsWithGradeAboveAverage(int studentCount, double[] grades, String[] students, double average) {
         System.out.println("Students with grade above average:");
         for (int i = 0; i < studentCount; i++) {
             if (grades[i] > average) {
@@ -28,7 +29,7 @@ class AverageMarkApp {
         }
     }
 
-    private static double calculateAverageStudentGrade(int studentCount, double[] grades) {
+    private double calculateAverageStudentGrade(int studentCount, double[] grades) {
         double sum = 0.0;
         for (double grade : grades) {
             sum += grade;
@@ -36,7 +37,7 @@ class AverageMarkApp {
         return sum / studentCount;
     }
 
-    private static double[] getStudentGrades(Scanner scanner, int studentCount, String[] students) {
+    private double[] getStudentGrades(Scanner scanner, int studentCount, String[] students) {
         double[] grades = new double[studentCount];
 
         for (int i = 0; i < studentCount; i++) {
@@ -47,7 +48,7 @@ class AverageMarkApp {
         return grades;
     }
 
-    private static String[] getStudentNames(Scanner scanner, int studentCount) {
+    private String[] getStudentNames(Scanner scanner, int studentCount) {
         String[] students = new String[studentCount];
 
         for (int i = 0; i < studentCount; i++) {

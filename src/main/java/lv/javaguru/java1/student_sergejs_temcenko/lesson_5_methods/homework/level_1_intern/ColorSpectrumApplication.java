@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_sergejs_temcenko.lesson_5_methods.homework.level_1_intern;
 
-class ColorSpectrumAplication {
+class ColorSpectrumApplication {
     public static void main(String[] args) {
         ColorSpectrum colorSpectrum = new ColorSpectrum();
 

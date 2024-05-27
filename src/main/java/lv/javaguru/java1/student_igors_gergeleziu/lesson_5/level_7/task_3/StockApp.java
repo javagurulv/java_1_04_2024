@@ -4,30 +4,31 @@ import java.util.Scanner;
 
 class StockApp {
     public static void main(String[] args) {
+        StockApp app = new StockApp();
         Scanner scanner = new Scanner(System.in);
-        String stockName = getStockName(scanner);
-        int stockPriceCount = getStockPriceCount(scanner);
-        double[] prices = getStockPrices(scanner, stockPriceCount);
-        double maxPrice = findMaxPrice(prices);
+        String stockName = app.getStockName(scanner);
+        int stockPriceCount = app.getStockPriceCount(scanner);
+        double[] prices = app.getStockPrices(scanner, stockPriceCount);
+        double maxPrice = app.findMaxPrice(prices);
         System.out.println("Max stock price " + stockName + ": " + maxPrice);
-        double minPrice = findMinPrice(prices);
+        double minPrice = app.findMinPrice(prices);
         System.out.println("Min stock price " + stockName + ": " + minPrice);
-        double averagePrice = calculateAveragePrice(prices);
+        double averagePrice = app.calculateAveragePrice(prices);
         System.out.println("Average stock price " + stockName + ": " + averagePrice);
         System.out.println("The program is completed.");
     }
 
-    private static String getStockName(Scanner scanner) {
+    private String getStockName(Scanner scanner) {
         System.out.print("Enter stock name: ");
         return scanner.nextLine();
     }
 
-    private static int getStockPriceCount(Scanner scanner) {
+    private int getStockPriceCount(Scanner scanner) {
         System.out.print("Enter stock price count: ");
         return Integer.parseInt(scanner.nextLine());
     }
 
-    private static double[] getStockPrices(Scanner scanner, int stockPriceCount) {
+    private double[] getStockPrices(Scanner scanner, int stockPriceCount) {
         double[] prices = new double[stockPriceCount];
 
         for (int i = 0; i < stockPriceCount; i++) {
@@ -37,7 +38,7 @@ class StockApp {
         return prices;
     }
 
-    private static double findMinPrice(double[] prices) {
+    private double findMinPrice(double[] prices) {
         double minPrice = prices[0];
         for (double price : prices) {
             if (price < minPrice) {
@@ -47,7 +48,7 @@ class StockApp {
         return minPrice;
     }
 
-    private static double findMaxPrice(double[] prices) {
+    private double findMaxPrice(double[] prices) {
         double maxPrice = prices[0];
         for (double price : prices) {
             if (price > maxPrice) {
@@ -57,7 +58,7 @@ class StockApp {
         return maxPrice;
     }
 
-    private static double calculateAveragePrice(double[] prices) {
+    private double calculateAveragePrice(double[] prices) {
         double totalPrice = 0.0;
         for (double price : prices) {
             totalPrice = totalPrice + price;

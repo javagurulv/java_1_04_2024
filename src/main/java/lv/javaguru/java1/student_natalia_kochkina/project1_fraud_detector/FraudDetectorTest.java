@@ -8,6 +8,8 @@ class FraudDetectorTest {
         test.transactionAmountTest1();
         test.transactionAmountTest2();
         test.transactionAmountTest3();
+        test.transactionCityTest1();
+        test.transactionCityTest2();
     }
 
     //Trader's name = Pokemon -> false
@@ -58,7 +60,25 @@ class FraudDetectorTest {
                 "transactionAmountTest3 ");
     }
 
+    //Transaction's city = Sydney -> false
+    public void transactionCityTest1() {
+        FraudDetector detector = new FraudDetector();
+        Transaction transaction = new Transaction(new Trader("Pikachu",
+                "Sydney"), 100000);
+        boolean realResult = detector.isFraud(transaction);
+        checkResults(realResult, false,
+                "transactionCityTest1 ");
+    }
 
+    //Transaction's city = Riga -> true
+    public void transactionCityTest2() {
+        FraudDetector detector = new FraudDetector();
+        Transaction transaction = new Transaction(new Trader("Pikachu",
+                "Riga"), 100000);
+        boolean realResult = detector.isFraud(transaction);
+        checkResults(realResult, true,
+                "transactionCityTest2 ");
+    }
 
     private void checkResults(boolean realResult, boolean expectedResult,
                               String testScenarioName) {

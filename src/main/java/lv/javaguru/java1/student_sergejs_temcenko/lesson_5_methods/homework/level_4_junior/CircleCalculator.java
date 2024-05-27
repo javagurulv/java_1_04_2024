@@ -4,7 +4,7 @@ class CircleCalculator {
 
     double radius;
 
-    public CircleCalculator(double radius) {
+    CircleCalculator(double radius) {
         this.radius = radius;
     }
 
@@ -20,8 +20,8 @@ class CircleCalculator {
         return radius;
     }
 
-    void setRadius(double radius) {
-        this.radius = radius;
+    void setRadius() {
+        this.radius = 8;
     }
 
 }

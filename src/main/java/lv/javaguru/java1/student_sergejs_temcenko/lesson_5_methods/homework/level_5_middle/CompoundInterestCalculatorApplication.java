@@ -11,9 +11,13 @@ class CompoundInterestCalculatorApplication {
         int timesCompounded = 4;
         int years = 5;
 
-        double amount = compoundInterestCalculator.calculateCompoundInterest(principalAmount, annualRate, timesCompounded, years);
+        double amount = compoundInterestCalculator.calculateCompoundInterest(
+                principalAmount,
+                annualRate,
+                timesCompounded,
+                years);
 
-        System.out.println("After " +  years  + " years: " + amount);
+        System.out.println("After " + years + " years: " + amount);
 
     }
 

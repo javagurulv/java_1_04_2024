@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_6.homework.level_2_intern;
 
-public class MaxOfThreeNumbersTest {
+class MaxOfThreeNumbersTest {
 
     public static void main(String[] args) {
         MaxOfThreeNumbersTest test = new MaxOfThreeNumbersTest();

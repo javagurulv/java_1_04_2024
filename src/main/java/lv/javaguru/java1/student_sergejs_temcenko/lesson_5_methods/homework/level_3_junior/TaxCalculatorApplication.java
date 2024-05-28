@@ -6,6 +6,6 @@ class TaxCalculatorApplication {
 
         System.out.println(taxCalculator.calculateTax(10000));
         System.out.println(taxCalculator.calculateTax(20000));
-        System.out.println(taxCalculator.calculateTax(60000));
+        System.out.println(taxCalculator.calculateTax(50000));
     }
 }

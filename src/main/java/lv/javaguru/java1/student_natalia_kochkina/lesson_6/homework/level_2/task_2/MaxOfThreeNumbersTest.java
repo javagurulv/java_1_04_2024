@@ -5,34 +5,34 @@ class MaxOfThreeNumbersTest {
     public static void main(String[] args) {
 
         MaxOfThreeNumbersTest test = new MaxOfThreeNumbersTest();
-        test.test1();
-        test.test2();
-        test.test3();
-        test.test4();
+        test.firstNumberIsMaxTest();
+        test.secondNumberIsMaxTest();
+        test.thirdNumberIsMaxTest();
+        test.numbersAreEqualsTest();
     }
 
-    public void test1() {
+    public void firstNumberIsMaxTest() {
         MaxOfThreeNumbers maxOfThreeNumbers = new MaxOfThreeNumbers();
-        int realMax = maxOfThreeNumbers.findMax(5, 7, 0);
-        checkResult(realMax, 7, "maxNumberTest1 ");
+        int realMax = maxOfThreeNumbers.findMax(7, 5, 0);
+        checkResult(realMax, 7, "firstNumberIsMaxTest ");
     }
 
-    public void test2() {
+    public void secondNumberIsMaxTest() {
         MaxOfThreeNumbers maxOfThreeNumbers = new MaxOfThreeNumbers();
         int realMax = maxOfThreeNumbers.findMax(0, 777, 0);
-        checkResult(realMax, 777, "maxNumberTest2 ");
+        checkResult(realMax, 777, "secondNumberIsMaxTest ");
     }
 
-    public void test3() {
+    public void thirdNumberIsMaxTest() {
         MaxOfThreeNumbers maxOfThreeNumbers = new MaxOfThreeNumbers();
-        int realMax = maxOfThreeNumbers.findMax(44, 3, 2);
-        checkResult(realMax, 44, "maxNumberTest3 ");
+        int realMax = maxOfThreeNumbers.findMax(4, 3, 44);
+        checkResult(realMax, 44, "thirdNumberIsMaxTest ");
     }
 
-    public void test4() {
+    public void numbersAreEqualsTest() {
         MaxOfThreeNumbers maxOfThreeNumbers = new MaxOfThreeNumbers();
         int realMax = maxOfThreeNumbers.findMax(5, 5, 5);
-        checkResult(realMax, 5, "maxNumberTest4 ");
+        checkResult(realMax, 5, "numbersAreEqualsTest ");
     }
 
     private void checkResult(int realMax, int expectedMax,

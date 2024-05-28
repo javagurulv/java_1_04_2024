@@ -16,30 +16,30 @@ class MaxNumberTest {
     public void test1() {
         MaxNumber maxNumber = new MaxNumber();
         int realResult = maxNumber.findMax(10, 5);
-        if (realResult == 10) {
-            System.out.println("TEST 1 = OK");
-        } else {
-            System.out.println("TEST 1 = FAIL");
-        }
+        checkResult(realResult, 10, "1");
     }
 
     public void test2() {
         MaxNumber maxNumber = new MaxNumber();
         int realResult = maxNumber.findMax(5, 10);
-        if (realResult == 10) {
-            System.out.println("TEST 2 = OK");
-        } else {
-            System.out.println("TEST 2 = FAIL");
-        }
+        checkResult(realResult, 10, "2");
     }
 
     public void test3() {
         MaxNumber maxNumber = new MaxNumber();
         int realResult = maxNumber.findMax(5, 5);
-        if (realResult == 5) {
-            System.out.println("TEST 3 = OK");
+        checkResult(realResult, 5, "3");
+    }
+
+    private void checkResult(int realResult,
+                             int expectedResult,
+                             String testName) {
+        if (realResult == expectedResult) {
+            System.out.println("TEST " + testName + " = OK");
         } else {
-            System.out.println("TEST 3 = FAIL");
+            System.out.println("TEST " + testName + " =  FAIL");
+            System.out.println("Real result = " + realResult);
+            System.out.println("Expected result = " + expectedResult);
         }
     }
 

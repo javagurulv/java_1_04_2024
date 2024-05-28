@@ -6,7 +6,7 @@ class Stock {
     private double assetValue;
     private double returnInPercents;
 
-    public Stock(String ticker,
+    Stock(String ticker,
                  double assetValue,
                  double returnInPercents) {
         this.ticker = ticker;
@@ -14,15 +14,15 @@ class Stock {
         this.returnInPercents = returnInPercents;
     }
 
-    public String getTicker() {
+    String getTicker() {
         return ticker;
     }
 
-    public double getAssetValue() {
+    double getAssetValue() {
         return assetValue;
     }
 
-    public double getReturnInPercents() {
+    double getReturnInPercents() {
         return returnInPercents;
     }
 }

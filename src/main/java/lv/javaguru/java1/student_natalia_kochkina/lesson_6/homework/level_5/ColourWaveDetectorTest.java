@@ -4,52 +4,52 @@ class ColourWaveDetectorTest {
 
     public static void main(String[] args) {
         ColourWaveDetectorTest test = new ColourWaveDetectorTest();
-        test.test1();
-        test.test2();
-        test.test3();
-        test.test4();
-        test.test5();
-        test.test6();
-        test.test7();
+        test.violetTest();
+        test.blueTest();
+        test.greenTest();
+        test.yellowTest();
+        test.orangeTest();
+        test.redTest();
+        test.invisibleLightTest();
     }
 
-    public void test1() {
+    public void violetTest() {
         ColourWaveDetector colourWaveDetector = new ColourWaveDetector();
         String realResult = colourWaveDetector.colourWave(388);
         checkResult(realResult, "Violet", "VioletTest ");
     }
 
-    public void test2() {
+    public void blueTest() {
         ColourWaveDetector colourWaveDetector = new ColourWaveDetector();
         String realResult = colourWaveDetector.colourWave(494);
         checkResult(realResult, "Blue", "BlueTest ");
     }
 
-    public void test3() {
+    public void greenTest() {
         ColourWaveDetector colourWaveDetector = new ColourWaveDetector();
         String realResult = colourWaveDetector.colourWave(500);
         checkResult(realResult, "Green", "GreenTest ");
     }
 
-    public void test4() {
+    public void yellowTest() {
         ColourWaveDetector colourWaveDetector = new ColourWaveDetector();
         String realResult = colourWaveDetector.colourWave(577);
         checkResult(realResult, "Yellow", "YellowTest ");
     }
 
-    public void test5() {
+    public void orangeTest() {
         ColourWaveDetector colourWaveDetector = new ColourWaveDetector();
         String realResult = colourWaveDetector.colourWave(619);
         checkResult(realResult, "Orange", "OrangeTest ");
     }
 
-    public void test6() {
+    public void redTest() {
         ColourWaveDetector colourWaveDetector = new ColourWaveDetector();
         String realResult = colourWaveDetector.colourWave(700);
         checkResult(realResult, "Red", "RedTest ");
     }
 
-    public void test7() {
+    public void invisibleLightTest() {
         ColourWaveDetector colourWaveDetector = new ColourWaveDetector();
         String realResult = colourWaveDetector.colourWave(5000);
         checkResult(realResult, "Invisible Light", "InvisibleLightTest ");

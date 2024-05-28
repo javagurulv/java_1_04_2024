@@ -4,69 +4,69 @@ public class ColorDetectorTest {
 
     public static void main(String[] args) {
         ColorDetectorTest test = new ColorDetectorTest();
-        test.test1();
-        test.test2();
-        test.test3();
-        test.test4();
-        test.test5();
-        test.test6();
-        test.test7();
+        test.shouldReturnVioletTest();
+        test.shouldReturnBlueTest();
+        test.shouldReturnGreenTest();
+        test.shouldReturnYellowTest();
+        test.shouldReturnOrangeTest();
+        test.shouldReturnRedTest();
+        test.shouldReturnInvisibleLightTest();
     }
 
     //388 -> Violet
-    public void test1() {
+    public void shouldReturnVioletTest() {
         ColorDetector detector = new ColorDetector();
         String realResult = detector.defineColor(388);
         checkResult(realResult, "Violet",
-                "Test1 ");
+                "shouldReturnVioletTest ");
     }
 
     //494 -> Blue
-    public void test2() {
+    public void shouldReturnBlueTest() {
         ColorDetector detector = new ColorDetector();
         String realResult = detector.defineColor(494);
         checkResult(realResult, "Blue",
-                "Test2 ");
+                "shouldReturnBlueTest ");
     }
 
     //500 -> Green
-    public void test3() {
+    public void shouldReturnGreenTest() {
         ColorDetector detector = new ColorDetector();
         String realResult = detector.defineColor(500);
         checkResult(realResult, "Green",
-                "Test3 ");
+                "shouldReturnGreenTest ");
     }
 
     //580 -> Yellow
-    public void test4() {
+    public void shouldReturnYellowTest() {
         ColorDetector detector = new ColorDetector();
         String realResult = detector.defineColor(580);
         checkResult(realResult, "Yellow",
-                "Test4 ");
+                "shouldReturnYellowTest ");
     }
 
     //600 -> Orange
-    public void test5() {
+    public void shouldReturnOrangeTest() {
         ColorDetector detector = new ColorDetector();
         String realResult = detector.defineColor(600);
         checkResult(realResult, "Orange",
-                "Test5 ");
+                "shouldReturnOrangeTest ");
     }
 
     //620 -> Red
-    public void test6() {
+    public void shouldReturnRedTest() {
         ColorDetector detector = new ColorDetector();
         String realResult = detector.defineColor(620);
         checkResult(realResult, "Red",
-                "Test6 ");
+                "shouldReturnRedTest ");
     }
 
     //1000 -> Invisible Light
-    public void test7() {
+    public void shouldReturnInvisibleLightTest() {
         ColorDetector detector = new ColorDetector();
         String realResult = detector.defineColor(1000);
         checkResult(realResult, "Invisible Light",
-                "Test7 ");
+                "shouldReturnInvisibleLightTest ");
     }
 
 

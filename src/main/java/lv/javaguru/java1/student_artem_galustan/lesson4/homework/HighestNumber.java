@@ -8,6 +8,7 @@ public class HighestNumber {
 
         System.out.println("Enter number: ");
         int Number = scanner.nextInt();
+
         System.out.println("Enter number: ");
         int Number2 = scanner.nextInt();
 

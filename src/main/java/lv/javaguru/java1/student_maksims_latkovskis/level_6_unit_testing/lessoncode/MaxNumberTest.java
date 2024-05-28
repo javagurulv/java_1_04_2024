@@ -38,7 +38,4 @@ class MaxNumberTest {
             System.out.println(testName + " is FAILED");
         }
     }
-
-
-
 }

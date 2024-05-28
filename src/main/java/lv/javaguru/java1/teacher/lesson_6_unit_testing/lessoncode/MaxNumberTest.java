@@ -38,6 +38,8 @@ class MaxNumberTest {
             System.out.println("TEST " + testName + " = OK");
         } else {
             System.out.println("TEST " + testName + " =  FAIL");
+            System.out.println("Real result = " + realResult);
+            System.out.println("Expected result = " + expectedResult);
         }
     }
 

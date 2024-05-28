@@ -2,49 +2,18 @@ package lv.javaguru.java1.student_natalia_kochkina.project1_fraud_detector;
 
 class FraudDetector {
 
+    private FraudRule rule1 = new FraudRule1();
+    private FraudRule rule2 = new FraudRule2();
+    private FraudRule rule3 = new FraudRule3();
+    private FraudRule rule4 = new FraudRule4();
+    private FraudRule rule5 = new FraudRule5();
+
     boolean isFraud(Transaction transaction) {
-        if (detectPokemon(transaction)) {
-            return true;
-        } else if (detectMoreMillionTransaction(transaction)) {
-            return true;
-        } else if (detectTransactionsFromSydney(transaction)) {
-            return true;
-        } else if (detectTransactionsFromJamaica(transaction)) {
-            return true;
-        } else if (detectTransactionsFromGermany(transaction)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    //Rule 1: трейдер по имени "Pokemon" является мошенником,
-    //все его транзакции должны быть отклонены.
-    private boolean detectPokemon(Transaction transaction) {
-        return transaction.getTrader().getFullName().equals("Pokemon");
-    }
-
-    //- Rule 2: все транзакции на сумму больше 1000000 должны быть отклонены.
-    private boolean detectMoreMillionTransaction(Transaction transaction) {
-        return transaction.getAmount() > 1000000;
-    }
-
-    //- Rule 3: все транзакции трейдеров из города "Сидней"
-    //  должны быть отклонены.
-    private boolean detectTransactionsFromSydney(Transaction transaction){
-        return transaction.getTrader().getCity().equals("Sydney");
-    }
-
-    //- Rule 4: все транзакции от трейдеров из страны Ямайка должны быть отклонены.
-    private boolean detectTransactionsFromJamaica(Transaction transaction) {
-        return transaction.getTrader().getCountry().equals("Jamaica");
-    }
-
-    //- Rule 5: все транзакции трейдеров из Германии на сумму
-    //  больше 1000 должны быть отклонены.
-    private boolean detectTransactionsFromGermany(Transaction transaction) {
-        return transaction.getTrader().getCountry().equals("Germany")
-                && (transaction.getAmount() > 1000);
+        return rule1.isFraud(transaction)
+                || rule2.isFraud(transaction)
+                || rule3.isFraud(transaction)
+                || rule4.isFraud(transaction)
+                || rule5.isFraud(transaction);
     }
 
 }

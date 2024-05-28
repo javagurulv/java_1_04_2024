@@ -6,21 +6,21 @@ class Sale {
     private double pricePerUnit;
     private int unitCount;
 
-    public Sale(String product, double pricePerUnit, int unitCount) {
+    Sale(String product, double pricePerUnit, int unitCount) {
         this.product = product;
         this.pricePerUnit = pricePerUnit;
         this.unitCount = unitCount;
     }
 
-    public String getProduct() {
+    String getProduct() {
         return product;
     }
 
-    public double getPricePerUnit() {
+    double getPricePerUnit() {
         return pricePerUnit;
     }
 
-    public int getUnitCount() {
+    int getUnitCount() {
         return unitCount;
     }
 

@@ -1,4 +1,4 @@
-package lv.javaguru.java1.teacher.lesson_6_unit_testing.lessoncode;
+package lv.javaguru.java1.teacher.lesson_6_unit_testing.lessoncode.old;
 
 class OddNumber {
 

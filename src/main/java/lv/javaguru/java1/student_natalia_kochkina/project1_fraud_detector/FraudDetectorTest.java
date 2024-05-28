@@ -12,6 +12,8 @@ class FraudDetectorTest {
         test.traderCityTest2();
         test.traderCountryTest1();
         test.traderCountryTest2();
+        test.traderFromGermanyTest1();
+        test.traderFromGermanyTest2();
     }
 
     //Trader's name = Pokemon -> true
@@ -100,6 +102,26 @@ class FraudDetectorTest {
         boolean realResult = detector.isFraud(transaction);
         checkResults(realResult, false,
                 "traderCountryTest2 ");
+    }
+
+    //Country = Germany, amount = 100000 -> true
+    public void traderFromGermanyTest1() {
+        FraudDetector detector = new FraudDetector();
+        Transaction transaction = new Transaction(new Trader("Pikachu",
+                "Berlin", "Germany"), 100000);
+        boolean realResult = detector.isFraud(transaction);
+        checkResults(realResult, true,
+                "traderFromGermanyTest1 ");
+    }
+
+    //Country = Germany, amount = 600 -> false
+    public void traderFromGermanyTest2() {
+        FraudDetector detector = new FraudDetector();
+        Transaction transaction = new Transaction(new Trader("Pikachu",
+                "Berlin", "Germany"), 600);
+        boolean realResult = detector.isFraud(transaction);
+        checkResults(realResult, false,
+                "traderFromGermanyTest2 ");
     }
 
     private void checkResults(boolean realResult, boolean expectedResult,

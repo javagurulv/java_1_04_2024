@@ -9,6 +9,8 @@ class FraudDetector {
             return true;
         } else if (detectTransactionsFromSydney(transaction)) {
             return true;
+        } else if (detectTransactionsFromJamaica(transaction)) {
+            return true;
         } else {
             return false;
         }
@@ -29,6 +31,11 @@ class FraudDetector {
     //  должны быть отклонены.
     private boolean detectTransactionsFromSydney(Transaction transaction){
         return transaction.getTrader().getCity().equals("Sydney");
+    }
+
+    //- Rule 4: все транзакции от трейдеров из страны Ямайка должны быть отклонены.
+    private boolean detectTransactionsFromJamaica(Transaction transaction) {
+        return transaction.getTrader().getCountry().equals("Jamaica");
     }
 
 }

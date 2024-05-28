@@ -25,5 +25,4 @@ class CompoundInterest {
         double finalBalance = total.doubleValue();
         return finalBalance;
     }
-
 }

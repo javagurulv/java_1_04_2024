@@ -11,6 +11,4 @@ class CompoundInterestApp {
         System.out.println("Now assume you put the same 100 USD for 50 years, but the interest rate of 2.5% paid four times a year. You will get: ");
         System.out.println(compoundInterest.totalBalance(100, 0.025, 50,4));
     }
-
-
 }

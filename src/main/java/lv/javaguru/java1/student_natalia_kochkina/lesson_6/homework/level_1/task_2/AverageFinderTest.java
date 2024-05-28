@@ -13,29 +13,31 @@ class AverageFinderTest {
         AverageFinder averageFinder = new AverageFinder();
         double realAverage = averageFinder.findAverage(5, 7);
         checkResult(realAverage, 6,
-                "AverageNumberTest1 ");
+                "AverageNumber1 ");
     }
 
     public void test2() {
         AverageFinder averageFinder = new AverageFinder();
         double realAverage = averageFinder.findAverage(15, 2);
         checkResult(realAverage, 8.5,
-                "AverageNumberTest2 ");
+                "AverageNumber2 ");
     }
 
     public void test3() {
         AverageFinder averageFinder = new AverageFinder();
         double realAverage = averageFinder.findAverage(0, 16);
         checkResult(realAverage, 8,
-                "AverageNumberTest3 ");
+                "AverageNumber3 ");
     }
 
     private void checkResult(double realResult, double expectedResult,
-                             String testScenarioName) {
+                             String testName) {
         if (realResult == expectedResult) {
-            System.out.println(testScenarioName + "TEST = OK");
+            System.out.println("TEST " + testName + " = OK");
         } else {
-            System.out.println(testScenarioName + "TEST = FAIL");
+            System.out.println("TEST " + testName + " = OK");
+            System.out.println("Real result = " + realResult);
+            System.out.println("Expected result = " + expectedResult);
         }
     }
 

@@ -14,35 +14,31 @@ class MaxNumberTest {
         int number1 = 5;
         int number2 = 8;
         Calculator calculator = new Calculator();
-        if(calculator.maxOfTwo(number1, number2) == number2){
-            System.out.println("OK");
-        }
-        else{
-            System.out.println("FAIL");
-        }
+        testPrint(8,calculator.maxOfTwo(number1, number2), "Test 1" );
     }
 
     void test2(){
         int number1 = 5;
         int number2 = -8;
         Calculator calculator = new Calculator();
-        if(calculator.maxOfTwo(number1, number2) == number1){
-            System.out.println("OK");
-        }
-        else{
-            System.out.println("FAIL");
-        }
+        testPrint(5,calculator.maxOfTwo(number1, number2), "Test 2" );
     }
     void test3(){
         int number1 = 0;
         int number2 = 0;
         Calculator calculator = new Calculator();
-        if(calculator.maxOfTwo(number1, number2) == number1){
-            System.out.println("OK");
+        testPrint(0,calculator.maxOfTwo(number1, number2), "Test 3" );
+    }
+
+    void testPrint(int realResult, int expectedResult, String testName){
+        if(realResult == expectedResult){
+            System.out.println(testName + " is OK");
         }
         else{
-            System.out.println("FAIL");
+            System.out.println(testName + " is FAILED");
         }
     }
+
+
 
 }

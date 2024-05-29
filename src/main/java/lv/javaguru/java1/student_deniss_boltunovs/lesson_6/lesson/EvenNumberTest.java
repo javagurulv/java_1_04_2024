@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_deniss_boltunovs.lesson_7.lesson;
+package lv.javaguru.java1.student_deniss_boltunovs.lesson_6.lesson;
 
 class EvenNumberTest {
 

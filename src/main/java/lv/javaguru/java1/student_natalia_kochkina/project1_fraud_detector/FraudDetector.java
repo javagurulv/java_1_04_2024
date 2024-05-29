@@ -11,12 +11,12 @@ class FraudDetector {
             new FraudRule5());
 
     FraudDetectionResult isFraud(Transaction transaction) {
-        for (FraudRule rule: rules) {
-            if (rule.isFraud(transaction)) {
-                return new FraudDetectionResult(true, rule.getRuleName());
-            }
-        }
-        return new FraudDetectionResult(false, null);
+        return rules.stream()
+                .filter(fraudRule -> fraudRule.isFraud(transaction))
+                .findFirst()
+                .map(fraudRule -> new FraudDetectionResult(true, fraudRule.getRuleName()))
+                .orElse(new FraudDetectionResult(false, null));
+
     }
 
 }

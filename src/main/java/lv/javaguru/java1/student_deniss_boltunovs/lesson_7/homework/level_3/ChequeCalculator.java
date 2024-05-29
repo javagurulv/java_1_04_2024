@@ -20,7 +20,7 @@ class ChequeCalculator {
             return 0;
         } else {
             double totalAmount = calculateTotalSalesAmount(cheques);
-            return (double) (totalAmount / cheques.length);
+            return (totalAmount / cheques.length);
         }
     }
 

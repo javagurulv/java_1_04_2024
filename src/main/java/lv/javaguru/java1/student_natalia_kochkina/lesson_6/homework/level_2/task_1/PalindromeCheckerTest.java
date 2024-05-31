@@ -13,33 +13,35 @@ class PalindromeCheckerTest {
     public void test1() {
         PalindromeChecker palindromeChecker = new PalindromeChecker();
         boolean realResult = palindromeChecker.isPalindrome("cucumber");
-        checkResult(realResult, false, "notPalindromeTest1 ");
+        checkResult(realResult, false, "not palindrome1 ");
     }
 
     public void test2() {
         PalindromeChecker palindromeChecker = new PalindromeChecker();
         boolean realResult = palindromeChecker.isPalindrome("level");
-        checkResult(realResult, true, "palindromeTest1 ");
+        checkResult(realResult, true, "is palindrome1 ");
     }
 
     public void test3() {
         PalindromeChecker palindromeChecker = new PalindromeChecker();
         boolean realResult = palindromeChecker.isPalindrome("tequila");
-        checkResult(realResult, false, "notPalindromeTest2 ");
+        checkResult(realResult, false, "not palindrome2 ");
     }
 
     public void test4() {
         PalindromeChecker palindromeChecker = new PalindromeChecker();
         boolean realResult = palindromeChecker.isPalindrome("noon");
-        checkResult(realResult, true, "palindromeTest2 ");
+        checkResult(realResult, true, "is palindrome2 ");
     }
 
     private void checkResult(boolean realResult, boolean expectedResult,
-                             String testScenarioName) {
+                             String testName) {
         if (realResult == expectedResult) {
-            System.out.println(testScenarioName + "TEST = OK");
+            System.out.println("TEST " + testName + " = OK");
         } else {
-            System.out.println(testScenarioName + "TEST = FAIL");
+            System.out.println("TEST " + testName + " = OK");
+            System.out.println("Real result = " + realResult);
+            System.out.println("Expected result = " + expectedResult);
         }
     }
 }

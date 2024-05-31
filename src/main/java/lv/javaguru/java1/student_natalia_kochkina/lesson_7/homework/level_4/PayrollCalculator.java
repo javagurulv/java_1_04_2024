@@ -1,50 +1,76 @@
 package lv.javaguru.java1.student_natalia_kochkina.lesson_7.homework.level_4;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
+
 class PayrollCalculator {
 
-    double calculateSalarySum(double[] salaries) {
-        double sum = 0;
-        for (double salary : salaries) {
-            sum = sum + salary;
+    BigDecimal calculateSalarySum(BigDecimal[] salaries) {
+        if (salaries.length == 0) {
+            return BigDecimal.ZERO;
+        }
+
+        BigDecimal sum = BigDecimal.ZERO;
+        for (BigDecimal salary : salaries) {
+            sum = sum.add(salary);
         }
         return sum;
     }
 
-    double calculateMinSalary(double[] salaries) {
-        double min = salaries[0];
-        for (double salary : salaries) {
-            if (salary < min) {
-                min = salary;
-            }
-        }
-        return min;
-    }
-
-    double calculateMaxSalary(double[] salaries) {
-        double max = salaries[0];
-        for (double salary : salaries) {
-            if (salary > max) {
-                max = salary;
-            }
-        }
-        return max;
-    }
-
-    double calculateAverageSalary(double[] salaries) {
+    BigDecimal calculateMinSalary(BigDecimal[] salaries) {
         if (salaries.length == 0) {
-            return 0;
+            return BigDecimal.ZERO;
+        }
+
+        BigDecimal minSalary = salaries[0];
+        for (BigDecimal salary: salaries) {
+            if (salary.compareTo(minSalary) < 0) {
+                minSalary = salary;
+            }
+        }
+        return minSalary;
+    }
+
+    BigDecimal calculateMaxSalary(BigDecimal[] salaries) {
+        if (salaries.length == 0) {
+            return BigDecimal.ZERO;
+        }
+
+        BigDecimal maxSalary = salaries[0];
+        for (BigDecimal salary: salaries) {
+            if (salary.compareTo(maxSalary) > 0) {
+                maxSalary = salary;
+            }
+        }
+        return maxSalary;
+    }
+
+    BigDecimal calculateAverageSalary(BigDecimal[] salaries) {
+        if (salaries.length == 0) {
+            return BigDecimal.ZERO;
         } else {
-            return calculateSalarySum(salaries) / salaries.length;
+            return calculateSalarySum(salaries).
+                    divide(new BigDecimal(salaries.length),
+                            2, RoundingMode.HALF_UP);
         }
     }
 
-    double calculateSigma(double[] salaries) {
-        double average = calculateAverageSalary(salaries);
-        double squaredDifferences = 0;
-        for (double salary : salaries) {
-            squaredDifferences = squaredDifferences + Math.pow((salary - average), 2);
+    BigDecimal calculateSigma(BigDecimal[] salaries) {
+        if (salaries.length == 0) {
+            return BigDecimal.ZERO;
         }
-        return Math.sqrt(squaredDifferences / salaries.length);
+        BigDecimal averageSalary = calculateAverageSalary(salaries);
+        BigDecimal sumOfSquares = BigDecimal.ZERO;
+        for (BigDecimal salary: salaries) {
+            sumOfSquares = (salary.subtract(averageSalary)).pow(2).add(sumOfSquares)
+                    .setScale(2, RoundingMode.HALF_UP);
+        }
+        BigDecimal averageOfSquares = sumOfSquares
+                .divide(new BigDecimal(salaries.length),
+                        2, RoundingMode.HALF_UP);
+        return averageOfSquares.sqrt(new MathContext(10))
+                .setScale(2, RoundingMode.HALF_UP);
     }
 
 }

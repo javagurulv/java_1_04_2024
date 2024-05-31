@@ -1,19 +1,22 @@
 package lv.javaguru.java1.student_natalia_kochkina.project1_fraud_detector;
 
+import java.util.List;
+
 class FraudDetector {
 
-    private FraudRule rule1 = new FraudRule1();
-    private FraudRule rule2 = new FraudRule2();
-    private FraudRule rule3 = new FraudRule3();
-    private FraudRule rule4 = new FraudRule4();
-    private FraudRule rule5 = new FraudRule5();
+    List<FraudRule> rules = List.of(new FraudRule1(),
+            new FraudRule2(),
+            new FraudRule3(),
+            new FraudRule4(),
+            new FraudRule5());
 
-    boolean isFraud(Transaction transaction) {
-        return rule1.isFraud(transaction)
-                || rule2.isFraud(transaction)
-                || rule3.isFraud(transaction)
-                || rule4.isFraud(transaction)
-                || rule5.isFraud(transaction);
+    FraudDetectionResult isFraud(Transaction transaction) {
+        return rules.stream()
+                .filter(fraudRule -> fraudRule.isFraud(transaction))
+                .findFirst()
+                .map(fraudRule -> new FraudDetectionResult(true, fraudRule.getRuleName()))
+                .orElse(new FraudDetectionResult(false, null));
+
     }
 
 }

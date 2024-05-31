@@ -1,6 +1,7 @@
 package lv.javaguru.java1.student_natalia_kochkina.project1_fraud_detector;
 
 class FraudRuleTest {
+
     public static void main(String[] args) {
         FraudRuleTest test = new FraudRuleTest();
         test.fraudRule1Test1();

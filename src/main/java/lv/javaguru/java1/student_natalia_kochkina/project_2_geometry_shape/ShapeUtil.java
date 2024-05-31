@@ -16,4 +16,10 @@ class ShapeUtil {
         return new Square("RandomSquare", side);
     }
 
+    Rectangle createRandomRectangle() {
+        double side1 = random.nextDouble(10);
+        double side2 = random.nextDouble(10);
+        return new Rectangle("RandomRectangle", side1, side2);
+    }
+
 }

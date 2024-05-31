@@ -1,6 +1,5 @@
 package lv.javaguru.java1.student_natalia_kochkina.project_2_geometry_shape;
 
-
 class CircleTest {
 
     public static void main(String[] args) {

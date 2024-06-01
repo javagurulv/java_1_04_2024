@@ -22,4 +22,18 @@ class ShapeUtil {
         return new Rectangle("RandomRectangle", side1, side2);
     }
 
+    Shape createRandomShape() {
+        int randomNumber = random.nextInt(3);
+        if (randomNumber == 0) {
+            return createRandomCircle();
+        }
+        if (randomNumber == 1) {
+            return createRandomSquare();
+        }
+        if (randomNumber == 2) {
+            return createRandomRectangle();
+        }
+        return null;
+    }
+
 }

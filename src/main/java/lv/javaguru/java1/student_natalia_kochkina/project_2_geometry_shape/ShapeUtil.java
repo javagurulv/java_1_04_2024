@@ -26,14 +26,19 @@ class ShapeUtil {
         int randomNumber = random.nextInt(3);
         if (randomNumber == 0) {
             return createRandomCircle();
-        }
-        if (randomNumber == 1) {
+        } else if (randomNumber == 1) {
             return createRandomSquare();
-        }
-        if (randomNumber == 2) {
+        } else {
             return createRandomRectangle();
         }
-        return null;
+    }
+
+    double calculateArea(Shape[] shapes) {
+        double area = 0;
+        for (Shape shape: shapes) {
+            area = area + shape.calculateArea();
+        }
+        return area;
     }
 
 }

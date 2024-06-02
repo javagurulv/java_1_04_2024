@@ -29,7 +29,7 @@ class FactorialForLoopTest {
         int realResult = factorial.factorial(4);
         checkResult(realResult, 24, "3");
     }
-    public void checkResult (int realResult, int expectedResult, String testName){
+    private void checkResult (int realResult, int expectedResult, String testName){
         if (realResult == expectedResult){
             System.out.println ("TEST " + testName + " OK");
         } else {

@@ -4,28 +4,50 @@ class FraudDetectorTest {
 
     public static void main(String[] args) {
         FraudDetectorTest test = new FraudDetectorTest();
-        test.testIsNotFraud();
-        test.testIsFraud();
+        test.testTraderIsNotPokemon();
+        test.testTraderIsPokemon();
+        test.testTransactionAmountBelowMillion();
+        test.testTransactionAmountAboveMillion();
     }
 
     // trader: The Best -> false
-    public void testIsNotFraud(){
+    void testTraderIsNotPokemon(){
         Trader trader = new Trader("The Best", "London");
         Transaction transaction = new Transaction(trader, 1500);
         FraudDetector detector = new FraudDetector();
         boolean realResult = detector.isFraud(transaction);
         boolean expectedResult = false;
-        checkResult(realResult, expectedResult, "testIsNotFraud");
+        checkResult(realResult, expectedResult, "testTraderIsNotPokemon");
     }
 
     // trader: Pokemon -> true
-    public void testIsFraud(){
+    void testTraderIsPokemon(){
         Trader trader = new Trader("Pokemon", "London");
         Transaction transaction = new Transaction(trader, 1500);
         FraudDetector detector = new FraudDetector();
         boolean realResult = detector.isFraud(transaction);
         boolean expectedResult = true;
-        checkResult(realResult, expectedResult, "testIsFraud");
+        checkResult(realResult, expectedResult, "testTraderIsPokemon");
+    }
+
+    // amount: 25000 -> false
+    void testTransactionAmountBelowMillion(){
+        Trader trader = new Trader("The Best", "London");
+        Transaction transaction = new Transaction(trader, 25000);
+        FraudDetector detector = new FraudDetector();
+        boolean realResult = detector.isFraud(transaction);
+        boolean expectedResult = false;
+        checkResult(realResult, expectedResult, "testTransactionAmountBelowMillion");
+    }
+
+    // amount: 1500000 -> true
+    void testTransactionAmountAboveMillion(){
+        Trader trader = new Trader("The Best", "London");
+        Transaction transaction = new Transaction(trader, 1500000);
+        FraudDetector detector = new FraudDetector();
+        boolean realResult = detector.isFraud(transaction);
+        boolean expectedResult = true;
+        checkResult(realResult, expectedResult, "testTransactionAmountAboveMillion");
     }
 
     private void checkResult(boolean realResult, boolean expectedResult, String testName) {
@@ -35,6 +57,5 @@ class FraudDetectorTest {
             System.out.println(testName + ": FAILED (expected " + expectedResult + ", received " + realResult + ")");
         }
     }
-
 
 }

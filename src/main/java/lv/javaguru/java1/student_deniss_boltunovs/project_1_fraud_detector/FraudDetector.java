@@ -6,13 +6,13 @@ class FraudDetector {
         return (isFraudTrader(transaction) ||
                 isFraudAmount(transaction) ||
                 isFraudCity(transaction)||
-                isFraudCountry(transaction));
+                isFraudCountry(transaction) ||
+                isFraudCountryAndAmount(transaction) );
     }
 
     //// fraud trader = Pokemon
     private boolean isFraudTrader(Transaction transaction) {
-        String traderFullName = transaction.getTrader().getFullName();
-        return traderFullName.equals("Pokemon");
+        return transaction.getTrader().getFullName().equals("Pokemon");
     }
 
     /// fraud amount > 1mio
@@ -22,14 +22,20 @@ class FraudDetector {
 
     /// fraud city = Sydney
     private boolean isFraudCity(Transaction transaction) {
-        String traderCity = transaction.getTrader().getCity();
-        return traderCity.equals("Sydney");
+        return transaction.getTrader().getCity().equals("Sydney");
     }
 
     /// fraud country = Jamaica
     private boolean isFraudCountry(Transaction transaction) {
-        String traderCountry = transaction.getTrader().getCountry();
-        return traderCountry.equals("Jamaica");
+       return transaction.getTrader().getCountry().equals("Jamaica");
     }
+
+    /// fraud country = Germany && amount > 1000
+    private boolean isFraudCountryAndAmount(Transaction transaction) {
+        boolean traderCountry = transaction.getTrader().getCountry().equals("Germany");
+        boolean transactionAmount = transaction.getAmount() > 1000;
+        return (traderCountry && transactionAmount);
+    }
+
 
 }

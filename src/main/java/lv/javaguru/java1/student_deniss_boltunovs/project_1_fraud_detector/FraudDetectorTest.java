@@ -12,6 +12,8 @@ class FraudDetectorTest {
         test.testTraderCityIsSydney();
         test.testTraderCountryIsJamaica();
         test.testTraderCountryNotJamaica();
+        test.testTraderCountryGermanyAndAmountBelow1k();
+        test.testTraderCountryGermanyAndAmountAbove1k();
     }
 
     // trader: The Best -> false
@@ -92,6 +94,26 @@ class FraudDetectorTest {
         boolean realResult = detector.isFraud(transaction);
         boolean expectedResult = false;
         checkResult(realResult, expectedResult, "testTraderCountryNotJamaica");
+    }
+
+    // country: Germany, amount: 998 -> false
+    void testTraderCountryGermanyAndAmountBelow1k(){
+        Trader trader = new Trader("Albert How", "Berlin", "Germany");
+        Transaction transaction = new Transaction(trader, 998);
+        FraudDetector detector = new FraudDetector();
+        boolean realResult = detector.isFraud(transaction);
+        boolean expectedResult = false;
+        checkResult(realResult, expectedResult, "testTraderCountryGermanyAndAmountBelow1k");
+    }
+
+    // country: Germany, amount: 1998 -> true
+    void testTraderCountryGermanyAndAmountAbove1k(){
+        Trader trader = new Trader("Albert How", "Berlin", "Germany");
+        Transaction transaction = new Transaction(trader, 1998);
+        FraudDetector detector = new FraudDetector();
+        boolean realResult = detector.isFraud(transaction);
+        boolean expectedResult = true;
+        checkResult(realResult, expectedResult, "testTraderCountryGermanyAndAmountAbove1k");
     }
 
 

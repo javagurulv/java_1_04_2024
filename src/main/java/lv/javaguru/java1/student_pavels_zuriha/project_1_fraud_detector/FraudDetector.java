@@ -4,11 +4,32 @@ class FraudDetector {
 
     boolean isFraud(Transaction transaction) {
 
-        String trader = String.valueOf(transaction.getTrader().getFullName());
-        if (trader.equals("Pokemon")) {
+        if ((!fullNameChecker(transaction.getTrader())) || ((!transactionAbove1Million(transaction))))   {
             return false;
         } else {
             return true;
         }
     }
+
+    public boolean fullNameChecker(Trader trader) {
+
+        if (trader.getFullName().equals("Pokemon")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean transactionAbove1Million(Transaction transaction) {
+
+        if (transaction.getAmount() > 1000000) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
 }
+
+

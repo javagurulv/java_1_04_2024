@@ -8,6 +8,8 @@ class FraudDetectorTest {
         test.testNameCheckerShouldReturnTrue();
         test.testTransactionBelow1000000();
         test.testTransactionAbove1000000();
+        test.testCityCheckerSydney();
+        test.testCityCheckerNotSydney();
     }
 
     public void testNameCheckerShouldReturnFalse() {
@@ -60,6 +62,34 @@ class FraudDetectorTest {
 
         boolean realResult = fraudDetector.transactionAbove1Million(transaction);
         if (!realResult) {
+            System.out.println("Test OK");
+        } else {
+            System.out.println("Test FAILED");
+        }
+    }
+
+    public void testCityCheckerSydney() {
+
+        FraudDetector fraudDetector = new FraudDetector();
+        Trader trader = new Trader("Not Pokemon", "Sydney");
+        Transaction transaction = new Transaction(trader, 100000);
+
+        boolean realResult = fraudDetector.cityChecker(trader);
+        if (!realResult) {
+            System.out.println("Test OK");
+        } else {
+            System.out.println("Test FAILED");
+        }
+    }
+
+    public void testCityCheckerNotSydney() {
+
+        FraudDetector fraudDetector = new FraudDetector();
+        Trader trader = new Trader("Not Pokemon", "Riga");
+        Transaction transaction = new Transaction(trader, 100000);
+
+        boolean realResult = fraudDetector.cityChecker(trader);
+        if (realResult) {
             System.out.println("Test OK");
         } else {
             System.out.println("Test FAILED");

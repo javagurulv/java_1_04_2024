@@ -8,6 +8,8 @@ class FraudDetectorTest {
         test.testTraderIsPokemon();
         test.testTransactionAmountBelowMillion();
         test.testTransactionAmountAboveMillion();
+        test.testTraderCityNotSydney();
+        test.testTraderCityIsSydney();
     }
 
     // trader: The Best -> false
@@ -49,6 +51,27 @@ class FraudDetectorTest {
         boolean expectedResult = true;
         checkResult(realResult, expectedResult, "testTransactionAmountAboveMillion");
     }
+
+    // city: Melbourne -> false
+    void testTraderCityNotSydney(){
+        Trader trader = new Trader("Michel Rose", "Melbourne");
+        Transaction transaction = new Transaction(trader, 567000);
+        FraudDetector detector = new FraudDetector();
+        boolean realResult = detector.isFraud(transaction);
+        boolean expectedResult = false;
+        checkResult(realResult, expectedResult, "testTraderCityNotSydney");
+    }
+
+    // city: Sydney -> true
+    void testTraderCityIsSydney(){
+        Trader trader = new Trader("Michel Rose", "Sydney");
+        Transaction transaction = new Transaction(trader, 567000);
+        FraudDetector detector = new FraudDetector();
+        boolean realResult = detector.isFraud(transaction);
+        boolean expectedResult = true;
+        checkResult(realResult, expectedResult, "testTraderCityIsSydney");
+    }
+
 
     private void checkResult(boolean realResult, boolean expectedResult, String testName) {
         if (realResult == expectedResult) {

@@ -3,18 +3,24 @@ package lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector;
 class FraudDetector {
 
     boolean isFraud(Transaction transaction) {
-        return (isFraudRule1(transaction) || isFraudRule2(transaction));
+        return (isFraudTrader(transaction) || isFraudAmount(transaction) || isFraudCity(transaction));
     }
 
-    //// trader is Pokemon
-    private boolean isFraudRule1(Transaction transaction) {
+    //// fraud trader = Pokemon
+    private boolean isFraudTrader(Transaction transaction) {
         String traderFullName = transaction.getTrader().getFullName();
         return traderFullName.equals("Pokemon");
     }
 
-    /// transaction amount > 1mio
-    private boolean isFraudRule2(Transaction transaction) {
+    /// fraud amount > 1mio
+    private boolean isFraudAmount(Transaction transaction) {
         return transaction.getAmount() > 1000000;
+    }
+
+    /// fraud city = Sydney
+    private boolean isFraudCity(Transaction transaction) {
+        String traderCity = transaction.getTrader().getCity();
+        return traderCity.equals("Sydney");
     }
 
 }

@@ -6,8 +6,8 @@ class FraudDetector {
         if ((!fullNameChecker(transaction.getTrader()))
                 || ((!transactionAbove1Million(transaction)))
                 || (!cityChecker(transaction.getTrader()))
-                || (!countryChecker(transaction.getTrader()))
-        ){
+                || (!countryChecker(transaction.getTrader(), transaction))
+        ) {
             return false;
         } else {
             return true;
@@ -38,13 +38,18 @@ class FraudDetector {
         }
     }
 
-    public boolean countryChecker(Trader trader) {
-        if (trader.getCountry().equals("Jamaica")) {
+    public boolean countryChecker(Trader trader, Transaction transaction) {
+        if (
+                (trader.getCountry().equals("Jamaica"))
+                || ((trader.getCountry().equals("Germany")) && (transaction.getAmount() > 1000))
+        ) {
             return false;
         } else {
             return true;
         }
     }
+
+
 
 
 }

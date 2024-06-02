@@ -12,6 +12,8 @@ class FraudDetectorTest {
         test.testCityCheckerNotSydney();
         test.testCountryCheckerNotJamaica();
         test.testCountryCheckerJamaica();
+        test.testCountryCheckerGermanyBelow1000();
+        test.testCountryCheckerGermanyAbove1000();
     }
 
     public void testNameCheckerShouldReturnFalse() {
@@ -74,6 +76,8 @@ class FraudDetectorTest {
 
         FraudDetector fraudDetector = new FraudDetector();
         Trader trader = new Trader("Not Pokemon", "Sydney", "Australia");
+        Transaction transaction = new Transaction(trader, 100000);
+
 
         boolean realResult = fraudDetector.cityChecker(trader);
         if (!realResult) {
@@ -87,6 +91,8 @@ class FraudDetectorTest {
 
         FraudDetector fraudDetector = new FraudDetector();
         Trader trader = new Trader("Not Pokemon", "Riga", "Latvia");
+        Transaction transaction = new Transaction(trader, 100000);
+
 
         boolean realResult = fraudDetector.cityChecker(trader);
         if (realResult) {
@@ -100,8 +106,10 @@ class FraudDetectorTest {
 
         FraudDetector fraudDetector = new FraudDetector();
         Trader trader = new Trader("Not Pokemon", "Riga", "Latvia");
+        Transaction transaction = new Transaction(trader, 100000);
 
-        boolean realResult = fraudDetector.countryChecker(trader);
+
+        boolean realResult = fraudDetector.countryChecker(trader, transaction);
         if (realResult) {
             System.out.println("Test OK");
         } else {
@@ -113,8 +121,40 @@ class FraudDetectorTest {
 
         FraudDetector fraudDetector = new FraudDetector();
         Trader trader = new Trader("Not Pokemon", "Kingston", "Jamaica");
+        Transaction transaction = new Transaction(trader, 100000);
 
-        boolean realResult = fraudDetector.countryChecker(trader);
+
+        boolean realResult = fraudDetector.countryChecker(trader, transaction);
+        if (!realResult) {
+            System.out.println("Test OK");
+        } else {
+            System.out.println("Test FAILED");
+        }
+    }
+
+    public void testCountryCheckerGermanyBelow1000() {
+
+        FraudDetector fraudDetector = new FraudDetector();
+        Trader trader = new Trader("Not Pokemon", "Berlin", "Germany");
+        Transaction transaction = new Transaction(trader, 100);
+
+
+        boolean realResult = fraudDetector.countryChecker(trader, transaction);
+        if (realResult) {
+            System.out.println("Test OK");
+        } else {
+            System.out.println("Test FAILED");
+        }
+    }
+
+    public void testCountryCheckerGermanyAbove1000() {
+
+        FraudDetector fraudDetector = new FraudDetector();
+        Trader trader = new Trader("Not Pokemon", "Berlin", "Germany");
+        Transaction transaction = new Transaction(trader, 1001);
+
+
+        boolean realResult = fraudDetector.countryChecker(trader, transaction);
         if (!realResult) {
             System.out.println("Test OK");
         } else {

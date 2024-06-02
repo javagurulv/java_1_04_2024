@@ -18,37 +18,31 @@ class FactorialRecursionTest
  public void test1(){
      FactorialRecursion factorialRecursion = new FactorialRecursion();
      int realResult = factorialRecursion.factorial(1);
-     if (realResult == 1){
-         System.out.println("TEST 1 = OK");
-     } else {
-         System.out.println("TEST 1 = FAIL");
-     }
+     checkResult(realResult, 1, "1");
+
  }
     public void test2(){
         FactorialRecursion factorialRecursion = new FactorialRecursion();
         int realResult = factorialRecursion.factorial(3);
-        if (realResult == 6){
-            System.out.println("TEST 2 = OK");
-        } else {
-            System.out.println("TEST 2 = FAIL");
-        }
+        checkResult(realResult, 6, "2");
+
     }
     public void test3(){
         FactorialRecursion factorialRecursion = new FactorialRecursion();
         int realResult = factorialRecursion.factorial(6);
-        if (realResult == 720){
-            System.out.println("TEST 3 = OK");
-        } else {
-            System.out.println("TEST 3 = FAIL");
-        }
+        checkResult(realResult, 720, "3");
+
     }
     public void test4(){
         FactorialRecursion factorialRecursion = new FactorialRecursion();
         int realResult = factorialRecursion.factorial(0);
-        if (realResult == 1){
-            System.out.println("TEST 4 = OK");
+        checkResult(realResult, 1, "4");
+    }
+    private void checkResult (int realResult, int expectedResult, String testName){
+        if (realResult == expectedResult){
+            System.out.println("TEST " + testName + " OK");
         } else {
-            System.out.println("TEST 4 = FAIL");
+            System.out.println("TEST " + testName + " FAIL");
         }
     }
 }

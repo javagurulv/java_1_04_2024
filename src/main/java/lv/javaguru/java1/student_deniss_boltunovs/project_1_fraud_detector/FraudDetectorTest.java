@@ -1,7 +1,5 @@
 package lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector;
 
-import java.util.zip.DataFormatException;
-
 class FraudDetectorTest {
 
     public static void main(String[] args) {

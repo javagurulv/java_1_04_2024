@@ -1,6 +1,8 @@
 package lv.javaguru.java1.student_natalia_kochkina.project_2_geometry_shape;
 
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 class ShapeUtil {
 
@@ -55,6 +57,12 @@ class ShapeUtil {
 
     double calculatePerimeter(Shape shape) {
         return shape.calculatePerimeter();
+    }
+
+    List<Shape> findEquals(List<Shape> allShapes, Shape shapeToCompare) {
+        return allShapes.stream().filter(x -> x.equals(shapeToCompare))
+                .collect(Collectors.toList());
+
     }
 
 }

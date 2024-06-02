@@ -10,11 +10,13 @@ class FraudDetectorTest {
         test.testTransactionAmountAboveMillion();
         test.testTraderCityNotSydney();
         test.testTraderCityIsSydney();
+        test.testTraderCountryIsJamaica();
+        test.testTraderCountryNotJamaica();
     }
 
     // trader: The Best -> false
     void testTraderIsNotPokemon(){
-        Trader trader = new Trader("The Best", "London");
+        Trader trader = new Trader("The Best", "London", "UK");
         Transaction transaction = new Transaction(trader, 1500);
         FraudDetector detector = new FraudDetector();
         boolean realResult = detector.isFraud(transaction);
@@ -24,7 +26,7 @@ class FraudDetectorTest {
 
     // trader: Pokemon -> true
     void testTraderIsPokemon(){
-        Trader trader = new Trader("Pokemon", "London");
+        Trader trader = new Trader("Pokemon", "London", "UK");
         Transaction transaction = new Transaction(trader, 1500);
         FraudDetector detector = new FraudDetector();
         boolean realResult = detector.isFraud(transaction);
@@ -34,7 +36,7 @@ class FraudDetectorTest {
 
     // amount: 25000 -> false
     void testTransactionAmountBelowMillion(){
-        Trader trader = new Trader("The Best", "London");
+        Trader trader = new Trader("The Best", "London", "UK");
         Transaction transaction = new Transaction(trader, 25000);
         FraudDetector detector = new FraudDetector();
         boolean realResult = detector.isFraud(transaction);
@@ -44,7 +46,7 @@ class FraudDetectorTest {
 
     // amount: 1500000 -> true
     void testTransactionAmountAboveMillion(){
-        Trader trader = new Trader("The Best", "London");
+        Trader trader = new Trader("The Best", "London", "UK");
         Transaction transaction = new Transaction(trader, 1500000);
         FraudDetector detector = new FraudDetector();
         boolean realResult = detector.isFraud(transaction);
@@ -54,7 +56,7 @@ class FraudDetectorTest {
 
     // city: Melbourne -> false
     void testTraderCityNotSydney(){
-        Trader trader = new Trader("Michel Rose", "Melbourne");
+        Trader trader = new Trader("Michel Rose", "Melbourne", "Australia");
         Transaction transaction = new Transaction(trader, 567000);
         FraudDetector detector = new FraudDetector();
         boolean realResult = detector.isFraud(transaction);
@@ -64,12 +66,32 @@ class FraudDetectorTest {
 
     // city: Sydney -> true
     void testTraderCityIsSydney(){
-        Trader trader = new Trader("Michel Rose", "Sydney");
+        Trader trader = new Trader("Michel Rose", "Sydney", "Australia");
         Transaction transaction = new Transaction(trader, 567000);
         FraudDetector detector = new FraudDetector();
         boolean realResult = detector.isFraud(transaction);
         boolean expectedResult = true;
         checkResult(realResult, expectedResult, "testTraderCityIsSydney");
+    }
+
+    // country: Jamaica -> true
+    void testTraderCountryIsJamaica(){
+        Trader trader = new Trader("Johny Tapia", "Kingston", "Jamaica");
+        Transaction transaction = new Transaction(trader, 5670);
+        FraudDetector detector = new FraudDetector();
+        boolean realResult = detector.isFraud(transaction);
+        boolean expectedResult = true;
+        checkResult(realResult, expectedResult, "testTraderCountryIsJamaica");
+    }
+
+    // country: Canada -> false
+    void testTraderCountryNotJamaica(){
+        Trader trader = new Trader("Albert How", "Toronto", "Canada");
+        Transaction transaction = new Transaction(trader, 5670);
+        FraudDetector detector = new FraudDetector();
+        boolean realResult = detector.isFraud(transaction);
+        boolean expectedResult = false;
+        checkResult(realResult, expectedResult, "testTraderCountryNotJamaica");
     }
 
 

@@ -3,7 +3,10 @@ package lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector;
 class FraudDetector {
 
     boolean isFraud(Transaction transaction) {
-        return (isFraudTrader(transaction) || isFraudAmount(transaction) || isFraudCity(transaction));
+        return (isFraudTrader(transaction) ||
+                isFraudAmount(transaction) ||
+                isFraudCity(transaction)||
+                isFraudCountry(transaction));
     }
 
     //// fraud trader = Pokemon
@@ -21,6 +24,12 @@ class FraudDetector {
     private boolean isFraudCity(Transaction transaction) {
         String traderCity = transaction.getTrader().getCity();
         return traderCity.equals("Sydney");
+    }
+
+    /// fraud country = Jamaica
+    private boolean isFraudCountry(Transaction transaction) {
+        String traderCountry = transaction.getTrader().getCountry();
+        return traderCountry.equals("Jamaica");
     }
 
 }

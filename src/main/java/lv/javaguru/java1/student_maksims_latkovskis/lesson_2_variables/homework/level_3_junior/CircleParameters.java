@@ -3,7 +3,7 @@ package lv.javaguru.java1.student_maksims_latkovskis.lesson_2_variables.homework
 import java.util.Scanner;
 import java.lang.Math;
 
-public class CircleParameters {
+class CircleParameters {
 
     public static void main(String[] args){
 

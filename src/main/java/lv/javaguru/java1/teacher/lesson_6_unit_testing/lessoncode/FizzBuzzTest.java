@@ -2,52 +2,56 @@ package lv.javaguru.java1.teacher.lesson_6_unit_testing.lessoncode;
 
 class FizzBuzzTest {
 
-    // 1. num = 9, result = Fizz
-    // 2. num = 10, result = Buzz
-    // 3. num = 15, result = FizzBuzz
-    // 4. num = 11, result = 11
-
     public static void main(String[] args) {
         FizzBuzzTest test = new FizzBuzzTest();
-        test.test1();
-        test.test2();
-        test.test3();
-        test.test4();
+        test.testCase1();
+        test.testCase2();
+        test.testCase3();
+        test.testCase4();
     }
 
-    public void test1() {
+    // test case 1:  3 -> "Fizz"
+    public void testCase1() {
         FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.detect(9);
-        checkResult(result, "Fizz", "test1");
+        String result = fizzBuzz.detect(3);
+        if (result.equals("Fizz")) {
+            System.out.println("Test 1 = OK");
+        } else {
+            System.out.println("Test 1 = FAIL");
+        }
     }
 
-    public void test2() {
+    // test case 2:  5 -> "Buzz"
+    public void testCase2() {
         FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.detect(10);
-        checkResult(result, "Buzz", "test2");
+        String result = fizzBuzz.detect(5);
+        if (result.equals("Buzz")) {
+            System.out.println("Test 2 = OK");
+        } else {
+            System.out.println("Test 2 = FAIL");
+        }
     }
 
-    public void test3() {
+    // test case 3:  15 -> "FizzBuzz"
+    public void testCase3() {
         FizzBuzz fizzBuzz = new FizzBuzz();
         String result = fizzBuzz.detect(15);
-        checkResult(result, "FizzBuzz", "test3");
-    }
-
-    public void test4() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.detect(11);
-        checkResult(result, "11", "test4");
-    }
-
-    private void checkResult(String realResult,
-                             String expectedResult,
-                             String testScenarioName) {
-        if (realResult.equals(expectedResult)) {
-            System.out.println(testScenarioName + ": TEST OK!");
+        if (result.equals("FizzBuzz")) {
+            System.out.println("Test 3 = OK");
         } else {
-            System.out.println(testScenarioName + ": TEST FAIL!");
+            System.out.println("Test 3 = FAIL");
+        }
+    }
+
+    // test case 4:  17 -> "17"
+    public void testCase4() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String result = fizzBuzz.detect(17);
+        if (result.equals("17")) {
+            System.out.println("Test 4 = OK");
+        } else {
+            System.out.println("Test 4 = FAIL");
         }
     }
 
 }
-

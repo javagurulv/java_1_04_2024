@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_deniss_boltunovs.lesson_4.homework.level_1;
 
 import java.util.Scanner;
 
-public class WeekDayApp {
+class WeekDayApp {
 
     public static void main(String[] args) {
 

@@ -10,7 +10,7 @@ class SchoolReportCard {
     private int englishGrade;
     private int sportGrade;
 
-    public SchoolReportCard(String studentName, String studentSurname, int mathGrade,
+    SchoolReportCard(String studentName, String studentSurname, int mathGrade,
                             int historyGrade, int biologyGrade, int englishGrade, int sportGrade) {
         this.studentName = studentName;
         this.studentSurname = studentSurname;
@@ -21,31 +21,31 @@ class SchoolReportCard {
         this.sportGrade = sportGrade;
     }
 
-    public String getStudentName() {
+    String getStudentName() {
         return studentName;
     }
 
-    public String getStudentSurname() {
+    String getStudentSurname() {
         return studentSurname;
     }
 
-    public int getMathGrade() {
+    int getMathGrade() {
         return mathGrade;
     }
 
-    public int getHistoryGrade() {
+    int getHistoryGrade() {
         return historyGrade;
     }
 
-    public int getBiologyGrade() {
+    int getBiologyGrade() {
         return biologyGrade;
     }
 
-    public int getEnglishGrade() {
+    int getEnglishGrade() {
         return englishGrade;
     }
 
-    public int getSportGrade() {
+    int getSportGrade() {
         return sportGrade;
     }
 }

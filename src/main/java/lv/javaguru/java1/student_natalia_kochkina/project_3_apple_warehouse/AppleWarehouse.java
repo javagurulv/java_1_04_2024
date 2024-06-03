@@ -30,6 +30,12 @@ class AppleWarehouse {
                 .collect(Collectors.toList());
     }
 
+    List<Apple> findApples(AppleSearchCriteria searchCriteria) {
+        return getAllApples().stream()
+                .filter(searchCriteria::test)
+                .collect(Collectors.toList());
+    }
+
     private List<Apple> apples = getAllApples();
 
     private List<Apple> getAllApples() {

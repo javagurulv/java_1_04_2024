@@ -12,6 +12,10 @@ class AppleWarehouseTest {
     test.findApplesByColorTest1();
     test.findApplesByColorTest2();
     test.findHeavyApplesTest();
+    test.findApplesBySearchCriteriaTest1();
+    test.findApplesBySearchCriteriaTest2();
+    test.findApplesBySearchCriteriaTest3();
+    test.findApplesBySearchCriteriaTest4();
     }
 
     public void findGreenApplesTest() {
@@ -59,6 +63,48 @@ class AppleWarehouseTest {
         expectedResult.add(new Apple("green", 200));
         expectedResult.add(new Apple("yellow", 170));
         checkResult(realResult, expectedResult, "findHeavyApples");
+    }
+
+    public void findApplesBySearchCriteriaTest1() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(new GreenApplesSearchCriteria());
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("green", 200));
+        expectedResult.add(new Apple("green", 90));
+        expectedResult.add(new Apple("green", 50));
+        checkResult(realResult, expectedResult, "findApplesBySearchCriteria1");
+    }
+
+    public void findApplesBySearchCriteriaTest2() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(new RedApplesSearchCriteria());
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 100));
+        expectedResult.add(new Apple("red", 160));
+        expectedResult.add(new Apple("red", 200));
+        checkResult(realResult, expectedResult, "findApplesBySearchCriteria2");
+    }
+
+    public void findApplesBySearchCriteriaTest3() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(new HeavyApplesSearchCriteria());
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 160));
+        expectedResult.add(new Apple("red", 200));
+        expectedResult.add(new Apple("green", 200));
+        expectedResult.add(new Apple("yellow", 170));
+        checkResult(realResult, expectedResult, "findApplesBySearchCriteria3");
+    }
+
+    public void findApplesBySearchCriteriaTest4() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(new LightweightApplesSearchCriteria());
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 100));
+        expectedResult.add(new Apple("green", 90));
+        expectedResult.add(new Apple("green", 50));
+        expectedResult.add(new Apple("yellow", 50));
+        checkResult(realResult, expectedResult, "findApplesBySearchCriteria4");
     }
 
     private void checkResult(List realResult,

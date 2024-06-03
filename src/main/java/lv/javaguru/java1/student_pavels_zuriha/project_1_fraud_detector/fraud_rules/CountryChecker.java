@@ -1,6 +1,9 @@
-package lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector;
+package lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.fraud_rules;
 
- class CountryChecker {
+import lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.Trader;
+import lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.Transaction;
+
+public class CountryChecker {
 
      public boolean countryChecker(Trader trader, Transaction transaction) {
          if (

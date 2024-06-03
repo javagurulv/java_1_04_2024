@@ -23,11 +23,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 120);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        if (realResult == false) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test FAILED");
-        }
+        checkResult(realResult, false, "testNameCheckerShouldReturnTrue");
     }
 
     public void testNameCheckerShouldReturnTrue() {
@@ -37,11 +33,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 120);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        if (realResult) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test FAILED");
-        }
+        checkResult(realResult, true, "testNameCheckerShouldReturnTrue");
     }
 
     public void testTransactionBelow1000000() {
@@ -51,11 +43,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        if (realResult) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test FAILED");
-        }
+        checkResult(realResult, true, "testTransactionBelow1000000");
     }
 
     public void testTransactionAbove1000000() {
@@ -65,11 +53,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 1000001);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        if (!realResult) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test FAILED");
-        }
+        checkResult(realResult, false, "testTransactionAbove1000000");
     }
 
     public void testCityCheckerSydney() {
@@ -78,13 +62,8 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Sydney", "Australia");
         Transaction transaction = new Transaction(trader, 100000);
 
-
         boolean realResult = fraudDetector.isFraud(transaction);
-        if (!realResult) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test FAILED");
-        }
+        checkResult(realResult, false, "testCityCheckerSydney");
     }
 
     public void testCityCheckerNotSydney() {
@@ -93,13 +72,8 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Riga", "Latvia");
         Transaction transaction = new Transaction(trader, 100000);
 
-
         boolean realResult = fraudDetector.isFraud(transaction);
-        if (realResult) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test FAILED");
-        }
+        checkResult(realResult, true, "testCityCheckerNotSydney");
     }
 
     public void testCountryCheckerNotJamaica() {
@@ -108,13 +82,8 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Riga", "Latvia");
         Transaction transaction = new Transaction(trader, 100000);
 
-
         boolean realResult = fraudDetector.isFraud(transaction);
-        if (realResult) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test FAILED");
-        }
+        checkResult(realResult, true, "testCountryCheckerNotJamaica");
     }
 
     public void testCountryCheckerJamaica() {
@@ -123,13 +92,8 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Kingston", "Jamaica");
         Transaction transaction = new Transaction(trader, 100000);
 
-
         boolean realResult = fraudDetector.isFraud(transaction);
-        if (!realResult) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test FAILED");
-        }
+        checkResult(realResult, false, "testCountryCheckerJamaica");
     }
 
     public void testCountryCheckerGermanyBelow1000() {
@@ -138,13 +102,8 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Berlin", "Germany");
         Transaction transaction = new Transaction(trader, 100);
 
-
         boolean realResult = fraudDetector.isFraud(transaction);
-        if (realResult) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test FAILED");
-        }
+        checkResult(realResult, true, "testCountryCheckerGermanyBelow1000");
     }
 
     public void testCountryCheckerGermanyAbove1000() {
@@ -153,12 +112,15 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Berlin", "Germany");
         Transaction transaction = new Transaction(trader, 1001);
 
-
         boolean realResult = fraudDetector.isFraud(transaction);
-        if (!realResult) {
-            System.out.println("Test OK");
+        checkResult(realResult, false, "testCountryCheckerGermanyAbove1000");
+    }
+
+    private void checkResult(boolean realResult, boolean expectedResult, String scenarioName) {
+        if (realResult == expectedResult) {
+            System.out.println(scenarioName + ": OK");
         } else {
-            System.out.println("Test FAILED");
+            System.out.println(scenarioName + ": FAIL. Real Result: " + realResult + ", Expected Result: " + expectedResult);
         }
     }
 

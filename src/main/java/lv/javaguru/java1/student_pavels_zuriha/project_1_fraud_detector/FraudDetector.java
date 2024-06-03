@@ -1,5 +1,10 @@
 package lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector;
 
+import lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.fraud_rules.CityChecker;
+import lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.fraud_rules.CountryChecker;
+import lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.fraud_rules.FullNameChecker;
+import lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.fraud_rules.TransactionsAbove1MillionChecker;
+
 class FraudDetector {
 
     boolean isFraud(Transaction transaction) {

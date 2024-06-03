@@ -4,20 +4,16 @@ class PaymentReceipt {
     private int receiptNumber = 0;
     private double purchaseAmount = 0;
 
+    public PaymentReceipt(int receiptNumber, double purchaseAmount) {
+        this.receiptNumber = receiptNumber;
+        this.purchaseAmount = purchaseAmount;
+    }
+
     int getReceiptNumber(){
-        return this.receiptNumber;
+        return receiptNumber;
     }
 
     double getPurchaseAmount(){
-        this.purchaseAmount = purchaseAmount;
         return purchaseAmount;
-    }
-
-    void setReceiptNumber(int number) {
-        this.receiptNumber = number;
-    }
-
-    void setPurchaseAmount(double amount) {
-        this.purchaseAmount = amount;
     }
 }

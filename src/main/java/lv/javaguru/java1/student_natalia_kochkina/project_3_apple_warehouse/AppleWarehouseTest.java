@@ -20,6 +20,11 @@ class AppleWarehouseTest {
     test.anonymousClassTest2();
     test.anonymousClassTest3();
     test.anonymousClassTest4();
+    test.lambdaExpressionTest1();
+    test.lambdaExpressionTest2();
+    test.lambdaExpressionTest3();
+    test.lambdaExpressionTest4();
+    test.lambdaExpressionTest5();
     }
 
     public void findGreenApplesTest() {
@@ -123,7 +128,7 @@ class AppleWarehouseTest {
         expectedResult.add(new Apple("green", 200));
         expectedResult.add(new Apple("green", 90));
         expectedResult.add(new Apple("green", 50));
-        checkResult(realResult, expectedResult, "anonymousClassTest1");
+        checkResult(realResult, expectedResult, "anonymousClass1");
     }
 
     public void anonymousClassTest2() {
@@ -138,7 +143,7 @@ class AppleWarehouseTest {
         expectedResult.add(new Apple("red", 100));
         expectedResult.add(new Apple("red", 160));
         expectedResult.add(new Apple("red", 200));
-        checkResult(realResult, expectedResult, "anonymousClassTest2");
+        checkResult(realResult, expectedResult, "anonymousClass2");
     }
 
     public void anonymousClassTest3() {
@@ -154,7 +159,7 @@ class AppleWarehouseTest {
         expectedResult.add(new Apple("red", 200));
         expectedResult.add(new Apple("green", 200));
         expectedResult.add(new Apple("yellow", 170));
-        checkResult(realResult, expectedResult, "anonymousClassTest3");
+        checkResult(realResult, expectedResult, "anonymousClass3");
     }
 
     public void anonymousClassTest4() {
@@ -170,7 +175,63 @@ class AppleWarehouseTest {
         expectedResult.add(new Apple("green", 90));
         expectedResult.add(new Apple("green", 50));
         expectedResult.add(new Apple("yellow", 50));
-        checkResult(realResult, expectedResult, "anonymousClassTest4");
+        checkResult(realResult, expectedResult, "anonymousClass4");
+    }
+
+    public void lambdaExpressionTest1() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(
+                (Apple apple) -> "green".equals(apple.getColor()));
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("green", 200));
+        expectedResult.add(new Apple("green", 90));
+        expectedResult.add(new Apple("green", 50));
+        checkResult(realResult, expectedResult, "lambdaExpression1");
+    }
+
+    public void lambdaExpressionTest2() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(
+                (Apple apple) -> "red".equals(apple.getColor()));
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 100));
+        expectedResult.add(new Apple("red", 160));
+        expectedResult.add(new Apple("red", 200));
+        checkResult(realResult, expectedResult, "lambdaExpression2");
+    }
+
+    public void lambdaExpressionTest3() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(
+                (Apple apple) -> (apple.getWeight() > 150));
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 160));
+        expectedResult.add(new Apple("red", 200));
+        expectedResult.add(new Apple("green", 200));
+        expectedResult.add(new Apple("yellow", 170));
+        checkResult(realResult, expectedResult, "lambdaExpression3");
+    }
+
+    public void lambdaExpressionTest4() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(
+                (Apple apple) -> (apple.getWeight() < 150));
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 100));
+        expectedResult.add(new Apple("green", 90));
+        expectedResult.add(new Apple("green", 50));
+        expectedResult.add(new Apple("yellow", 50));
+        checkResult(realResult, expectedResult, "lambdaExpression4");
+    }
+
+    public void lambdaExpressionTest5() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(
+                (Apple apple) -> (apple.getWeight() > 150)
+                        && ("green".equals(apple.getColor())));
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("green", 200));
+        checkResult(realResult, expectedResult, "lambdaExpression5");
     }
 
     private void checkResult(List realResult,

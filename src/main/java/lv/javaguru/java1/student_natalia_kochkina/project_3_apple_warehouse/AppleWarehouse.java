@@ -24,6 +24,12 @@ class AppleWarehouse {
                 .collect(Collectors.toList());
     }
 
+    List<Apple> findApplesHeavierThen(int weight) {
+        return getAllApples().stream()
+                .filter(apple -> apple.getWeight() > weight)
+                .collect(Collectors.toList());
+    }
+
     private List<Apple> apples = getAllApples();
 
     private List<Apple> getAllApples() {

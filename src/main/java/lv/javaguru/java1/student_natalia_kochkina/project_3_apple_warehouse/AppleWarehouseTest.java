@@ -11,6 +11,7 @@ class AppleWarehouseTest {
     test.findRedApplesTest();
     test.findApplesByColorTest1();
     test.findApplesByColorTest2();
+    test.findHeavyApplesTest();
     }
 
     public void findGreenApplesTest() {
@@ -47,6 +48,17 @@ class AppleWarehouseTest {
         List<Apple> realResult = appleWarehouse.findApplesByColor("blue");
         List<Apple> expectedResult = new ArrayList<>();
         checkResult(realResult, expectedResult, "findApplesByColor2");
+    }
+
+    public void findHeavyApplesTest() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApplesHeavierThen(150);
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 160));
+        expectedResult.add(new Apple("red", 200));
+        expectedResult.add(new Apple("green", 200));
+        expectedResult.add(new Apple("yellow", 170));
+        checkResult(realResult, expectedResult, "findHeavyApples");
     }
 
     private void checkResult(List realResult,

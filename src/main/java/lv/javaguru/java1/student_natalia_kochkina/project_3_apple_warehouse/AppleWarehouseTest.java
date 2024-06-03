@@ -16,6 +16,10 @@ class AppleWarehouseTest {
     test.findApplesBySearchCriteriaTest2();
     test.findApplesBySearchCriteriaTest3();
     test.findApplesBySearchCriteriaTest4();
+    test.anonymousClassTest1();
+    test.anonymousClassTest2();
+    test.anonymousClassTest3();
+    test.anonymousClassTest4();
     }
 
     public void findGreenApplesTest() {
@@ -105,6 +109,68 @@ class AppleWarehouseTest {
         expectedResult.add(new Apple("green", 50));
         expectedResult.add(new Apple("yellow", 50));
         checkResult(realResult, expectedResult, "findApplesBySearchCriteria4");
+    }
+
+    public void anonymousClassTest1() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(new AppleSearchCriteria() {
+            @Override
+            public boolean test(Apple apple) {
+                return "green".equals(apple.getColor());
+            }
+        });
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("green", 200));
+        expectedResult.add(new Apple("green", 90));
+        expectedResult.add(new Apple("green", 50));
+        checkResult(realResult, expectedResult, "anonymousClassTest1");
+    }
+
+    public void anonymousClassTest2() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(new AppleSearchCriteria() {
+            @Override
+            public boolean test(Apple apple) {
+                return "red".equals(apple.getColor());
+            }
+        });
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 100));
+        expectedResult.add(new Apple("red", 160));
+        expectedResult.add(new Apple("red", 200));
+        checkResult(realResult, expectedResult, "anonymousClassTest2");
+    }
+
+    public void anonymousClassTest3() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(new AppleSearchCriteria() {
+            @Override
+            public boolean test(Apple apple) {
+                return apple.getWeight() > 150;
+            }
+        });
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 160));
+        expectedResult.add(new Apple("red", 200));
+        expectedResult.add(new Apple("green", 200));
+        expectedResult.add(new Apple("yellow", 170));
+        checkResult(realResult, expectedResult, "anonymousClassTest3");
+    }
+
+    public void anonymousClassTest4() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findApples(new AppleSearchCriteria() {
+            @Override
+            public boolean test(Apple apple) {
+                return apple.getWeight() < 150;
+            }
+        });
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 100));
+        expectedResult.add(new Apple("green", 90));
+        expectedResult.add(new Apple("green", 50));
+        expectedResult.add(new Apple("yellow", 50));
+        checkResult(realResult, expectedResult, "anonymousClassTest4");
     }
 
     private void checkResult(List realResult,

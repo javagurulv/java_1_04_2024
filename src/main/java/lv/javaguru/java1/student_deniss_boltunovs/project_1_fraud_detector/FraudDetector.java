@@ -5,7 +5,7 @@ class FraudDetector {
     boolean isFraud(Transaction transaction) {
         return (isFraudTrader(transaction) ||
                 isFraudAmount(transaction) ||
-                isFraudCity(transaction)||
+                isFraudCity(transaction) ||
                 isFraudCountry(transaction) ||
                 isFraudCountryAndAmount(transaction) );
     }

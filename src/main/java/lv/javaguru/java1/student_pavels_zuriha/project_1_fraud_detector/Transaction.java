@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector;
 
-class Transaction {
+public class Transaction {
 
     private Trader trader;
     private int amount;

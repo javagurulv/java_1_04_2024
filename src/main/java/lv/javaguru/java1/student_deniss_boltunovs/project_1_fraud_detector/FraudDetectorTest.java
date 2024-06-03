@@ -117,6 +117,7 @@ class FraudDetectorTest {
     }
 
 
+
     private void checkResult(boolean realResult, boolean expectedResult, String testName) {
         if (realResult == expectedResult) {
             System.out.println(testName + ": OK");

@@ -1,36 +1,25 @@
 package lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector;
 
-import lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.fraud_rules.CityChecker;
-import lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.fraud_rules.CountryChecker;
-import lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.fraud_rules.FullNameChecker;
-import lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector.fraud_rules.TransactionsAbove1MillionChecker;
-
 class FraudDetector {
 
     boolean isFraud(Transaction transaction) {
 
-        FullNameChecker fullNameChecker = new FullNameChecker();
-        TransactionsAbove1MillionChecker transactionsAbove1MillionChecker = new TransactionsAbove1MillionChecker();
-        CityChecker cityChecker = new CityChecker();
-        CountryChecker countryChecker = new CountryChecker();
+        FraudRule1 fullNameChecker = new FraudRule1();
+        FraudRule2 transactionsAbove1MillionChecker = new FraudRule2();
+        FraudRule3 cityChecker = new FraudRule3();
+        FraudRule4 countryChecker = new FraudRule4();
 
-        if (
-                (!fullNameChecker.fullNameChecker(transaction.getTrader()))
-                || ((!transactionsAbove1MillionChecker.transactionAbove1Million(transaction)))
-                || (!cityChecker.cityChecker(transaction.getTrader()))
-                || (!countryChecker.countryChecker(transaction.getTrader(), transaction))
-        ) {
-            return false;
-        } else {
-            return true;
-        }
+        return (fullNameChecker.isFraud(transaction))
+                || ((transactionsAbove1MillionChecker.isFraud(transaction)))
+                || (cityChecker.isFraud(transaction))
+                || (countryChecker.isFraud(transaction));
     }
-
-
-
-
-
-
 }
+
+
+
+
+
+
 
 

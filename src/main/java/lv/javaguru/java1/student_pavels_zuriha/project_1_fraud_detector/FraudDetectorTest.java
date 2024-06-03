@@ -4,6 +4,7 @@ class FraudDetectorTest {
 
     public static void main(String[] args) {
         FraudDetectorTest test = new FraudDetectorTest();
+
         test.testNameCheckerShouldReturnFalse();
         test.testNameCheckerShouldReturnTrue();
         test.testTransactionBelow1000000();
@@ -16,24 +17,24 @@ class FraudDetectorTest {
         test.testCountryCheckerGermanyAbove1000();
     }
 
-    public void testNameCheckerShouldReturnFalse() {
+    public void testNameCheckerShouldReturnTrue() {
 
         FraudDetector fraudDetector = new FraudDetector();
         Trader trader = new Trader("Pokemon", "Riga", "Latvia");
         Transaction transaction = new Transaction(trader, 120);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, false, "testNameCheckerShouldReturnTrue");
+        checkResult(realResult, true, "testNameCheckerShouldReturnTrue");
     }
 
-    public void testNameCheckerShouldReturnTrue() {
+    public void testNameCheckerShouldReturnFalse() {
 
         FraudDetector fraudDetector = new FraudDetector();
         Trader trader = new Trader("Not Pokemon", "Riga", "Latvia");
         Transaction transaction = new Transaction(trader, 120);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, true, "testNameCheckerShouldReturnTrue");
+        checkResult(realResult, false, "testNameCheckerShouldReturnFalse");
     }
 
     public void testTransactionBelow1000000() {
@@ -43,7 +44,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, true, "testTransactionBelow1000000");
+        checkResult(realResult, false, "testTransactionBelow1000000");
     }
 
     public void testTransactionAbove1000000() {
@@ -53,7 +54,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 1000001);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, false, "testTransactionAbove1000000");
+        checkResult(realResult, true, "testTransactionAbove1000000");
     }
 
     public void testCityCheckerSydney() {
@@ -63,7 +64,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, false, "testCityCheckerSydney");
+        checkResult(realResult, true, "testCityCheckerSydney");
     }
 
     public void testCityCheckerNotSydney() {
@@ -73,7 +74,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, true, "testCityCheckerNotSydney");
+        checkResult(realResult, false, "testCityCheckerNotSydney");
     }
 
     public void testCountryCheckerNotJamaica() {
@@ -83,7 +84,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, true, "testCountryCheckerNotJamaica");
+        checkResult(realResult, false, "testCountryCheckerNotJamaica");
     }
 
     public void testCountryCheckerJamaica() {
@@ -93,7 +94,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, false, "testCountryCheckerJamaica");
+        checkResult(realResult, true, "testCountryCheckerJamaica");
     }
 
     public void testCountryCheckerGermanyBelow1000() {
@@ -103,7 +104,7 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, true, "testCountryCheckerGermanyBelow1000");
+        checkResult(realResult, false, "testCountryCheckerGermanyBelow1000");
     }
 
     public void testCountryCheckerGermanyAbove1000() {
@@ -113,10 +114,12 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 1001);
 
         boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, false, "testCountryCheckerGermanyAbove1000");
+        checkResult(realResult, true, "testCountryCheckerGermanyAbove1000");
     }
 
-    private void checkResult(boolean realResult, boolean expectedResult, String scenarioName) {
+    private void checkResult(boolean realResult,
+                             boolean expectedResult,
+                             String scenarioName) {
         if (realResult == expectedResult) {
             System.out.println(scenarioName + ": OK");
         } else {

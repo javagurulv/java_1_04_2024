@@ -18,6 +18,12 @@ class AppleWarehouse {
                 .collect(Collectors.toList());
     }
 
+    List<Apple> findApplesByColor(String color) {
+        return getAllApples().stream()
+                .filter(apple -> apple.getColor().equals(color))
+                .collect(Collectors.toList());
+    }
+
     private List<Apple> apples = getAllApples();
 
     private List<Apple> getAllApples() {

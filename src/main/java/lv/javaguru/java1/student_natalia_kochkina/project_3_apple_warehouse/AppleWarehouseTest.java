@@ -7,10 +7,11 @@ class AppleWarehouseTest {
 
     public static void main(String[] args) {
     AppleWarehouseTest test = new AppleWarehouseTest();
-    test.greenApplesTest1();
+    test.greenApplesTest();
+    test.redApplesTest();
     }
 
-    public void greenApplesTest1() {
+    public void greenApplesTest() {
         AppleWarehouse appleWarehouse = new AppleWarehouse();
         List<Apple> realResult = appleWarehouse.findGreenApples();
         List<Apple> expectedResult = new ArrayList<>();
@@ -20,13 +21,23 @@ class AppleWarehouseTest {
         checkResult(realResult, expectedResult, "greenApples");
     }
 
+    public void redApplesTest() {
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> realResult = appleWarehouse.findRedApples();
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(new Apple("red", 100));
+        expectedResult.add(new Apple("red", 160));
+        expectedResult.add(new Apple("red", 200));
+        checkResult(realResult, expectedResult, "redApples");
+    }
+
     private void checkResult(List realResult,
                              List expectedResult,
                              String testName) {
         if (realResult.equals(expectedResult)) {
-            System.out.println("TEST" + testName + "= OK");
+            System.out.println("TEST " + testName + " = OK");
         } else {
-            System.out.println("TEST" + testName + "= FAIL");
+            System.out.println("TEST " + testName + " = FAIL");
         }
     }
 

@@ -14,17 +14,17 @@ class EvenNumberTest {
         if (isEven) {
             System.out.println("TEST IS OK!");
         } else {
-            System.out.println("TEST IS FAIL!");
+            System.out.println("TEST FAILED!");
         }
     }
 
     public void shouldNotBeEven() {
         EvenNumber evenNumber = new EvenNumber();
-        boolean notEven = !evenNumber.isEven(12);
-        if (notEven) {
+        boolean notEven = evenNumber.isEven(11);
+        if (notEven == false) {
             System.out.println("TEST IS OK!");
         } else {
-            System.out.println("TEST IS FAIL!");
+            System.out.println("TEST FAILED!");
         }
     }
 }

@@ -63,7 +63,7 @@ class SalaryCalculationTest {
         SalaryCalculation salaryCalculation = new SalaryCalculation();
         double[] employeeSalaryArray = {};
         double realResult = salaryCalculation.employeeSalaryMax(employeeSalaryArray);
-        checkResult(realResult, 0.0, "shouldReturnZeroMaxSalary");
+        checkResult(realResult, 0, "shouldReturnZeroMaxSalary");
     }
 
     public void shouldReturnZeroAverageSalary() {

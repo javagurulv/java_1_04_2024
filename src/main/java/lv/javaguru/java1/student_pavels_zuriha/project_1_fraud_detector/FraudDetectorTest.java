@@ -23,7 +23,7 @@ class FraudDetectorTest {
         Trader trader = new Trader("Pokemon", "Riga", "Latvia");
         Transaction transaction = new Transaction(trader, 120);
 
-        boolean realResult = fraudDetector.isFraud(transaction);
+        boolean realResult = fraudDetector.isFraud(transaction).isFraud();
         checkResult(realResult, true, "testNameCheckerShouldReturnTrue");
     }
 
@@ -33,7 +33,7 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Riga", "Latvia");
         Transaction transaction = new Transaction(trader, 120);
 
-        boolean realResult = fraudDetector.isFraud(transaction);
+        boolean realResult = fraudDetector.isFraud(transaction).isFraud();
         checkResult(realResult, false, "testNameCheckerShouldReturnFalse");
     }
 
@@ -43,7 +43,7 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Riga", "Latvia");
         Transaction transaction = new Transaction(trader, 100000);
 
-        boolean realResult = fraudDetector.isFraud(transaction);
+        boolean realResult = fraudDetector.isFraud(transaction).isFraud();
         checkResult(realResult, false, "testTransactionBelow1000000");
     }
 
@@ -53,7 +53,7 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Riga", "Latvia");
         Transaction transaction = new Transaction(trader, 1000001);
 
-        boolean realResult = fraudDetector.isFraud(transaction);
+        boolean realResult = fraudDetector.isFraud(transaction).isFraud();
         checkResult(realResult, true, "testTransactionAbove1000000");
     }
 
@@ -63,7 +63,7 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Sydney", "Australia");
         Transaction transaction = new Transaction(trader, 100000);
 
-        boolean realResult = fraudDetector.isFraud(transaction);
+        boolean realResult = fraudDetector.isFraud(transaction).isFraud();
         checkResult(realResult, true, "testCityCheckerSydney");
     }
 
@@ -73,7 +73,7 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Riga", "Latvia");
         Transaction transaction = new Transaction(trader, 100000);
 
-        boolean realResult = fraudDetector.isFraud(transaction);
+        boolean realResult = fraudDetector.isFraud(transaction).isFraud();
         checkResult(realResult, false, "testCityCheckerNotSydney");
     }
 
@@ -83,7 +83,7 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Riga", "Latvia");
         Transaction transaction = new Transaction(trader, 100000);
 
-        boolean realResult = fraudDetector.isFraud(transaction);
+        boolean realResult = fraudDetector.isFraud(transaction).isFraud();
         checkResult(realResult, false, "testCountryCheckerNotJamaica");
     }
 
@@ -93,7 +93,7 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Kingston", "Jamaica");
         Transaction transaction = new Transaction(trader, 100000);
 
-        boolean realResult = fraudDetector.isFraud(transaction);
+        boolean realResult = fraudDetector.isFraud(transaction).isFraud();
         checkResult(realResult, true, "testCountryCheckerJamaica");
     }
 
@@ -103,7 +103,7 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Berlin", "Germany");
         Transaction transaction = new Transaction(trader, 100);
 
-        boolean realResult = fraudDetector.isFraud(transaction);
+        boolean realResult = fraudDetector.isFraud(transaction).isFraud();
         checkResult(realResult, false, "testCountryCheckerGermanyBelow1000");
     }
 
@@ -113,8 +113,9 @@ class FraudDetectorTest {
         Trader trader = new Trader("Not Pokemon", "Berlin", "Germany");
         Transaction transaction = new Transaction(trader, 1001);
 
-        boolean realResult = fraudDetector.isFraud(transaction);
-        checkResult(realResult, true, "testCountryCheckerGermanyAbove1000");
+        boolean realResult = fraudDetector.isFraud(transaction).isFraud();
+        String scenarioName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, true, scenarioName);
     }
 
     private void checkResult(boolean realResult,

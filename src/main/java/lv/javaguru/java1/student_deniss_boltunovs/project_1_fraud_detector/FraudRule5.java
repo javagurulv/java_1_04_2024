@@ -9,4 +9,9 @@ class FraudRule5 implements FraudRule {
         return (country.equals("Germany")) && (amount > 1000);
     }
 
+    @Override
+    public String getRuleName() {
+        return "FraudRule5";
+    }
+
 }

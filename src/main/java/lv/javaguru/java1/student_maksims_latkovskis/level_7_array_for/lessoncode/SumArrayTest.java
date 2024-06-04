@@ -11,7 +11,7 @@ public class SumArrayTest {
 
     public void evaluation(int number, String testName){
         SumArray sum100 = new SumArray();
-        double sumGauss = ((number + 1) / 2) * (number-1);
+        double sumGauss = (((double)number + 1) / 2) * (number);
         if((int)sumGauss == sum100.sum(number)){
             System.out.println("OK " + testName);
         }

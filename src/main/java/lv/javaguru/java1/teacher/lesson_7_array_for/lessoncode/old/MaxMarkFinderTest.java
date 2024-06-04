@@ -1,4 +1,4 @@
-package lv.javaguru.java1.teacher.lesson_7_array_for.lessoncode;
+package lv.javaguru.java1.teacher.lesson_7_array_for.lessoncode.old;
 
 class MaxMarkFinderTest {
 

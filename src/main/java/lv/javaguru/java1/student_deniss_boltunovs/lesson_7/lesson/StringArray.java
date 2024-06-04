@@ -5,7 +5,8 @@ class StringArray {
     public String getNumbersAsString(int numberFrom, int numberTo) {
         String array = "";
         for (int i = numberFrom; i <= numberTo; i++) {
-            array += i + " ";
+            array = array + i;
+            array = array + " ";
         }
         return array;
     }

@@ -11,27 +11,37 @@ class SalaryStatistics {
     }
 
     double findMaxSalary(double[] array) {
-        double maxSalary = array[0];
-        for (int i = 0; i < array.length; i++){
-            if (maxSalary < array[i]) {
-                maxSalary = array[i];
+        double maxSalary = 0;
+        if (array.length > 0) {
+            maxSalary = array[0];
+            for (int i = 0; i < array.length; i++){
+                if (maxSalary < array[i]) {
+                    maxSalary = array[i];
+                }
             }
         }
         return maxSalary;
     }
 
     double findMinSalary(double[] array) {
-        double minSalary = array[0];
-        for (int i = 0; i < array.length; i++){
-            if (minSalary > array[i]) {
-                minSalary = array[i];
+        double minSalary = 0;
+        if (array.length > 0){
+            minSalary = array[0];
+            for (int i = 0; i < array.length; i++){
+                if (minSalary > array[i]) {
+                    minSalary = array[i];
+                }
             }
         }
         return minSalary;
     }
 
     double findAverageSalary(double[] array) {
-        return calculateSalaryTotal(array)/array.length;
+        double averageSalary = 0;
+        if (array.length > 0) {
+            averageSalary = calculateSalaryTotal(array)/array.length;
+        }
+        return averageSalary;
     }
 
 

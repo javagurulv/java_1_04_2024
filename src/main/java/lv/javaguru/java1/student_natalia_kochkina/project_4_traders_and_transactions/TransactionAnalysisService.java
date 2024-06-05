@@ -5,9 +5,9 @@ import java.util.stream.Collectors;
 
 class TransactionAnalysisService {
 
-    List<Transaction> findTransactionsFor2011Year(List<Transaction> allTransactions) {
+    List<Transaction> findTransactionsByYear(List<Transaction> allTransactions, int year) {
         return allTransactions.stream()
-                .filter(transaction -> transaction.getYear() == 2011)
+                .filter(transaction -> transaction.getYear() == year)
                 .collect(Collectors.toList());
     }
 

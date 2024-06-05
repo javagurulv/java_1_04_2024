@@ -1,41 +1,25 @@
 package lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector;
 
+import java.util.List;
+
 class FraudDetector {
 
-    boolean isFraud(Transaction transaction) {
-        return (isFraudTrader(transaction) ||
-                isFraudAmount(transaction) ||
-                isFraudCity(transaction) ||
-                isFraudCountry(transaction) ||
-                isFraudCountryAndAmount(transaction) );
-    }
+    private List<FraudRule> fraudRules = List.of( new FraudRule1()
+                                                  , new FraudRule2()
+                                                  , new FraudRule3()
+                                                  , new FraudRule4()
+                                                  , new FraudRule5() );
 
-    //// fraud trader = Pokemon
-    private boolean isFraudTrader(Transaction transaction) {
-        return transaction.getTrader().getFullName().equals("Pokemon");
+    FraudDetectionResult isFraud(Transaction transaction) {
+        //// Detecting frauds
+        for (FraudRule fraudRule : fraudRules) {
+              if (fraudRule.isFraud(transaction)) {
+                  String ruleName = fraudRule.getRuleName();
+                  return new FraudDetectionResult( true, ruleName);
+              }
+         }
+        //// If not a fraud
+        return new FraudDetectionResult(false, null);
     }
-
-    /// fraud amount > 1mio
-    private boolean isFraudAmount(Transaction transaction) {
-        return transaction.getAmount() > 1000000;
-    }
-
-    /// fraud city = Sydney
-    private boolean isFraudCity(Transaction transaction) {
-        return transaction.getTrader().getCity().equals("Sydney");
-    }
-
-    /// fraud country = Jamaica
-    private boolean isFraudCountry(Transaction transaction) {
-       return transaction.getTrader().getCountry().equals("Jamaica");
-    }
-
-    /// fraud country = Germany && amount > 1000
-    private boolean isFraudCountryAndAmount(Transaction transaction) {
-        boolean traderCountry = transaction.getTrader().getCountry().equals("Germany");
-        boolean transactionAmount = transaction.getAmount() > 1000;
-        return (traderCountry && transactionAmount);
-    }
-
 
 }

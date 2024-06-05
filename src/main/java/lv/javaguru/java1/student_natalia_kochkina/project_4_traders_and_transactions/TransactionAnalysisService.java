@@ -38,4 +38,10 @@ class TransactionAnalysisService {
                 .collect(Collectors.toList());
     }
 
+    List<Integer> findYearsOfTransactions(List<Transaction> allTransactions) {
+        return allTransactions.stream()
+                .map(Transaction::getYear)
+                .collect(Collectors.toList());
+    }
+
 }

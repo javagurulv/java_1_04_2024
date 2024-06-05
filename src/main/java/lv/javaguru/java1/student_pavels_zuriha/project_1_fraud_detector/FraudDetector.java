@@ -11,11 +11,7 @@ class FraudDetector {
             new FraudRule4()
     );
 
-
-
-
     FraudDetectionResult isFraud(Transaction transaction) {
-
 
         for (FraudRule fraudRule : rules) {
             if (fraudRule.isFraud(transaction)) {
@@ -27,10 +23,6 @@ class FraudDetector {
         return new FraudDetectionResult(false, "null");
 
     }
-
-
-
-
 }
 
 

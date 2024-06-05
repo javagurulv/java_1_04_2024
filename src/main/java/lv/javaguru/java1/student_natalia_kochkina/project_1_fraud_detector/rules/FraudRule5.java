@@ -1,6 +1,8 @@
-package lv.javaguru.java1.student_natalia_kochkina.project_1_fraud_detector;
+package lv.javaguru.java1.student_natalia_kochkina.project_1_fraud_detector.rules;
 
-class FraudRule5 implements FraudRule {
+import lv.javaguru.java1.student_natalia_kochkina.project_1_fraud_detector.domain.Transaction;
+
+public class FraudRule5 implements FraudRule {
     @Override
     public boolean isFraud(Transaction transaction) {
         return transaction.getTrader().getCountry().equals("Germany")

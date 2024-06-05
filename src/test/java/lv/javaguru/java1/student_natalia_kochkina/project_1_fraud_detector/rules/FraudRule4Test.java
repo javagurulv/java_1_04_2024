@@ -1,5 +1,7 @@
-package lv.javaguru.java1.student_natalia_kochkina.project_1_fraud_detector;
+package lv.javaguru.java1.student_natalia_kochkina.project_1_fraud_detector.rules;
 
+import lv.javaguru.java1.student_natalia_kochkina.project_1_fraud_detector.domain.Trader;
+import lv.javaguru.java1.student_natalia_kochkina.project_1_fraud_detector.domain.Transaction;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

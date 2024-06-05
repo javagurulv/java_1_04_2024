@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_artem_galustan.lesson7.homework;
 
-class ArrayLength1 {
+class ArrayDefinition2 {
     public static void main(String[] args) {
     byte[] numbers = new byte[10];
 }

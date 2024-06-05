@@ -32,8 +32,8 @@ class TransactionAnalysisServiceTest {
     }
 
     @Test
-    void shouldSortTransactionsByValue() {
-        List<Transaction> transactions = service.sortTransactionsByValue(
+    void shouldSortTransactionsByValueASC() {
+        List<Transaction> transactions = service.sortTransactionsByValueASC(
                 TransactionTestData.getTransactions()
         );
         assertEquals(transactions.size(), 6);
@@ -43,6 +43,20 @@ class TransactionAnalysisServiceTest {
         assertEquals(710, transactions.get(3).getValue());
         assertEquals(950, transactions.get(4).getValue());
         assertEquals(1000, transactions.get(5).getValue());
+    }
+
+    @Test
+    void shouldSortTransactionsByValueDesc() {
+        List<Transaction> transactions = service.sortTransactionsByValueDesc(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(transactions.size(), 6);
+        assertEquals(1000, transactions.get(0).getValue());
+        assertEquals(950, transactions.get(1).getValue());
+        assertEquals(710, transactions.get(2).getValue());
+        assertEquals(700, transactions.get(3).getValue());
+        assertEquals(400, transactions.get(4).getValue());
+        assertEquals(300, transactions.get(5).getValue());
     }
 
 }

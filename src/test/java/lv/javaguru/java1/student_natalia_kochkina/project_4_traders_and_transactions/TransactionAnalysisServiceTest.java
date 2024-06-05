@@ -83,4 +83,14 @@ class TransactionAnalysisServiceTest {
         assertEquals(2012, transactions.get(5));
     }
 
+    @Test
+    void shouldFindUniqueYearsOfTransactions() {
+        List<Integer> transactions = service.findUniqueYearsOfTransactions(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(transactions.size(), 2);
+        assertEquals(2011, transactions.get(0));
+        assertEquals(2012, transactions.get(1));
+    }
+
 }

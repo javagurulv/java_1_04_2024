@@ -59,4 +59,14 @@ class TransactionAnalysisServiceTest {
         assertEquals(300, transactions.get(5).getValue());
     }
 
+    @Test
+    void shouldFindTransactionsIn2011YearAndSortByValueASC() {
+        List<Transaction> transactions = service.findTransactionsIn2011YearAndSortByValueASC(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(transactions.size(), 2);
+        assertEquals(300, transactions.get(0).getValue());
+        assertEquals(400, transactions.get(1).getValue());
+    }
+
 }

@@ -30,4 +30,12 @@ class TransactionAnalysisService {
                 .collect(Collectors.toList());
     }
 
+    List<Transaction> findTransactionsIn2011YearAndSortByValueASC(
+            List<Transaction> allTransactions) {
+        return allTransactions.stream()
+                .filter(transaction -> transaction.getYear() == 2011)
+                .sorted(Comparator.comparing(Transaction::getValue))
+                .collect(Collectors.toList());
+    }
+
 }

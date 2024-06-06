@@ -105,4 +105,14 @@ class TransactionAnalysisServiceTest {
         assertEquals("Alan", transactions.get(3));
     }
 
+    @Test
+    void shouldFindUniqueTraderCities() {
+        List<String> transactions = service.findUniqueTraderCities(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(transactions.size(), 2);
+        assertEquals("Cambridge", transactions.get(0));
+        assertEquals("Milan", transactions.get(1));
+    }
+
 }

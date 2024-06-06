@@ -57,4 +57,11 @@ class TransactionAnalysisService {
                 .distinct().collect(Collectors.toList());
     }
 
+    List<String> findUniqueTraderCities(List<Transaction> allTransactions) {
+        return allTransactions.stream()
+                .map(Transaction::getTrader)
+                .map(Trader::getCity)
+                .distinct().collect(Collectors.toList());
+    }
+
 }

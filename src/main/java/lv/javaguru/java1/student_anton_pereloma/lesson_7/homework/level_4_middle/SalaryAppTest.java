@@ -23,7 +23,9 @@ class SalaryAppTest {
 //    Test case 6: salary max 4000 = {100.00, 300.00, 4000.00}
 //    Test case 7: salary max 200 = {200.00, 200.00, 200.00}
 //    Test case 8: salary max 0 = {}
-//    Test case 8: salary max 0 = {}
+//    Test case 9: salary avg 1446 = {100.00, 300.00, 4000.00}
+//    Test case 10: salary avg 200 = {200.00, 200.00, 200.00}
+//    Test case 11: salary max 0 = {}
 
 
     public void salaryTotal3000() {

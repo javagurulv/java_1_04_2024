@@ -2,6 +2,7 @@ package lv.javaguru.java1.student_natalia_kochkina.project_4_traders_and_transac
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 class TransactionAnalysisService {
@@ -70,6 +71,15 @@ class TransactionAnalysisService {
                 .filter(trader -> trader.getCity().equals("Cambridge"))
                 .map(Trader::getName)
                 .distinct().collect(Collectors.toList());
+    }
+
+    Set<String> findTraderNamesFromSpecificCity(List<Transaction> allTransactions,
+                                                String city) {
+        return allTransactions.stream()
+                .map(Transaction::getTrader)
+                .filter(trader -> trader.getCity().equals(city))
+                .map(Trader::getName)
+                .collect(Collectors.toSet());
     }
 
 }

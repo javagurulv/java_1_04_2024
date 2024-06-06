@@ -93,4 +93,16 @@ class TransactionAnalysisServiceTest {
         assertEquals(2012, transactions.get(1));
     }
 
+    @Test
+    void shouldFindUniqueNamesOfTraders() {
+        List<String> transactions = service.findUniqueNamesOfTraders(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(transactions.size(), 4);
+        assertEquals("Brian", transactions.get(0));
+        assertEquals("Raoul", transactions.get(1));
+        assertEquals("Mario", transactions.get(2));
+        assertEquals("Alan", transactions.get(3));
+    }
+
 }

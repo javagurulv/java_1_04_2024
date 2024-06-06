@@ -50,4 +50,11 @@ class TransactionAnalysisService {
                 .collect(Collectors.toList());
     }
 
+    List<String> findUniqueNamesOfTraders(List<Transaction> allTransactions) {
+        return allTransactions.stream()
+                .map(Transaction::getTrader)
+                .map(Trader::getName)
+                .distinct().collect(Collectors.toList());
+    }
+
 }

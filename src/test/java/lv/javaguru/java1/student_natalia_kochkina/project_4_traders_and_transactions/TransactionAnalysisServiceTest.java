@@ -115,4 +115,15 @@ class TransactionAnalysisServiceTest {
         assertEquals("Milan", transactions.get(1));
     }
 
+    @Test
+    void shouldFindTraderNamesFromCambridge() {
+        List<String> transactions = service.findTraderNamesFromCambridge(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(transactions.size(), 3);
+        assertEquals("Brian", transactions.get(0));
+        assertEquals("Raoul", transactions.get(1));
+        assertEquals("Alan", transactions.get(2));
+    }
+
 }

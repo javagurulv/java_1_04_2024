@@ -82,4 +82,15 @@ class TransactionAnalysisService {
                 .collect(Collectors.toSet());
     }
 
+    int calculateValueByYear(List<Transaction> allTransactions, int year) {
+        return allTransactions.stream()
+                .filter(transaction -> transaction.getYear() == year)
+                .map(Transaction::getValue).reduce(Integer::sum).orElse(0);
+    }
+
+    int calculateTransactionQuantityByYear(List<Transaction> allTransactions, int year) {
+        return (int) allTransactions.stream()
+                .filter(transaction -> transaction.getYear() == year).count();
+    }
+
 }

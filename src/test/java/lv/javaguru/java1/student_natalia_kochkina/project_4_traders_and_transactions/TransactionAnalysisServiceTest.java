@@ -136,4 +136,36 @@ class TransactionAnalysisServiceTest {
         assertTrue(traderNames.contains("Mario"));
     }
 
+    @Test
+    void shouldCalculateValueByYear() {
+        int value = service.calculateValueByYear(
+                TransactionTestData.getTransactions(), 2011
+        );
+        assertEquals(value, 700);
+    }
+
+    @Test
+    void shouldCalculateValueByYear2() {
+        int value = service.calculateValueByYear(
+                TransactionTestData.getTransactions(), 2013
+        );
+        assertEquals(value, 0);
+    }
+
+    @Test
+    void shouldCalculateTransactionQuantityByYear() {
+        int transactionQuantity = service.calculateTransactionQuantityByYear(
+                TransactionTestData.getTransactions(), 2012
+        );
+        assertEquals(transactionQuantity, 4);
+    }
+
+    @Test
+    void shouldCalculateTransactionQuantityByYear2() {
+        int transactionQuantity = service.calculateTransactionQuantityByYear(
+                TransactionTestData.getTransactions(), 2013
+        );
+        assertEquals(transactionQuantity, 0);
+    }
+
 }

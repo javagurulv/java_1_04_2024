@@ -1,12 +1,12 @@
-package lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector;
+package lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector.domain;
 
-class Trader {
+public class Trader {
 
     private String fullName;
     private String city;
     private String country;
 
-    Trader(String fullName, String city, String country) {
+    public Trader(String fullName, String city, String country) {
         this.fullName = fullName;
         this.city = city;
         this.country = country;

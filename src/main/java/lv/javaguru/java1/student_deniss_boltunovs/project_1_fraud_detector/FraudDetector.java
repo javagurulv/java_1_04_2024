@@ -1,5 +1,8 @@
 package lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector;
 
+import lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector.domain.Transaction;
+import lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector.rule.*;
+
 import java.util.List;
 
 class FraudDetector {

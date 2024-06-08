@@ -1,6 +1,8 @@
-package lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector;
+package lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector.rule;
 
-class FraudRule4 implements FraudRule {
+import lv.javaguru.java1.student_deniss_boltunovs.project_1_fraud_detector.domain.Transaction;
+
+public class FraudRule4 implements FraudRule {
 
     @Override
     public boolean isFraud(Transaction transaction){

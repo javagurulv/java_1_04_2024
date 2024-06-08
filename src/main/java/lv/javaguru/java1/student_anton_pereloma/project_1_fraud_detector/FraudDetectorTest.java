@@ -10,14 +10,15 @@ class FraudDetectorTest {
         test.transactionAmountOver1MillionAndInvalidName();
         test.transactionAmount10kValidName();
         test.transactionAmount0ValidName();
-        test.transactionAmount0ValidNameBlockedRegion();
+        test.transactionAmount0ValidNameBlockedCitySydney();
         test.transactionAmount10kValidNameBlockedRegion();
         test.transactionAmountOver1MillionAndInvalidNameAndBlockedRegion();
+        test.transactionAmount0ValidNameBlockedCountryJamaica();
     }
 
     public void shouldCatchPokemon () {
         FraudDetector fraudDetector = new FraudDetector();
-        Trader trader1 = new Trader("Pokemon","Kathmandu");
+        Trader trader1 = new Trader("Pokemon","Kathmandu","Nepal");
         Transaction transaction1 = new Transaction(trader1,1);
 
 //        boolean result = fraudDetector.isFraud(new Transaction(new Trader("Pokemon","Kathmandu"),1));
@@ -27,7 +28,7 @@ class FraudDetectorTest {
 
     public void transactionAmount1ValidName () {
         FraudDetector fraudDetector = new FraudDetector();
-        Trader trader1 = new Trader("JohnDoe","NYC");
+        Trader trader1 = new Trader("JohnDoe","NYC","USA");
         Transaction transaction1 = new Transaction(trader1,1);
         boolean result = fraudDetector.isFraud(transaction1);
         checkResult(result,false,"transactionAmount1ValidName");
@@ -35,7 +36,7 @@ class FraudDetectorTest {
 
     public void transactionAmountOver1MillionValidName () {
         FraudDetector fraudDetector = new FraudDetector();
-        Trader trader1 = new Trader("JohnDoe","NYC");
+        Trader trader1 = new Trader("JohnDoe","NYC","USA");
         Transaction transaction1 = new Transaction(trader1,100000000);
         boolean result = fraudDetector.isFraud(transaction1);
         checkResult(result,true,"transactionAmountOver1MillionValidName");
@@ -43,7 +44,7 @@ class FraudDetectorTest {
 
     public void transactionAmountOver1MillionAndInvalidName () {
         FraudDetector fraudDetector = new FraudDetector();
-        Trader trader1 = new Trader("Pokemon","NYC");
+        Trader trader1 = new Trader("Pokemon","NYC","USA");
         Transaction transaction1 = new Transaction(trader1,100000000);
         boolean result = fraudDetector.isFraud(transaction1);
         checkResult(result,true,"transactionAmount1MillionAndInvalidName");
@@ -51,7 +52,7 @@ class FraudDetectorTest {
 
     public void transactionAmount10kValidName () {
         FraudDetector fraudDetector = new FraudDetector();
-        Trader trader1 = new Trader("JohnDoe","NYC");
+        Trader trader1 = new Trader("JohnDoe","NYC","USA");
         Transaction transaction1 = new Transaction(trader1,10000);
         boolean result = fraudDetector.isFraud(transaction1);
         checkResult(result,false,"transactionAmount10kValidName");
@@ -59,7 +60,7 @@ class FraudDetectorTest {
 
     public void transactionAmount0ValidName () {
         FraudDetector fraudDetector = new FraudDetector();
-        Trader trader1 = new Trader("JohnDoe","NYC");
+        Trader trader1 = new Trader("JohnDoe","NYC","USA");
         Transaction transaction1 = new Transaction(trader1,0);
         boolean result = fraudDetector.isFraud(transaction1);
         checkResult(result,false,"transactionAmount0ValidName");
@@ -67,7 +68,7 @@ class FraudDetectorTest {
 
     public void transactionAmountOver1MillionAndInvalidNameAndBlockedRegion () {
         FraudDetector fraudDetector = new FraudDetector();
-        Trader trader1 = new Trader("Pokemon","Sydney");
+        Trader trader1 = new Trader("Pokemon","Sydney","Australia");
         Transaction transaction1 = new Transaction(trader1,100000000);
         boolean result = fraudDetector.isFraud(transaction1);
         checkResult(result,true,"transactionAmountOver1MillionAndInvalidNameAndBlockedRegion");
@@ -75,19 +76,27 @@ class FraudDetectorTest {
 
     public void transactionAmount10kValidNameBlockedRegion () {
         FraudDetector fraudDetector = new FraudDetector();
-        Trader trader1 = new Trader("JohnDoe","Sydney");
+        Trader trader1 = new Trader("JohnDoe","Sydney","Australia");
         Transaction transaction1 = new Transaction(trader1,10000);
         boolean result = fraudDetector.isFraud(transaction1);
         checkResult(result,true,"transactionAmount10kValidNameBlockedRegion");
     }
 
-    public void transactionAmount0ValidNameBlockedRegion () {
+    public void transactionAmount0ValidNameBlockedCitySydney () {
         FraudDetector fraudDetector = new FraudDetector();
-        Trader trader1 = new Trader("JohnDoe","Sydney");
+        Trader trader1 = new Trader("JohnDoe","Sydney","Australia");
         Transaction transaction1 = new Transaction(trader1,0);
         boolean result = fraudDetector.isFraud(transaction1);
         checkResult(result,true,"transactionAmount0ValidNameBlockedRegion");
     }
+    public void transactionAmount0ValidNameBlockedCountryJamaica () {
+        FraudDetector fraudDetector = new FraudDetector();
+        Trader trader1 = new Trader("JohnDoe","Kingston","Jamaica");
+        Transaction transaction1 = new Transaction(trader1,0);
+        boolean result = fraudDetector.isFraud(transaction1);
+        checkResult(result,true,"transactionAmount0ValidNameBlockedRegion");
+    }
+
 
     private void checkResult(boolean result,
                              boolean expectedResult,

@@ -10,7 +10,7 @@ class Transaction {
         this.amount = amount;
     }
 
-    private int getAmount () {
+    public int getAmount () {
         return this.amount;
     }
 

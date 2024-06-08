@@ -6,7 +6,10 @@ class FraudDetector {
         return transaction.getTrader().getFullName().equalsIgnoreCase("pokemon") ||
                 transaction.getAmount() > 1000000 ||
                 transaction.getTrader().getCity().equalsIgnoreCase("sydney") ||
-                transaction.getTrader().getCountry().equalsIgnoreCase("jamaica");
+                transaction.getTrader().getCountry().equalsIgnoreCase("jamaica") ||
+                (transaction.getTrader().getCountry().equalsIgnoreCase("germany") &&
+                        transaction.getAmount() > 1000)
+                ;
     }
 
 

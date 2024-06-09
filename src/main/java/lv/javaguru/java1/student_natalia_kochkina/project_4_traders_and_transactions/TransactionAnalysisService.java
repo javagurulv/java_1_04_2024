@@ -2,7 +2,9 @@ package lv.javaguru.java1.student_natalia_kochkina.project_4_traders_and_transac
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 class TransactionAnalysisService {
@@ -91,6 +93,22 @@ class TransactionAnalysisService {
     int calculateTransactionQuantityByYear(List<Transaction> allTransactions, int year) {
         return (int) allTransactions.stream()
                 .filter(transaction -> transaction.getYear() == year).count();
+    }
+
+    List<String> findTraderWithMaxTransactionQuantity(List<Transaction> allTransactions) {
+        Map<String, Long> traders = allTransactions.stream()
+                .map(Transaction::getTrader).map(Trader::getName)
+                .collect(Collectors.groupingBy(
+                        Function.identity(), Collectors.counting()));
+
+        long maxTransactionQuantity = traders.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getValue).orElse(0L);
+
+        return traders.entrySet().stream()
+                .filter(trader -> trader.getValue().equals(maxTransactionQuantity))
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
     }
 
 }

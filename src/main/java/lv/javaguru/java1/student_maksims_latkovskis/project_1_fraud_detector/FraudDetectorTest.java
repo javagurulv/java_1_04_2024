@@ -14,8 +14,8 @@ class FraudDetectorTest {
     }
 
     void test1() {
-        // case John (valid)
-        testPrint("Test 1", "John", "Sydney", 799, true);
+        // case John, Sydney (invalid)
+        testPrint("Test 1", "John", "Sydney", 799, false);
     }
 
     void test2() {
@@ -29,18 +29,18 @@ class FraudDetectorTest {
     }
 
     void test4() {
-        // case 1000001
+        // case 1000001 (invalid)
         testPrint("Test 4", "Fred", "NYC", 1000001, false);
     }
 
     void test5() {
-        // case 999
+        // case 999 (valid)
         testPrint("Test 5", "Greg", "Memphis", 999, true);
     }
 
     void test6() {
         // case Pokemon, 8888888 (invalid)
-        testPrint("Test 6", "Pokemon", "London", 88888888, false);
+        testPrint("Test 6", "Pokemon", "Dallas", 88888888, false);
     }
 
     void testPrint(String testName, String fullName, String city, int amount, boolean expectedOutput) {

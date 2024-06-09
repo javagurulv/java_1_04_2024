@@ -10,6 +10,9 @@ class FraudDetector {
         else if(transaction.getAmount() > 1000000){
             return false;
         }
+        else if(transaction.getTrader().getCity().equals("Sydney")){
+            return false;
+        }
         else {
             return true;
         }

@@ -1,10 +1,10 @@
 package lv.javaguru.java1.student_deniss_boltunovs.project_2_geometry_shape.shapes;
 
-class Square extends Shape {
+public class Square extends Shape {
 
        private double sideLength;
 
-       Square(String title, double sideLength) {
+       public Square(String title, double sideLength) {
            super(title);
            this.sideLength = sideLength;
        }
@@ -17,6 +17,10 @@ class Square extends Shape {
        @Override
        public double calculatePerimeter(){
            return sideLength * 4;
+       }
+
+       public double getSideLength(){
+           return sideLength;
        }
 
 }

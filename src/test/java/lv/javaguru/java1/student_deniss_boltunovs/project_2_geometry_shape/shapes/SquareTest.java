@@ -5,18 +5,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SquareTest {
 
-    Square square = new Square("First square", 6);
+    Square square = new Square("First square", 2);
 
     @Test
     void firstSquareArea(){
         double result = square.calculateArea();
-        assertEquals(36, result);
+        assertEquals(4, result);
     }
 
     @Test
     void firstSquarePerimeter(){
         double result = square.calculatePerimeter();
-        assertEquals(24, result);
+        assertEquals(8, result);
     }
 
 }

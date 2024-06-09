@@ -1,11 +1,11 @@
 package lv.javaguru.java1.student_deniss_boltunovs.project_2_geometry_shape.shapes;
 
-class Rectangle extends Shape {
+public class Rectangle extends Shape {
 
       private double length;
       private double width;
 
-      Rectangle(String title, double length, double width) {
+      public Rectangle(String title, double length, double width) {
           super(title);
           this.length = length;
           this.width = width;
@@ -19,6 +19,14 @@ class Rectangle extends Shape {
       @Override
       public double calculatePerimeter(){
           return (length + width) * 2;
+      }
+
+      public double getLength(){
+          return length;
+      }
+
+      public double getWidth(){
+          return width;
       }
 
 }

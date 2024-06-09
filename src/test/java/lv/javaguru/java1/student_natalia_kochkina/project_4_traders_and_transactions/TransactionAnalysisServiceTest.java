@@ -138,34 +138,73 @@ class TransactionAnalysisServiceTest {
 
     @Test
     void shouldCalculateValueByYear() {
-        int value = service.calculateValueByYear(
+        int value2011 = service.calculateValueByYear(
                 TransactionTestData.getTransactions(), 2011
         );
-        assertEquals(value, 700);
-    }
+        assertEquals(value2011, 700);
 
-    @Test
-    void shouldCalculateValueByYear2() {
-        int value = service.calculateValueByYear(
+        int value2013 = service.calculateValueByYear(
                 TransactionTestData.getTransactions(), 2013
         );
-        assertEquals(value, 0);
+        assertEquals(value2013, 0);
     }
 
     @Test
     void shouldCalculateTransactionQuantityByYear() {
-        int transactionQuantity = service.calculateTransactionQuantityByYear(
+        int transactionQuantity2012 = service.calculateTransactionQuantityByYear(
                 TransactionTestData.getTransactions(), 2012
         );
-        assertEquals(transactionQuantity, 4);
+        assertEquals(transactionQuantity2012, 4);
+
+        int transactionQuantity2013 = service.calculateTransactionQuantityByYear(
+                TransactionTestData.getTransactions(), 2013
+        );
+        assertEquals(transactionQuantity2013, 0);
     }
 
     @Test
-    void shouldCalculateTransactionQuantityByYear2() {
-        int transactionQuantity = service.calculateTransactionQuantityByYear(
-                TransactionTestData.getTransactions(), 2013
+    void shouldFindTraderWithMaxTransactionQuantity() {
+        List<String> traders = service.findTraderWithMaxTransactionQuantity(
+                TransactionTestData.getTransactions()
         );
-        assertEquals(transactionQuantity, 0);
+        assertEquals(traders.size(), 2);
+        assertEquals("Raoul", traders.get(0));
+        assertEquals("Mario", traders.get(1));
+    }
+
+    @Test
+    void shouldFindTraderWithMaxTransactionValue() {
+        List<String> traders = service.findTraderWithMaxTransactionValue(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(traders.size(), 1);
+        assertEquals("Mario", traders.get(0));
+    }
+
+    @Test
+    void shouldFindTransactionsWithMaxValue() {
+        List<Transaction> transactions = service.findTransactionsWithMaxValue(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(transactions.size(), 1);
+        assertEquals(transactions.get(0).getValue(), 1000);
+    }
+
+    @Test
+    void shouldFindTransactionsWithMinValue() {
+        List<Transaction> transactions = service.findTransactionsWithMinValue(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(transactions.size(), 1);
+        assertEquals(transactions.get(0).getValue(), 300);
+    }
+
+    @Test
+    void shouldCalculateTransactionsAverageValue() {
+        double average = service.calculateTransactionsAverageValue(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(average, 676.66, 2);
     }
 
 }

@@ -181,4 +181,30 @@ class TransactionAnalysisServiceTest {
         assertEquals("Mario", traders.get(0));
     }
 
+    @Test
+    void shouldFindTransactionsWithMaxValue() {
+        List<Transaction> transactions = service.findTransactionsWithMaxValue(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(transactions.size(), 1);
+        assertEquals(transactions.get(0).getValue(), 1000);
+    }
+
+    @Test
+    void shouldFindTransactionsWithMinValue() {
+        List<Transaction> transactions = service.findTransactionsWithMinValue(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(transactions.size(), 1);
+        assertEquals(transactions.get(0).getValue(), 300);
+    }
+
+    @Test
+    void shouldCalculateTransactionsAverageValue() {
+        double average = service.calculateTransactionsAverageValue(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(average, 676.66, 2);
+    }
+
 }

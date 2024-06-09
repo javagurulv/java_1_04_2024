@@ -124,6 +124,33 @@ class TransactionAnalysisService {
                 .collect(Collectors.toList());
     }
 
+    List<Transaction> findTransactionsWithMaxValue(List<Transaction> allTransactions) {
+        int maxValue = allTransactions.stream()
+                .map(Transaction::getValue)
+                .max(Integer::compare).orElse(0);
+
+        return allTransactions.stream()
+                .filter(transaction -> transaction.getValue() == maxValue)
+                .collect(Collectors.toList());
+    }
+
+    List<Transaction> findTransactionsWithMinValue(List<Transaction> allTransactions) {
+        int minValue = allTransactions.stream()
+                .map(Transaction::getValue)
+                .min(Integer::compare).orElse(0);
+
+        return allTransactions.stream()
+                .filter(transaction -> transaction.getValue() == minValue)
+                .collect(Collectors.toList());
+    }
+
+    double calculateTransactionsAverageValue(List<Transaction> allTransactions) {
+        int valueSum = allTransactions.stream()
+                .map(Transaction::getValue)
+                .reduce(Integer::sum).orElse(0);
+        return (double) valueSum / allTransactions.size();
+    }
+
     private int calculateTotalValueOfTraderTransactions(List<Transaction> allTransactions,
                                                         Transaction thisTransaction) {
         int totalValue = 0;

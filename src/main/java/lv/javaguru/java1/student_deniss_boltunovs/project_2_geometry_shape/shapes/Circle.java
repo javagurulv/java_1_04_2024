@@ -19,8 +19,4 @@ class Circle extends Shape {
         return 2 * Math.PI * radius;
     }
 
-    double getRadius(){
-        return radius;
-    }
-
 }

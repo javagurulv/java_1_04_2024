@@ -24,7 +24,8 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 120);
 
         boolean realResult = fraudDetector.isFraud(transaction).isFraud();
-        checkResult(realResult, true, "testNameCheckerShouldReturnTrue");
+        String ruleName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, true, "testNameCheckerShouldReturnTrue", ruleName);
     }
 
     public void testNameCheckerShouldReturnFalse() {
@@ -34,7 +35,8 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 120);
 
         boolean realResult = fraudDetector.isFraud(transaction).isFraud();
-        checkResult(realResult, false, "testNameCheckerShouldReturnFalse");
+        String ruleName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, false, "testNameCheckerShouldReturnFalse", ruleName);
     }
 
     public void testTransactionBelow1000000() {
@@ -44,7 +46,8 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction).isFraud();
-        checkResult(realResult, false, "testTransactionBelow1000000");
+        String ruleName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, false, "testTransactionBelow1000000", ruleName);
     }
 
     public void testTransactionAbove1000000() {
@@ -54,7 +57,8 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 1000001);
 
         boolean realResult = fraudDetector.isFraud(transaction).isFraud();
-        checkResult(realResult, true, "testTransactionAbove1000000");
+        String ruleName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, true, "testTransactionAbove1000000", ruleName);
     }
 
     public void testCityCheckerSydney() {
@@ -64,7 +68,8 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction).isFraud();
-        checkResult(realResult, true, "testCityCheckerSydney");
+        String ruleName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, true, "testCityCheckerSydney",ruleName);
     }
 
     public void testCityCheckerNotSydney() {
@@ -74,7 +79,8 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction).isFraud();
-        checkResult(realResult, false, "testCityCheckerNotSydney");
+        String ruleName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, false, "testCityCheckerNotSydney", ruleName);
     }
 
     public void testCountryCheckerNotJamaica() {
@@ -84,7 +90,8 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction).isFraud();
-        checkResult(realResult, false, "testCountryCheckerNotJamaica");
+        String ruleName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, false, "testCountryCheckerNotJamaica", ruleName);
     }
 
     public void testCountryCheckerJamaica() {
@@ -94,7 +101,8 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100000);
 
         boolean realResult = fraudDetector.isFraud(transaction).isFraud();
-        checkResult(realResult, true, "testCountryCheckerJamaica");
+        String ruleName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, true, "testCountryCheckerJamaica", ruleName);
     }
 
     public void testCountryCheckerGermanyBelow1000() {
@@ -104,7 +112,8 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 100);
 
         boolean realResult = fraudDetector.isFraud(transaction).isFraud();
-        checkResult(realResult, false, "testCountryCheckerGermanyBelow1000");
+        String ruleName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, false, "testCountryCheckerGermanyBelow1000", ruleName);
     }
 
     public void testCountryCheckerGermanyAbove1000() {
@@ -114,15 +123,16 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 1001);
 
         boolean realResult = fraudDetector.isFraud(transaction).isFraud();
-        String scenarioName = fraudDetector.isFraud(transaction).getRuleName();
-        checkResult(realResult, true, scenarioName);
+        String ruleName = fraudDetector.isFraud(transaction).getRuleName();
+        checkResult(realResult, true, "testCountryCheckerGermanyAbove1000", ruleName);
     }
 
     private void checkResult(boolean realResult,
                              boolean expectedResult,
-                             String scenarioName) {
+                             String scenarioName,
+                             String ruleName) {
         if (realResult == expectedResult) {
-            System.out.println(scenarioName + ": OK");
+            System.out.println(scenarioName + ": OK. Rule Name: " + ruleName);
         } else {
             System.out.println(scenarioName + ": FAIL. Real Result: " + realResult + ", Expected Result: " + expectedResult);
         }

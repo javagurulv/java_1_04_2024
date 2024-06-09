@@ -10,11 +10,11 @@ class FraudDetectionResult {
         this.ruleName = ruleName;
     }
 
-    public boolean isFraud() {
+    boolean isFraud() {
         return fraud;
     }
 
-    public String getRuleName() {
+    String getRuleName() {
         return ruleName;
     }
 }

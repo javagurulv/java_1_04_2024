@@ -2,49 +2,55 @@ package lv.javaguru.java1.student_maksims_latkovskis.project_1_fraud_detector;
 
 class FraudDetectorTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         FraudDetectorTest test = new FraudDetectorTest();
 
         test.test1();
         test.test2();
         test.test3();
-
+        test.test4();
+        test.test5();
+        test.test6();
     }
 
-    void test1(){
+    void test1() {
         // case John (valid)
-        Trader john = new Trader("John", "Sidney");
-        Transaction transaction = new Transaction(john, 4 );
-        FraudDetector fraudDetector = new FraudDetector();
-        boolean isValid = fraudDetector.isFraud(transaction);
-
-        if(isValid) System.out.println("Test 1 Pass");
-        else System.out.println("Test 1 Fail");
+        testPrint("Test 1", "John", "Sydney", 799, true);
     }
 
-    void test2(){
+    void test2() {
         // case Pokemon (invalid)
-       Trader pokemon = new Trader("Pokemon", "London");
-       Transaction transaction = new Transaction(pokemon, 4 );
-        FraudDetector fraudDetector = new FraudDetector();
-        boolean isValid = fraudDetector.isFraud(transaction);
-
-        if(isValid) System.out.println("Test 1 Fail");
-        else System.out.println("Test 1 Pass");
+        testPrint("Test 2", "Pokemon", "London", 40, false);
     }
 
-    void test3(){
+    void test3() {
         // case pokemon (valid)
-        Trader pokemonLowercase = new Trader("pokemon", "London");
-        Transaction transaction = new Transaction(pokemonLowercase, 4 );
-        FraudDetector fraudDetector = new FraudDetector();
-        boolean isValid = fraudDetector.isFraud(transaction);
-
-        if(isValid) System.out.println("Test 1 Pass");
-        else System.out.println("Test 1 Fail");
+        testPrint("Test 3", "pokemon", "London", 60, true);
     }
 
+    void test4() {
+        // case 1000001
+        testPrint("Test 4", "Fred", "NYC", 1000001, false);
+    }
 
+    void test5() {
+        // case 999
+        testPrint("Test 5", "Greg", "Memphis", 999, true);
+    }
+
+    void test6() {
+        // case Pokemon, 8888888 (invalid)
+        testPrint("Test 6", "Pokemon", "London", 88888888, false);
+    }
+
+    void testPrint(String testName, String fullName, String city, int amount, boolean expectedOutput) {
+        Trader trader = new Trader(fullName, city);
+        Transaction transaction = new Transaction(trader, amount);
+        FraudDetector fraudDetector = new FraudDetector();
+        boolean isValid = fraudDetector.isFraud(transaction);
+        if (isValid == expectedOutput) System.out.println(testName + " Pass");
+        else System.out.println(testName + " Fail");
+    }
 
 
 }

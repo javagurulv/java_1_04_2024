@@ -4,10 +4,12 @@ class Trader {
 
     private String fullName;
     private String city;
+    private String country;
 
-    public Trader(String fullName, String city){
+    public Trader(String fullName, String city, String country){
         this.city = city;
         this.fullName = fullName;
+        this.country = country;
     }
 
     public String getFullName() {
@@ -17,4 +19,6 @@ class Trader {
     public String getCity() {
         return city;
     }
+
+    public String getCountry() { return  country; }
 }

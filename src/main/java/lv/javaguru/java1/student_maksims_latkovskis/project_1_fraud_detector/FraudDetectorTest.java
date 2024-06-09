@@ -12,6 +12,8 @@ class FraudDetectorTest {
         test.test5();
         test.test6();
         test.test7();
+        test.test8();
+        test.test9();
     }
 
     void test1() {
@@ -21,17 +23,17 @@ class FraudDetectorTest {
 
     void test2() {
         // case Pokemon (invalid)
-        testPrint("Test 2", "Pokemon", "London","UK", 40, false);
+        testPrint("Test 2", "Pokemon", "London", "UK", 40, false);
     }
 
     void test3() {
         // case pokemon (valid)
-        testPrint("Test 3", "pokemon", "London", "UK" , 60, true);
+        testPrint("Test 3", "pokemon", "London", "UK", 60, true);
     }
 
     void test4() {
         // case 1000001 (invalid)
-        testPrint("Test 4", "Fred", "NYC", "US",  1000001, false);
+        testPrint("Test 4", "Fred", "NYC", "US", 1000001, false);
     }
 
     void test5() {
@@ -41,16 +43,26 @@ class FraudDetectorTest {
 
     void test6() {
         // case Pokemon, 8888888 (invalid)
-        testPrint("Test 6", "Pokemon", "Dallas", "US" ,88888888, false);
+        testPrint("Test 6", "Pokemon", "Dallas", "US", 88888888, false);
     }
+
     void test7() {
         // case Pokemon, 8888888 (invalid)
-        testPrint("Test 7", "Bob Marley", "Kingston", "Jamaica" ,23, false);
+        testPrint("Test 7", "Bob Marley", "Kingston", "Jamaica", 23, false);
+    }
+
+    void test8() {
+        // case Hans, 1001, Germany (invalid)
+        testPrint("Test 8", "Hans", "Stuttgart", "Germany", 1001, false);
+    }
+
+    void test9() {
+        // case Ulrich, 1001, Germany (invalid)
+        testPrint("Test 9", "Ulrich", "Bremen", "Germany", 659, true);
     }
 
 
-
-    void testPrint(String testName, String fullName, String city,String country,  int amount, boolean expectedOutput) {
+    void testPrint(String testName, String fullName, String city, String country, int amount, boolean expectedOutput) {
         Trader trader = new Trader(fullName, city, country);
         Transaction transaction = new Transaction(trader, amount);
         FraudDetector fraudDetector = new FraudDetector();

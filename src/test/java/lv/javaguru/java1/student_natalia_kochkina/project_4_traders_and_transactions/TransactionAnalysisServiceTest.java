@@ -172,4 +172,13 @@ class TransactionAnalysisServiceTest {
         assertEquals("Mario", traders.get(1));
     }
 
+    @Test
+    void shouldFindTraderWithMaxTransactionValue() {
+        List<String> traders = service.findTraderWithMaxTransactionValue(
+                TransactionTestData.getTransactions()
+        );
+        assertEquals(traders.size(), 1);
+        assertEquals("Mario", traders.get(0));
+    }
+
 }

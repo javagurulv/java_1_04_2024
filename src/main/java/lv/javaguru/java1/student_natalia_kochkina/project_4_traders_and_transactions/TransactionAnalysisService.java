@@ -111,4 +111,29 @@ class TransactionAnalysisService {
                 .collect(Collectors.toList());
     }
 
+    List<String> findTraderWithMaxTransactionValue(List<Transaction> allTransactions) {
+        int maxTransactionValue = allTransactions.stream()
+                .map(transaction -> calculateTotalValueOfTraderTransactions(allTransactions, transaction))
+                .max(Integer::compare).orElse(0);
+
+        return allTransactions.stream()
+                .filter(transaction -> calculateTotalValueOfTraderTransactions(allTransactions, transaction)
+                        == maxTransactionValue)
+                .map(transaction -> transaction.getTrader().getName())
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    private int calculateTotalValueOfTraderTransactions(List<Transaction> allTransactions,
+                                                        Transaction thisTransaction) {
+        int totalValue = 0;
+        for (Transaction transaction: allTransactions) {
+            if (thisTransaction.getTrader()
+                    .equals(transaction.getTrader())) {
+                totalValue += transaction.getValue();
+            }
+        }
+        return totalValue;
+    }
+
 }

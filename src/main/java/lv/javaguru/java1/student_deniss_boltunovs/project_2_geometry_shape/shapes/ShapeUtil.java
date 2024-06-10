@@ -33,4 +33,29 @@ class ShapeUtil {
         return shape;
     }
 
+    double calculateArea(Shape[] shapes){
+        double totalArea = 0;
+        for (Shape shape : shapes) {
+            totalArea += shape.calculateArea();
+        }
+        return totalArea;
+    }
+
+    double calculatePerimeter(Shape[] shapes){
+        double totalPerimeter = 0;
+        for (Shape shape : shapes){
+            totalPerimeter += shape.calculatePerimeter();
+        }
+        return totalPerimeter;
+    }
+
+    double calculateArea(Shape shape){
+        return shape.calculateArea();
+    }
+
+    double calculatePerimeter(Shape shape){
+        return shape.calculatePerimeter();
+    }
+
+
 }

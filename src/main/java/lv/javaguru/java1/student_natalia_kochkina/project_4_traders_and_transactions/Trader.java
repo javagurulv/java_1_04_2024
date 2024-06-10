@@ -21,7 +21,7 @@ class Trader {
     }
 
     public String toString() {
-        return "Trader:"+this.name + " in " + this.city;
+        return "Trader:" + this.name + " in " + this.city;
     }
 
     @Override
@@ -29,8 +29,7 @@ class Trader {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Trader trader = (Trader) o;
-        return Objects.equals(getName(), trader.getName())
-                && Objects.equals(getCity(), trader.getCity());
+        return Objects.equals(getName(), trader.getName()) && Objects.equals(getCity(), trader.getCity());
     }
 
     @Override

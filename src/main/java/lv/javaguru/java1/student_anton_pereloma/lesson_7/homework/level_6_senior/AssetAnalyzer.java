@@ -12,11 +12,13 @@ class AssetAnalyzer {
 
     double findMeanAssetReturn(Stock[] array) {
         double returnPercentSum = 0;
-        for (int i = 0; i < array.length; i++) {
-            returnPercentSum += array[i].getReturnInPercents();
-
+        if (array.length > 0) {
+            for (int i = 0; i < array.length; i++) {
+                returnPercentSum += array[i].getReturnInPercents();
+            }
+                returnPercentSum = returnPercentSum / array.length;
         }
-        return returnPercentSum / array.length;
+        return returnPercentSum;
     }
 
 

@@ -8,11 +8,11 @@ public class TwoNumSumm {
         System.out.println(Integer.sum(100, 200));
     }
 
-    public static int getSumm(int OneNum, int TwoNum) {
-        return Integer.sum(OneNum, TwoNum);
+    public static int getSumm(int NumOne, int NumTwo) {
+        return Integer.sum(NumOne, NumTwo);
     }
 
-    public static void printSumm(int OneNum, int TwoNum) {
-        System.out.println(getSumm(OneNum, TwoNum));
+    public static void printSumm(int NumOne, int NumTwo) {
+        System.out.println(getSumm(NumOne, NumTwo));
     }
 }

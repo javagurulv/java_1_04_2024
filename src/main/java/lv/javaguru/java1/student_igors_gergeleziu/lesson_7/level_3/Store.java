@@ -11,7 +11,7 @@ class Store {
     void fillArrayWithReceipts(CashReceipt[] array) {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < array.length; i++) {
-            System.out.println("Please enter purchase amount of " + i + " receipt ID");
+            System.out.print("Receipt ID " + i + ":");
             int purchaseAmount = scanner.nextInt();
             array[i] = new CashReceipt(i, purchaseAmount);
         }

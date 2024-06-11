@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_anton_pereloma.lesson_7.homework.level_5_middl
 
 class SaleAnalyser {
     String findBestSeller(Sale[] array) {
-        String bestSellerProduct ="";
+        String bestSellerProduct ="No Best Seller";
         int unitsSold = 0;
 
         for (int i = 0; i < array.length; i++) {

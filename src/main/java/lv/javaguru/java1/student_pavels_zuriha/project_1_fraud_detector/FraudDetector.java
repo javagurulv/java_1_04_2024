@@ -1,33 +1,28 @@
 package lv.javaguru.java1.student_pavels_zuriha.project_1_fraud_detector;
 
+import java.util.List;
+
 class FraudDetector {
 
-    private FraudRule fullnameChecker = new FraudRule1();
-    private FraudRule transactionsAbove1MillionChecker = new FraudRule2();
-    private FraudRule cityChecker = new FraudRule3();
-    private FraudRule countryChecker = new FraudRule4();
+    private List<FraudRule> rules = List.of(
+            new FraudRule1(),
+            new FraudRule2(),
+            new FraudRule3(),
+            new FraudRule4()
+    );
 
     FraudDetectionResult isFraud(Transaction transaction) {
 
-        if (fullnameChecker.isFraud(transaction)) {
-            return new FraudDetectionResult(true, "fullNameChecker");
+        for (FraudRule fraudRule : rules) {
+            if (fraudRule.isFraud(transaction)) {
+                String ruleName = fraudRule.getRuleName();
+                return new FraudDetectionResult(true, ruleName);
+            }
         }
-        if (transactionsAbove1MillionChecker.isFraud(transaction)) {
-            return new FraudDetectionResult(true, "transactionsAbove1MillionChecker");
-        }
-        if (cityChecker.isFraud(transaction)) {
-            return new FraudDetectionResult(true, "cityChecker");
-        }
-        if (countryChecker.isFraud(transaction)) {
-            return new FraudDetectionResult(true, "countryChecker");
-        }
+
         return new FraudDetectionResult(false, "null");
 
     }
-
-
-
-
 }
 
 

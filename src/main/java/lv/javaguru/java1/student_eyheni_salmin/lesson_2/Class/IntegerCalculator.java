@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_eyheni_salmin.lesson_2.Class;
 
-public class Calculator {
+public class IntegerCalculator {
     public static void main(String[] args) {
 
         printResult(100, 200);

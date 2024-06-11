@@ -4,10 +4,18 @@ class MathGradeCalculatorTest {
 
     public static void main(String[] args) {
         MathGradeCalculatorTest test = new MathGradeCalculatorTest();
-        test.test0();
+        //test.testNull();
+        //test.test0();
         test.test1();
         test.test2();
         test.test3();
+    }
+
+    void testNull() {
+        MathGradeCalculator calculator = new MathGradeCalculator();
+        int[] grades = null;
+        int realResult = calculator.findMaxGrade(grades);
+        checkResult(realResult, 8, "TEST 1");
     }
 
     void test0() {

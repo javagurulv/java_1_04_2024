@@ -15,7 +15,7 @@ public class Calculator {
     public static int getNumMultipl(int NumOne, int NumTwo) {
         return NumOne * NumTwo;
     }
-    public static int getNumDivision(int NumOne, int NumTwo) {
+    public static float getNumDivision(float NumOne, float NumTwo) {
         return NumOne / NumTwo;
     }
 

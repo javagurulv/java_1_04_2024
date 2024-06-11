@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_artem_galustan;
+package lv.javaguru.java1.student_artem_galustan.someclasswork;
 
 class MaxNumber {
 

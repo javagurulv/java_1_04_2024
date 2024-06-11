@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_artem_galustan.testlesson6;
+package lv.javaguru.java1.student_artem_galustan.someclasswork.testlesson6;
 
 class FizzBuzz {
 

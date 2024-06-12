@@ -7,6 +7,7 @@ class MinGradeTest {
 
         MinGradeTest test = new MinGradeTest();
         test.minGradeTest();
+        test.minGradeZeroTest();
 
     }
 
@@ -22,6 +23,20 @@ class MinGradeTest {
         } else {
             System.out.println("Test FAIL");
         }
+    }
+
+
+    public void minGradeZeroTest() {
+
+            MinGrade minGrade = new MinGrade();
+
+            int[] array = {};
+            int lowestGrade = minGrade.findMinGrade(array);
+            if (lowestGrade == 0) {
+                System.out.println("Test OK");
+            } else {
+                System.out.println("Test FAIL");
+            }
 
     }
 }

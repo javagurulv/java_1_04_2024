@@ -67,49 +67,25 @@ class AppleWarehouseTest {
     void findApplesByAnonymousClass(){
 
         ///// Green apples
-        List<Apple> green = warehouse.findApples( new AppleSearchCriteria() {
-            @Override
-            public boolean searchCriteria(Apple apple) {
-                return apple.getColor().equals("green");
-            }
-        });
+        List<Apple> green = warehouse.findApples((Apple apple) -> apple.getColor().equals("green"));
         assertEquals(3, green.size());
 
         ///// Red apples
-        List<Apple> red = warehouse.findApples( new AppleSearchCriteria() {
-            @Override
-            public boolean searchCriteria(Apple apple) {
-                return apple.getColor().equals("red");
-            }
-        });
+        List<Apple> red = warehouse.findApples((Apple apple) -> apple.getColor().equals("red"));
         assertEquals(3, red.size());
 
         ///// Heavy apples
-        List<Apple> heavy = warehouse.findApples( new AppleSearchCriteria() {
-            @Override
-            public boolean searchCriteria(Apple apple) {
-                return apple.getWeight() > 150;
-            }
-        });
+        List<Apple> heavy = warehouse.findApples((Apple apple) -> apple.getWeight() > 150);
         assertEquals(4, heavy.size());
 
         ///// Light apples
-        List<Apple> light = warehouse.findApples( new AppleSearchCriteria() {
-            @Override
-            public boolean searchCriteria(Apple apple) {
-                return apple.getWeight() < 150;
-            }
-        });
+        List<Apple> light = warehouse.findApples( (Apple apple) -> apple.getWeight() < 150);
         assertEquals(4, light.size());
 
         ///// Heavy and Green apples
-        List<Apple> heavyGreen = warehouse.findApples( new AppleSearchCriteria() {
-            @Override
-            public boolean searchCriteria(Apple apple) {
-                return (apple.getColor().equals("green")) && (apple.getWeight() > 150);
-            }
-        });
+        List<Apple> heavyGreen = warehouse.findApples((Apple apple) -> (apple.getColor().equals("green")) && (apple.getWeight() > 150));
         assertEquals(1, heavyGreen.size());
+
     }
 
 

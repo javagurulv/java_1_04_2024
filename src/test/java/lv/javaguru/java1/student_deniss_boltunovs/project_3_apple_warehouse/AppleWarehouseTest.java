@@ -59,6 +59,12 @@ class AppleWarehouseTest {
         AppleSearchCriteria light = new LightAppleSearchCriteria();
         int resultLightApples = warehouse.findApples(light).size();
         assertEquals(4, resultLightApples);
+
+        ///////Heavy and Green apples
+        AppleSearchCriteria heavyGreen = new HeavyGreenAppleSearchCriteria();
+        int resultHeavyGreenApples = warehouse.findApples(heavyGreen).size();
+        assertEquals(1, resultHeavyGreenApples);
+
     }
 
 

@@ -17,8 +17,8 @@ class PremiumCalculatorTest {
         InsuredSubObject tv = createSubObject("TV", "80", RiskType.FIRE);
         InsuredObject house = createObject("House", tv);
         Policy policy = createPolicy("LV-1", PolicyStatus.REGISTERED, house);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("1.12"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("1.12"));
     }
 
     //one object, one sub-object, risk fire, sumInsured > 100
@@ -27,8 +27,8 @@ class PremiumCalculatorTest {
         InsuredSubObject tv = createSubObject("TV", "120", RiskType.FIRE);
         InsuredObject house = createObject("House", tv);
         Policy policy = createPolicy("LV-1", PolicyStatus.APPROVED, house);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("2.88"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("2.88"));
 
     }
     //one object, two sub-objects, risk fire, sumInsured = 100
@@ -38,8 +38,8 @@ class PremiumCalculatorTest {
         InsuredSubObject fridge = createSubObject("Fridge", "50", RiskType.FIRE);
         InsuredObject house = createObject("House", tv, fridge);
         Policy policy = createPolicy("LV-1", PolicyStatus.REGISTERED, house);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("1.4"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("1.40"));
     }
 
     //one object, two sub-objects, risk fire, sumInsured > 100
@@ -49,8 +49,8 @@ class PremiumCalculatorTest {
         InsuredSubObject fridge = createSubObject("Fridge", "50", RiskType.FIRE);
         InsuredObject house = createObject("House", tv, fridge);
         Policy policy = createPolicy("LV-1", PolicyStatus.REGISTERED, house);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("13.2"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("13.20"));
     }
 
     //one object, one sub-object, risk theft, sumInsured < 15
@@ -59,8 +59,8 @@ class PremiumCalculatorTest {
         InsuredSubObject tv = createSubObject("TV", "12", RiskType.THEFT);
         InsuredObject house = createObject("House", tv);
         Policy policy = createPolicy("LV-1", PolicyStatus.REGISTERED, house);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("1.32"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("1.32"));
     }
 
     //one object, one sub-object, risk theft, sumInsured > 15
@@ -69,8 +69,8 @@ class PremiumCalculatorTest {
         InsuredSubObject tv = createSubObject("TV", "50", RiskType.THEFT);
         InsuredObject house = createObject("House", tv);
         Policy policy = createPolicy("LV-1", PolicyStatus.REGISTERED, house);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("2.5"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("2.50"));
     }
 
     //one object, two sub-objects, risk theft, sumInsured < 15
@@ -80,8 +80,8 @@ class PremiumCalculatorTest {
         InsuredSubObject fridge = createSubObject("Fridge", "6.5", RiskType.THEFT);
         InsuredObject house = createObject("House", tv, fridge);
         Policy policy = createPolicy("LV-1", PolicyStatus.REGISTERED, house);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("1.265"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("1.27"));
     }
 
     //one object, two sub-objects, risk theft, sumInsured > 15
@@ -91,8 +91,8 @@ class PremiumCalculatorTest {
         InsuredSubObject fridge = createSubObject("Fridge", "66", RiskType.THEFT);
         InsuredObject house = createObject("House", tv, fridge);
         Policy policy = createPolicy("LV-1", PolicyStatus.REGISTERED, house);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("5.8"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("5.80"));
     }
 
     //one object, one sub-object, risk theft and fire, sumInsured > 100
@@ -102,8 +102,8 @@ class PremiumCalculatorTest {
                 "1160", RiskType.THEFT, RiskType.FIRE);
         InsuredObject house = createObject("House", tv);
         Policy policy = createPolicy("LV-1", PolicyStatus.REGISTERED, house);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("85.84"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("85.84"));
     }
 
     //one object, two sub-objects, risk theft and fire, sumInsured < 15
@@ -115,8 +115,8 @@ class PremiumCalculatorTest {
                 "9", RiskType.THEFT, RiskType.FIRE);
         InsuredObject house = createObject("House", tv, fridge);
         Policy policy = createPolicy("LV-1", PolicyStatus.REGISTERED, house);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("1.612"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("1.61"));
     }
 
     //two objects, one sub-object, risk theft and fire, sumInsured < 100, > 15
@@ -129,8 +129,8 @@ class PremiumCalculatorTest {
         InsuredObject house = createObject("House", tv);
         InsuredObject apartment = createObject("Apartment", fridge);
         Policy policy = createPolicy("LV-1", PolicyStatus.REGISTERED, house, apartment);
-//        BigDecimal premium = calculator.calculate(policy);
-//        assertEquals(premium, new BigDecimal("6.08"));
+        BigDecimal premium = calculator.calculate(policy);
+        assertEquals(premium, new BigDecimal("6.08"));
     }
 
 

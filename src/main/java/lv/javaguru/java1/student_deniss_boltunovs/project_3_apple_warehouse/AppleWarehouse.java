@@ -8,14 +8,13 @@ class AppleWarehouse {
     private List<Apple> apples = getAllApples();
 
     List<Apple> findApplesByColor(String color) {
-        List<Apple> applesArray = new ArrayList<>();
+        List<Apple> result = new ArrayList<>();
         for (Apple apple : apples) {
-            String appleColor = apple.getColor();
-            if (appleColor.equals(color)) {
-                applesArray.add(apple);
+            if (apple.getColor().equals(color)) {
+                result.add(apple);
             }
         }
-        return applesArray;
+        return result;
     }
 
 

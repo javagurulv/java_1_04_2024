@@ -8,15 +8,21 @@ class AppleWarehouseTest {
     AppleWarehouse warehouse = new AppleWarehouse();
 
     @Test
-    void shouldReturnThreeGreenApples() {
+    void shouldReturnGreenApples() {
         int result = warehouse.findApplesByColor("green").size();
         assertEquals(3,result);
     }
 
     @Test
-    void shouldReturnThreeRedApples() {
+    void shouldReturnRedApples() {
         int result = warehouse.findApplesByColor("red").size();
         assertEquals(3,result);
+    }
+
+    @Test
+    void shouldReturnYellowApples() {
+        int result = warehouse.findApplesByColor("yellow").size();
+        assertEquals(2,result);
     }
 
 }

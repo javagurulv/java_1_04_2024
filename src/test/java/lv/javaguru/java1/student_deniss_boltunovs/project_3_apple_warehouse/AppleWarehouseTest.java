@@ -25,4 +25,16 @@ class AppleWarehouseTest {
         assertEquals(2,result);
     }
 
+    @Test
+    void shouldReturnApplesHeavierThan150() {
+        int result = warehouse.findApplesHeavierThan(150).size();
+        assertEquals(4,result);
+    }
+
+    @Test
+    void shouldReturnApplesHeavierThan170() {
+        int result = warehouse.findApplesHeavierThan(170).size();
+        assertEquals(2,result);
+    }
+
 }

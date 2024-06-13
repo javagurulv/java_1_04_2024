@@ -17,6 +17,16 @@ class AppleWarehouse {
         return result;
     }
 
+    List<Apple> findApplesHeavierThan(int weight){
+        List<Apple> result = new ArrayList<>();
+        for (Apple apple : apples) {
+            if (apple.getWeight() > weight) {
+                result.add(apple);
+            }
+        }
+        return result;
+    }
+
 
     private List<Apple> getAllApples() {
         List<Apple> apples = new ArrayList<>();

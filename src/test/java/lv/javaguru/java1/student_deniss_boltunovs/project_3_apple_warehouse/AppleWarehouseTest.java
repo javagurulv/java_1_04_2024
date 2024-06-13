@@ -2,6 +2,7 @@ package lv.javaguru.java1.student_deniss_boltunovs.project_3_apple_warehouse;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
 
 class AppleWarehouseTest {
 
@@ -41,30 +42,74 @@ class AppleWarehouseTest {
     void findApples(){
 
         ///////Green apples
-        AppleSearchCriteria green = new GreenAppleSearchCriteria();
-        int resultGreenApples = warehouse.findApples(green).size();
-        assertEquals(3, resultGreenApples);
+        List<Apple> green = warehouse.findApples(new GreenAppleSearchCriteria());
+        assertEquals(3, green.size());
 
         ///////Red apples
-        AppleSearchCriteria red = new RedAppleSearchCriteria();
-        int resultRedApples = warehouse.findApples(red).size();
-        assertEquals(3, resultRedApples);
+        List<Apple> red = warehouse.findApples(new RedAppleSearchCriteria());
+        assertEquals(3, red.size());
 
         ///////Heavy apples
-        AppleSearchCriteria heavy = new HeavyAppleSearchCriteria();
-        int resultHeavyApples = warehouse.findApples(heavy).size();
-        assertEquals(4, resultHeavyApples);
+        List<Apple> heavy = warehouse.findApples(new HeavyAppleSearchCriteria());
+        assertEquals(4, heavy.size());
 
         ///////Light apples
-        AppleSearchCriteria light = new LightAppleSearchCriteria();
-        int resultLightApples = warehouse.findApples(light).size();
-        assertEquals(4, resultLightApples);
+        List<Apple> light = warehouse.findApples(new LightAppleSearchCriteria());
+        assertEquals(4, light.size());
 
         ///////Heavy and Green apples
-        AppleSearchCriteria heavyGreen = new HeavyGreenAppleSearchCriteria();
-        int resultHeavyGreenApples = warehouse.findApples(heavyGreen).size();
-        assertEquals(1, resultHeavyGreenApples);
+        List<Apple> heavyGreen = warehouse.findApples(new HeavyGreenAppleSearchCriteria());
+        assertEquals(1, heavyGreen.size());
 
+    }
+
+    @Test
+    void findApplesByAnonymousClass(){
+
+        ///// Green apples
+        List<Apple> green = warehouse.findApples( new AppleSearchCriteria() {
+            @Override
+            public boolean searchCriteria(Apple apple) {
+                return apple.getColor().equals("green");
+            }
+        });
+        assertEquals(3, green.size());
+
+        ///// Red apples
+        List<Apple> red = warehouse.findApples( new AppleSearchCriteria() {
+            @Override
+            public boolean searchCriteria(Apple apple) {
+                return apple.getColor().equals("red");
+            }
+        });
+        assertEquals(3, red.size());
+
+        ///// Heavy apples
+        List<Apple> heavy = warehouse.findApples( new AppleSearchCriteria() {
+            @Override
+            public boolean searchCriteria(Apple apple) {
+                return apple.getWeight() > 150;
+            }
+        });
+        assertEquals(4, heavy.size());
+
+        ///// Light apples
+        List<Apple> light = warehouse.findApples( new AppleSearchCriteria() {
+            @Override
+            public boolean searchCriteria(Apple apple) {
+                return apple.getWeight() < 150;
+            }
+        });
+        assertEquals(4, light.size());
+
+        ///// Heavy and Green apples
+        List<Apple> heavyGreen = warehouse.findApples( new AppleSearchCriteria() {
+            @Override
+            public boolean searchCriteria(Apple apple) {
+                return (apple.getColor().equals("green")) && (apple.getWeight() > 150);
+            }
+        });
+        assertEquals(1, heavyGreen.size());
     }
 
 

@@ -28,6 +28,17 @@ class AppleWarehouse {
     }
 
 
+    List<Apple> findApples(AppleSearchCriteria search){
+        List<Apple> result = new ArrayList<>();
+        for (Apple apple : apples) {
+            if (search.searchCriteria(apple)) {
+                result.add(apple);
+            }
+        }
+        return result;
+    }
+
+
     private List<Apple> getAllApples() {
         List<Apple> apples = new ArrayList<>();
         apples.add(new Apple("red", 100));

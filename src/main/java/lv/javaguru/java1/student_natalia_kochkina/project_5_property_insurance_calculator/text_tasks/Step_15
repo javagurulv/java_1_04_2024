@@ -6,9 +6,11 @@
 
 - Мы должны рассчитать policy premium по формуле
     PREMIUM = PREMIUM_FIRE + PREMIUM_THEFT
+    для этого будем считать premium отдельно для каждого объекта,
+    включенного в полис, а затем находить их сумму.
 
-- Для этого мы должны рассчитать отдельно PREMIUM_FIRE и PREMIUM_THEFT
-    по формулам:
+- Для этого мы должны рассчитать отдельно для каждого объекта
+    PREMIUM_FIRE и PREMIUM_THEFT по формулам:
 
     PREMIUM_FIRE = SUM_INSURED_FIRE * COEFFICIENT_FIRE
     COEFFICIENT_FIRE = 0.014 по умолчанию, но если общая страховая
@@ -18,5 +20,7 @@
     COEFFICIENT_THEFT = 0.11 по умолчанию, но если обзая страховая
         сумма >= 15, то = 0.05
 
-- Перед этим мы должны рассчитать SUM_INSURED. Для рассчета мы складываем
-    Sum Insured всех подобъектов из объектов, переданных в policy.
+- для подсчета SUM_INSURED_FIRE для одного объекта мы должны
+    выбрать все его подобъекты с RiskType FIRE и сложить их
+    SUM_INSURED.
+    Аналогично, для SUM_INSURED_THEFT.

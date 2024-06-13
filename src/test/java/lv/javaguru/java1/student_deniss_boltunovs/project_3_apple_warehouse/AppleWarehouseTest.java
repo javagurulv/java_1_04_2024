@@ -9,9 +9,14 @@ class AppleWarehouseTest {
 
     @Test
     void shouldReturnThreeGreenApples() {
-        int result = warehouse.getAllGreenApples().size();
+        int result = warehouse.findApplesByColor("green").size();
         assertEquals(3,result);
     }
 
+    @Test
+    void shouldReturnThreeRedApples() {
+        int result = warehouse.findApplesByColor("red").size();
+        assertEquals(3,result);
+    }
 
 }

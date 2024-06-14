@@ -6,6 +6,12 @@ class MaxMarkFinderTest {
         MaxMarkFinderTest test = new MaxMarkFinderTest();
         test.maxMarkShouldBe5();
         test.maxMarkShouldBe10();
+        test.maxMarkShouldBe0();
+        test.maxMarkNullCase();
+//        System.out.println(test);
+//
+//        int[] num = null;
+//        System.out.println(num);
     }
 
     private void maxMarkShouldBe5() {
@@ -20,6 +26,20 @@ class MaxMarkFinderTest {
         MaxMarkFinder finder = new MaxMarkFinder();
         int realResult = finder.findMaxMark(marks);
         checkResult(realResult, 10, "maxMarkShouldBe10");
+    }
+
+    private void maxMarkShouldBe0() {
+        int[] marks = {};
+        MaxMarkFinder finder = new MaxMarkFinder();
+        int realResult = finder.findMaxMark(marks);
+        checkResult(realResult, 0, "maxMarkShouldBe0");
+    }
+
+    private void maxMarkNullCase() {
+        int[] marks = null;
+        MaxMarkFinder finder = new MaxMarkFinder();
+        int realResult = finder.findMaxMark(marks);
+        checkResult(realResult, 0, "maxMarkNullCase");
     }
 
 

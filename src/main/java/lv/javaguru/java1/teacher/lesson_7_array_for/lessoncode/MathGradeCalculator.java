@@ -12,4 +12,15 @@ class MathGradeCalculator {
         return maxGrade;
     }
 
+    int findMinGrade(int[] grades) {
+        int minGrade = grades[0];
+        for (int i = 0; i < grades.length; i++) {
+            if (minGrade > grades[i]) {
+                minGrade = grades[i];
+            }
+        }
+        return minGrade;
+    }
+
+
 }

@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_eyheni_salmin.lesson_2.Class;
 
-public class Calculator {
+public class IntegerCalculator {
     public static void main(String[] args) {
 
         printResult(100, 200);
@@ -15,7 +15,7 @@ public class Calculator {
     public static int getNumMultipl(int NumOne, int NumTwo) {
         return NumOne * NumTwo;
     }
-    public static int getNumDivision(int NumOne, int NumTwo) {
+    public static float getNumDivision(float NumOne, float NumTwo) {
         return NumOne / NumTwo;
     }
 

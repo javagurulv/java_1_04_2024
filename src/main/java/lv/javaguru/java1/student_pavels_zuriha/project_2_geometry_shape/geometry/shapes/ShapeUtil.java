@@ -44,4 +44,13 @@ class ShapeUtil {
         return areaSum;
     }
 
+    double calculatePerimeter(Shape[] shapes) {
+
+        double perimeterSum = 0.0;
+        for (Shape i : shapes) {
+            perimeterSum = perimeterSum + i.calculatePerimeter();
+        }
+        return perimeterSum;
+    }
+
 }

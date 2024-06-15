@@ -8,7 +8,7 @@ class ShapeUtil {
 
     public Circle createRandomCircle() {
         double radius = randomNumbers.nextDouble((6) + 1);
-        return new Circle("Circle",radius);
+        return new Circle("Circle", radius);
     }
 
     public Square createRandomSquare() {
@@ -34,4 +34,14 @@ class ShapeUtil {
             return createRandomRectangle();
         }
     }
+
+    double calculateArea(Shape[] shapes) {
+
+        double areaSum = 0.0;
+        for (Shape i : shapes) {
+            areaSum = areaSum + i.calculateArea();
+        }
+        return areaSum;
+    }
+
 }

@@ -10,11 +10,11 @@ class FraudDetector {
         List<Supplier<Boolean>> fraudRules = new ArrayList<>();
 
         // Adding instances of each fraud rule
-        fraudRules.add(() -> new FraudRule1().fraudRule1(transaction));
-        fraudRules.add(() -> new FraudRule2().fraudRule2(transaction));
-        fraudRules.add(() -> new FraudRule3().fraudRule3(transaction));
-        fraudRules.add(() -> new FraudRule4().fraudRule4(transaction));
-        fraudRules.add(() -> new FraudRule5().fraudRule5(transaction));
+        fraudRules.add(() -> new FraudRule1().isFraud(transaction));
+        fraudRules.add(() -> new FraudRule2().isFraud(transaction));
+        fraudRules.add(() -> new FraudRule3().isFraud(transaction));
+        fraudRules.add(() -> new FraudRule4().isFraud(transaction));
+        fraudRules.add(() -> new FraudRule5().isFraud(transaction));
 
         // Checking each rule
         for (Supplier<Boolean> rule : fraudRules) {

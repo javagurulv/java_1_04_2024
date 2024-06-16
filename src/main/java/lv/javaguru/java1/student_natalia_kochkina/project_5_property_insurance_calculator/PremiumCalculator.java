@@ -5,6 +5,13 @@ import java.math.RoundingMode;
 
 class PremiumCalculator {
 
+    private static final BigDecimal DEFAULT_COEFFICIENT_FIRE = new BigDecimal("0.014");
+    private static final BigDecimal DEFAULT_COEFFICIENT_THEFT = new BigDecimal("0.11");
+    private static final BigDecimal COEFFICIENT_FIRE = new BigDecimal("0.024");
+    private static final BigDecimal COEFFICIENT_THEFT = new BigDecimal("0.05");
+    private static final BigDecimal FIRE_SUM_INSURED_LIMIT = new BigDecimal("100");
+    private static final BigDecimal THEFT_SUM_INSURED_LIMIT = new BigDecimal("15");
+
     BigDecimal calculate(Policy policy) {
         BigDecimal premium = policy.getObjects().stream()
                 .map(this::calculatePremiumForObject)
@@ -19,20 +26,28 @@ class PremiumCalculator {
     }
 
     private BigDecimal calculatePremiumFire(InsuredObject object) {
-        BigDecimal sumInsuredFire = calculateSumInsuredFire(object);
-        if (sumInsuredFire.compareTo(new BigDecimal("100")) > 0) {
-            return sumInsuredFire.multiply(new BigDecimal("0.024"));
-        } else {
-            return sumInsuredFire.multiply(new BigDecimal("0.014"));
-        }
+        return calculateSumInsuredFire(object)
+                .multiply(calculateCoefficientFire(object));
     }
 
     private BigDecimal calculatePremiumTheft(InsuredObject object) {
-        BigDecimal sumInsuredTheft = calculateSumInsuredTheft(object);
-        if (sumInsuredTheft.compareTo(new BigDecimal("15")) >= 0) {
-            return sumInsuredTheft.multiply(new BigDecimal("0.05"));
+        return calculateSumInsuredTheft(object)
+                .multiply(calculateCoefficientTheft(object));
+    }
+
+    private BigDecimal calculateCoefficientFire(InsuredObject object) {
+        if (calculateSumInsuredFire(object).compareTo(FIRE_SUM_INSURED_LIMIT) > 0) {
+            return COEFFICIENT_FIRE;
         } else {
-            return sumInsuredTheft.multiply(new BigDecimal("0.11"));
+            return DEFAULT_COEFFICIENT_FIRE;
+        }
+    }
+
+    private BigDecimal calculateCoefficientTheft(InsuredObject object) {
+        if (calculateSumInsuredTheft(object).compareTo(THEFT_SUM_INSURED_LIMIT) >= 0) {
+            return COEFFICIENT_THEFT;
+        } else {
+            return DEFAULT_COEFFICIENT_THEFT;
         }
     }
 

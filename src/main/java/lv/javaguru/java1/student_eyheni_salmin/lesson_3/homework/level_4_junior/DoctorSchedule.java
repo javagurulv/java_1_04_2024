@@ -49,10 +49,10 @@ public class DoctorSchedule {
         String time;
         if (aMpM.equalsIgnoreCase("am")) {
             time = "10:00-12:00";
-        }if (aMpM.equalsIgnoreCase("pm")) {
+        }else if (aMpM.equalsIgnoreCase("pm")) {
             time = "14:00-16:00";
         }else {
-            time = "10:00-12:00";
+            time = "error";
         }
         return time;
     }

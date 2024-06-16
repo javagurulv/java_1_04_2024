@@ -1,4 +1,4 @@
-package lv.javaguru.java1.teacher.lesson_3_oop_first_look.homework.level_1_intern;
+package lv.javaguru.java1.student_eyheni_salmin.lesson_3.homework.level_1_intern;
 
 public class Robot {
     private String name;
@@ -11,5 +11,8 @@ public class Robot {
     }
     public String getRobotName() {
         return name;
+    }
+    public void setRobotName(String name) {
+        this.name = name;
     }
 }

@@ -1,6 +1,6 @@
 package lv.javaguru.java1.teacher.lesson_3_oop_first_look.homework.solutions.level_3_junior.task_1;
 
-class Book {
+class  Book {
 
     private String title;
     private String author;

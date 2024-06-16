@@ -4,8 +4,8 @@ class FraudRule4 implements FraudRule{
 
     public boolean isFraud(Transaction transaction) {
         if(transaction.getTrader().getCountry().equals("Jamaica")){
-            return false;
+            return true;
         }
-        else return true;
+        else return false;
     }
 }

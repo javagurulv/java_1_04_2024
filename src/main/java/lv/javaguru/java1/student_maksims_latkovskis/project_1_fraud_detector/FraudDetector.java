@@ -18,11 +18,11 @@ class FraudDetector {
 
         // Checking each rule
         for (Supplier<Boolean> rule : fraudRules) {
-            if (!rule.get()) {
-                return false;
+            if (rule.get()) {
+                return true;
             }
         }
-        return true;
+        return false;
 
     }
 }

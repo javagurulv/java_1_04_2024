@@ -4,8 +4,8 @@ class FraudRule3 implements FraudRule {
 
     public boolean isFraud(Transaction transaction) {
         if (transaction.getTrader().getCity().equals("Sydney")) {
-            return false;
+            return true;
         }
-        else return true;
+        else return false;
     }
 }

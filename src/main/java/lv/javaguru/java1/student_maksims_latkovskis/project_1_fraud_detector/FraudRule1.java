@@ -4,8 +4,8 @@ class FraudRule1 implements FraudRule {
 
     public boolean isFraud(Transaction transaction){
         if(transaction.getTrader().getFullName().equals("Pokemon")){
-            return false;
+            return true;
         }
-        else return true;
+        else return false;
     }
 }

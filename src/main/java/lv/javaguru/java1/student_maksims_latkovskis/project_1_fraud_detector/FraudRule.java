@@ -2,5 +2,5 @@ package lv.javaguru.java1.student_maksims_latkovskis.project_1_fraud_detector;
 
 public interface FraudRule {
 
-    boolean isFraud(Transaction t);
+   FraudDetectionResult isFraud(Transaction t);
 }

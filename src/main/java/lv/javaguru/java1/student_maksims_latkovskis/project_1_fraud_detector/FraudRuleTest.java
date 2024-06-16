@@ -17,7 +17,10 @@ class FraudRuleTest {
         Transaction transaction = new Transaction(trader, 4);
 
         FraudRule1 fraudRule1 = new FraudRule1();
-        if(fraudRule1.isFraud(transaction)) System.out.println("Test 1 Pass");
+        if(fraudRule1.isFraud(transaction).isFraud()){
+            System.out.print("Test 1 Pass");
+            System.out.println(" " + fraudRule1.isFraud(transaction).getRuleName());
+        }
         else System.out.println("Test 1 Fail");
     }
 
@@ -26,7 +29,10 @@ class FraudRuleTest {
         Transaction transaction = new Transaction(trader, 9999999);
 
         FraudRule2 fraudRule2 = new FraudRule2();
-        if(fraudRule2.isFraud(transaction)) System.out.println("Test 2 Pass");
+        if(fraudRule2.isFraud(transaction).isFraud()) {
+            System.out.print("Test 2 Pass");
+            System.out.println(" " + fraudRule2.isFraud(transaction).getRuleName());
+        }
         else System.out.println("Test 2 Fail");
     }
 
@@ -35,7 +41,10 @@ class FraudRuleTest {
         Transaction transaction = new Transaction(trader, 4);
 
         FraudRule3 fraudRule3 = new FraudRule3();
-        if(fraudRule3.isFraud(transaction)) System.out.println("Test 3 Pass");
+        if(fraudRule3.isFraud(transaction).isFraud()){
+            System.out.print("Test 3 Pass");
+            System.out.println(" " + fraudRule3.isFraud(transaction).getRuleName());
+        }
         else System.out.println("Test 3 Fail");
     }
 
@@ -44,7 +53,10 @@ class FraudRuleTest {
         Transaction transaction = new Transaction(trader, 4);
 
         FraudRule4 fraudRule4 = new FraudRule4();
-        if(fraudRule4.isFraud(transaction)) System.out.println("Test 4 Pass");
+        if(fraudRule4.isFraud(transaction).isFraud()){
+            System.out.print("Test 4 Pass");
+            System.out.println(" " + fraudRule4.isFraud(transaction).getRuleName());
+        }
         else System.out.println("Test 4 Fail");
     }
 
@@ -53,7 +65,10 @@ class FraudRuleTest {
         Transaction transaction = new Transaction(trader, 2000);
 
         FraudRule5 fraudRule5 = new FraudRule5();
-        if(fraudRule5.isFraud(transaction)) System.out.println("Test 5 Pass");
+        if(fraudRule5.isFraud(transaction).isFraud()){
+            System.out.print("Test 5 Pass");
+            System.out.println(" " + fraudRule5.isFraud(transaction).getRuleName());
+        }
         else System.out.println("Test 5 Fail");
     }
 

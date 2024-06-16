@@ -6,8 +6,8 @@ import java.util.function.Supplier;
 
 class FraudDetector {
 
-    boolean isFraud(Transaction transaction) {
-        List<Supplier<Boolean>> fraudRules = new ArrayList<>();
+    FraudDetectionResult isFraud(Transaction transaction) {
+        List<Supplier<FraudDetectionResult>> fraudRules = new ArrayList<>();
 
         // Adding instances of each fraud rule
         fraudRules.add(() -> new FraudRule1().isFraud(transaction));
@@ -17,12 +17,12 @@ class FraudDetector {
         fraudRules.add(() -> new FraudRule5().isFraud(transaction));
 
         // Checking each rule
-        for (Supplier<Boolean> rule : fraudRules) {
-            if (rule.get()) {
-                return true;
+        for (Supplier<FraudDetectionResult> rule : fraudRules) {
+            if (rule.get().isFraud()) {
+                return rule.get();
             }
         }
-        return false;
+        return new FraudDetectionResult(false, null);
 
     }
 }

@@ -2,10 +2,10 @@ package lv.javaguru.java1.student_maksims_latkovskis.project_1_fraud_detector;
 
 class FraudRule3 implements FraudRule {
 
-    public boolean isFraud(Transaction transaction) {
+    public FraudDetectionResult isFraud(Transaction transaction) {
         if (transaction.getTrader().getCity().equals("Sydney")) {
-            return true;
+           return new FraudDetectionResult(true, "FraudRule3");
         }
-        else return false;
+        else return new FraudDetectionResult(false, null);
     }
 }

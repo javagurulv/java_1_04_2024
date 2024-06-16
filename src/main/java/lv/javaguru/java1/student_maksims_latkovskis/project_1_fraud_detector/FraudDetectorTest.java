@@ -66,8 +66,8 @@ class FraudDetectorTest {
         Trader trader = new Trader(fullName, city, country);
         Transaction transaction = new Transaction(trader, amount);
         FraudDetector fraudDetector = new FraudDetector();
-        boolean isValid = fraudDetector.isFraud(transaction);
-        if (isValid == expectedOutput) System.out.println(testName + " Pass");
+        FraudDetectionResult isValid = fraudDetector.isFraud(transaction);
+        if (isValid.isFraud() == expectedOutput) System.out.println(testName + " Pass");
         else System.out.println(testName + " Fail");
     }
 

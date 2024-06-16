@@ -3,6 +3,7 @@ package lv.javaguru.java1.student_natalia_kochkina.project_5_property_insurance_
 enum RiskType {
 
     FIRE,
-    THEFT
+    THEFT,
+    FLOOD
 
 }

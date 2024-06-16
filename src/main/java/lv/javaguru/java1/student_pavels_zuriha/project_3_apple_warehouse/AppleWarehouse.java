@@ -29,7 +29,17 @@ class AppleWarehouse {
                 greenApplesCount += 1;
             }
         }
+        return greenApplesCount;
+    }
 
+    public int countRedApples(List<Apple> apples) {
+
+        int greenApplesCount = 0;
+        for (Apple apple : apples) {
+            if (apple.getColor().equals("red")) {
+                greenApplesCount += 1;
+            }
+        }
         return greenApplesCount;
     }
 

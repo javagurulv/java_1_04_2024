@@ -8,6 +8,7 @@ class AppleWarehouseTest {
 
         AppleWarehouseTest test = new AppleWarehouseTest();
         test.testGreenAppleCount();
+        test.testRedAppleCount();
 
     }
 
@@ -22,7 +23,19 @@ class AppleWarehouseTest {
         } else {
             System.out.println("Test FAILED. Real Result: " + realResult);
         }
+    }
 
+    void testRedAppleCount() {
+
+        AppleWarehouse appleWarehouse = new AppleWarehouse();
+        List<Apple> apples = appleWarehouse.getAllApples();
+
+        int realResult = appleWarehouse.countRedApples(apples);
+        if (realResult == 3) {
+            System.out.println("Test OK");
+        } else {
+            System.out.println("Test FAILED. Real Result: " + realResult);
+        }
     }
 
 

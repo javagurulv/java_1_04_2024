@@ -36,19 +36,15 @@ class PremiumCalculator {
     }
 
     private BigDecimal calculateCoefficientFire(InsuredObject object) {
-        if (calculateSumInsuredFire(object).compareTo(FIRE_SUM_INSURED_LIMIT) > 0) {
-            return COEFFICIENT_FIRE;
-        } else {
-            return DEFAULT_COEFFICIENT_FIRE;
-        }
+        return calculateSumInsuredFire(object).compareTo(FIRE_SUM_INSURED_LIMIT) > 0
+                ? COEFFICIENT_FIRE
+                : DEFAULT_COEFFICIENT_FIRE;
     }
 
     private BigDecimal calculateCoefficientTheft(InsuredObject object) {
-        if (calculateSumInsuredTheft(object).compareTo(THEFT_SUM_INSURED_LIMIT) >= 0) {
-            return COEFFICIENT_THEFT;
-        } else {
-            return DEFAULT_COEFFICIENT_THEFT;
-        }
+        return calculateSumInsuredTheft(object).compareTo(THEFT_SUM_INSURED_LIMIT) >= 0
+                ? COEFFICIENT_THEFT
+                : DEFAULT_COEFFICIENT_THEFT;
     }
 
     private BigDecimal calculateSumInsuredFire(InsuredObject object) {

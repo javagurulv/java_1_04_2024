@@ -2,18 +2,13 @@ package lv.javaguru.java1.student_natalia_kochkina.project_5_property_insurance_
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 
 class PremiumCalculator {
 
-    private static final BigDecimal DEFAULT_COEFFICIENT_FIRE = new BigDecimal("0.014");
-    private static final BigDecimal DEFAULT_COEFFICIENT_THEFT = new BigDecimal("0.11");
-    private static final BigDecimal COEFFICIENT_FIRE = new BigDecimal("0.024");
-    private static final BigDecimal COEFFICIENT_THEFT = new BigDecimal("0.05");
-    private static final BigDecimal FIRE_SUM_INSURED_LIMIT = new BigDecimal("100");
-    private static final BigDecimal THEFT_SUM_INSURED_LIMIT = new BigDecimal("15");
-    private static final BigDecimal DEFAULT_COEFFICIENT_FLOOD = new BigDecimal("0.014");
-    private static final BigDecimal COEFFICIENT_FLOOD = new BigDecimal("0.024");
-    private static final BigDecimal FLOOD_SUM_INSURED_LIMIT = new BigDecimal("100");
+    List<RiskTypeCalculator> calculators = List.of(new FireRiskCalculator(),
+            new TheftRiskCalculator(),
+            new FloodRiskCalculator());
 
     BigDecimal calculate(Policy policy) {
         BigDecimal premium = policy.getObjects().stream()
@@ -24,65 +19,8 @@ class PremiumCalculator {
     }
 
     private BigDecimal calculatePremiumForObject(InsuredObject object) {
-        return calculatePremiumFire(object)
-                .add(calculatePremiumTheft(object))
-                .add(calculatePremiumFlood(object));
-    }
-
-    private BigDecimal calculatePremiumFire(InsuredObject object) {
-        return calculateSumInsuredFire(object)
-                .multiply(calculateCoefficientFire(object));
-    }
-
-    private BigDecimal calculatePremiumTheft(InsuredObject object) {
-        return calculateSumInsuredTheft(object)
-                .multiply(calculateCoefficientTheft(object));
-    }
-
-    private BigDecimal calculatePremiumFlood(InsuredObject object) {
-        return calculateSumInsuredFlood(object)
-                .multiply(calculateCoefficientFlood(object));
-    }
-
-    private BigDecimal calculateCoefficientFire(InsuredObject object) {
-        return calculateSumInsuredFire(object).compareTo(FIRE_SUM_INSURED_LIMIT) > 0
-                ? COEFFICIENT_FIRE
-                : DEFAULT_COEFFICIENT_FIRE;
-    }
-
-    private BigDecimal calculateCoefficientTheft(InsuredObject object) {
-        return calculateSumInsuredTheft(object).compareTo(THEFT_SUM_INSURED_LIMIT) >= 0
-                ? COEFFICIENT_THEFT
-                : DEFAULT_COEFFICIENT_THEFT;
-    }
-
-    private BigDecimal calculateCoefficientFlood(InsuredObject object) {
-        return calculateSumInsuredFlood(object).compareTo(FLOOD_SUM_INSURED_LIMIT) >= 0
-                ? COEFFICIENT_FLOOD
-                : DEFAULT_COEFFICIENT_FLOOD;
-    }
-
-    private BigDecimal calculateSumInsuredFire(InsuredObject object) {
-        return object.getSubObjects().stream()
-                .filter(insuredSubObject -> insuredSubObject.getRiskTypes()
-                        .contains(RiskType.FIRE))
-                .map(InsuredSubObject::getSumInsured)
-                .reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
-    }
-
-    private BigDecimal calculateSumInsuredTheft(InsuredObject object) {
-        return object.getSubObjects().stream()
-                .filter(insuredSubObject -> insuredSubObject.getRiskTypes()
-                        .contains(RiskType.THEFT))
-                .map(InsuredSubObject::getSumInsured)
-                .reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
-    }
-
-    private BigDecimal calculateSumInsuredFlood(InsuredObject object) {
-        return object.getSubObjects().stream()
-                .filter(insuredSubObject -> insuredSubObject.getRiskTypes()
-                        .contains(RiskType.FLOOD))
-                .map(InsuredSubObject::getSumInsured)
+        return calculators.stream()
+                .map(calculator -> calculator.calculatePremium(object))
                 .reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
     }
 

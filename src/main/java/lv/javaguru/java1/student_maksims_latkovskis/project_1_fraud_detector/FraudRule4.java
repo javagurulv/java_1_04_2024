@@ -8,4 +8,8 @@ class FraudRule4 implements FraudRule{
         }
         else return new FraudDetectionResult(true, null);
     }
+
+    public String getRuleName(){
+        return "FraudRule4";
+    }
 }

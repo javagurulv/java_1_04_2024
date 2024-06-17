@@ -7,10 +7,10 @@ class AppleWarehouse {
 
     private List<Apple> apples = getAllApples();
 
-    public List<Apple> findHeavyApples() {
+    public List<Apple> findHeavyApples(int heavyWeight) {
         List<Apple> result = new ArrayList<>();
         for(Apple apple : apples) {
-            if(apple.getWeight() > 150) {
+            if(apple.getWeight() > heavyWeight) {
                 result.add(apple);
             }
         }

@@ -45,9 +45,20 @@ class TransactionAnalysisServiceTest {
 
     @Test
     void shouldReturnTransactionForYear2011SortedDesc() {
-        List<Transaction> result = service.returnTransactionForYear2011SortedAsc(testData);
+        List<Transaction> result = service.returnTransactionForSelectedYearSortedAsc(testData, 2011);
         assertEquals(result.get(0).getValue(), 300);
         assertEquals(result.get(1).getValue(), 400);
+    }
+
+    @Test
+    void shouldReturnTransactionYears() {
+        List<Integer> result = service.returnTransactionYear(testData);
+        assertEquals(result.get(0), 2011);
+        assertEquals(result.get(1), 2012);
+        assertEquals(result.get(2), 2011);
+        assertEquals(result.get(3), 2012);
+        assertEquals(result.get(4), 2012);
+        assertEquals(result.get(5), 2012);
     }
 
 }

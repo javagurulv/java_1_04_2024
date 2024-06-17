@@ -31,10 +31,16 @@ class TransactionAnalysisService {
                 .collect(Collectors.toList());
     }
 
-    List<Transaction> returnTransactionForYear2011SortedAsc(List<Transaction> transactions){
+    List<Transaction> returnTransactionForSelectedYearSortedAsc(List<Transaction> transactions, int year){
         return transactions.stream()
-                .filter(t -> t.getYear() == 2011)
+                .filter(t -> t.getYear() == year)
                 .sorted(Comparator.comparingInt(Transaction::getValue))
+                .collect(Collectors.toList());
+    }
+
+    List<Integer> returnTransactionYear(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(Transaction::getYear)
                 .collect(Collectors.toList());
     }
 

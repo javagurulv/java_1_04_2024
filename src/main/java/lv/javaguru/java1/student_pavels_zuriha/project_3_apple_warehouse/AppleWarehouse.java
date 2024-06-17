@@ -7,6 +7,16 @@ class AppleWarehouse {
 
     private List<Apple> apples = getAllApples();
 
+    public List<Apple> findHeavyApples() {
+        List<Apple> result = new ArrayList<>();
+        for(Apple apple : apples) {
+            if(apple.getWeight() > 150) {
+                result.add(apple);
+            }
+        }
+        return result;
+    }
+
     public List<Apple> getAllApples() {
         List<Apple> apples = new ArrayList<>();
         apples.add(new Apple("red", 100));
@@ -53,6 +63,5 @@ class AppleWarehouse {
         }
         return appleCount;
     }
-
 
 }

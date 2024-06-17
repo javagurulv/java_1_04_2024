@@ -21,5 +21,15 @@ class TransactionAnalysisServiceTest {
         assertEquals(4, result.size());
     }
 
+    @Test
+    void shouldReturnSortedTransactions() {
+        List<Transaction> result = service.returnTransactionSortedASC(testData);
+        assertEquals(result.get(0).getValue(), 300);
+        assertEquals(result.get(1).getValue(), 400);
+        assertEquals(result.get(2).getValue(), 700);
+        assertEquals(result.get(3).getValue(), 710);
+        assertEquals(result.get(4).getValue(), 950);
+        assertEquals(result.get(5).getValue(), 1000);
+    }
 
 }

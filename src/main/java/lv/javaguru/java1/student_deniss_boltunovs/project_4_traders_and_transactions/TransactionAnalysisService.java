@@ -1,5 +1,6 @@
 package lv.javaguru.java1.student_deniss_boltunovs.project_4_traders_and_transactions;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,5 +18,10 @@ class TransactionAnalysisService {
                 .collect(Collectors.toList());
     }
 
+    List<Transaction> returnTransactionSortedASC(List<Transaction> transactions) {
+        return transactions.stream()
+                .sorted(Comparator.comparingInt(Transaction::getValue))
+                .collect(Collectors.toList()) ;
+    }
 
 }

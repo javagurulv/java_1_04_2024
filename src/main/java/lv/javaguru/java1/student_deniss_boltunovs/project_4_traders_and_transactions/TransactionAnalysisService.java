@@ -2,6 +2,7 @@ package lv.javaguru.java1.student_deniss_boltunovs.project_4_traders_and_transac
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 class TransactionAnalysisService {
@@ -43,5 +44,17 @@ class TransactionAnalysisService {
                 .map(Transaction::getYear)
                 .collect(Collectors.toList());
     }
+
+    List<Integer> returnTransactionUniqueYear(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(Transaction::getYear)
+                .distinct().collect(Collectors.toList());
+    }
+
+//    Set<Integer> returnTransactionUniqueYearV2(List<Transaction> transactions) {
+//        return transactions.stream()
+//                .map(Transaction::getYear)
+//                .collect(Collectors.toSet());
+//    }
 
 }

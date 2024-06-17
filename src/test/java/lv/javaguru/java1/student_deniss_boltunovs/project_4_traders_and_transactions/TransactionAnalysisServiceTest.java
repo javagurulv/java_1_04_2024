@@ -22,14 +22,32 @@ class TransactionAnalysisServiceTest {
     }
 
     @Test
-    void shouldReturnSortedTransactions() {
-        List<Transaction> result = service.returnTransactionSortedASC(testData);
+    void shouldReturnTransactionSortedAsc() {
+        List<Transaction> result = service.returnTransactionSortedAsc(testData);
         assertEquals(result.get(0).getValue(), 300);
         assertEquals(result.get(1).getValue(), 400);
         assertEquals(result.get(2).getValue(), 700);
         assertEquals(result.get(3).getValue(), 710);
         assertEquals(result.get(4).getValue(), 950);
         assertEquals(result.get(5).getValue(), 1000);
+    }
+
+    @Test
+    void shouldReturnTransactionSortedDesc() {
+        List<Transaction> result = service.returnTransactionSortedDesc(testData);
+        assertEquals(result.get(0).getValue(), 1000);
+        assertEquals(result.get(1).getValue(), 950);
+        assertEquals(result.get(2).getValue(), 710);
+        assertEquals(result.get(3).getValue(), 700);
+        assertEquals(result.get(4).getValue(), 400);
+        assertEquals(result.get(5).getValue(), 300);
+    }
+
+    @Test
+    void shouldReturnTransactionForYear2011SortedDesc() {
+        List<Transaction> result = service.returnTransactionForYear2011SortedAsc(testData);
+        assertEquals(result.get(0).getValue(), 300);
+        assertEquals(result.get(1).getValue(), 400);
     }
 
 }

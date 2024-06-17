@@ -18,10 +18,24 @@ class TransactionAnalysisService {
                 .collect(Collectors.toList());
     }
 
-    List<Transaction> returnTransactionSortedASC(List<Transaction> transactions) {
+    List<Transaction> returnTransactionSortedAsc(List<Transaction> transactions) {
         return transactions.stream()
                 .sorted(Comparator.comparingInt(Transaction::getValue))
                 .collect(Collectors.toList()) ;
+    }
+
+
+    List<Transaction> returnTransactionSortedDesc(List<Transaction> transactions){
+        return transactions.stream()
+                .sorted(Comparator.comparingInt(Transaction::getValue).reversed())
+                .collect(Collectors.toList());
+    }
+
+    List<Transaction> returnTransactionForYear2011SortedAsc(List<Transaction> transactions){
+        return transactions.stream()
+                .filter(t -> t.getYear() == 2011)
+                .sorted(Comparator.comparingInt(Transaction::getValue))
+                .collect(Collectors.toList());
     }
 
 }

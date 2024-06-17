@@ -2,7 +2,7 @@ package lv.javaguru.java1.student_deniss_boltunovs.project_4_traders_and_transac
 
 import java.util.Comparator;
 import java.util.List;
-//import java.util.Set;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 class TransactionAnalysisService {
@@ -56,5 +56,13 @@ class TransactionAnalysisService {
 //                .map(Transaction::getYear)
 //                .collect(Collectors.toSet());
 //    }
+
+
+    Set<String> returnTransactionUniqueTraders(List<Transaction> transactions) {
+         return transactions.stream()
+                 .map(Transaction::getTrader)
+                 .map(Trader::getName)
+                 .collect(Collectors.toSet());
+    }
 
 }

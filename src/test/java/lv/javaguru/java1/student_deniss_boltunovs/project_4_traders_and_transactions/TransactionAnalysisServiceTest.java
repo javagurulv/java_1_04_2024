@@ -2,6 +2,7 @@ package lv.javaguru.java1.student_deniss_boltunovs.project_4_traders_and_transac
 
 import org.junit.jupiter.api.Test;
 import java.util.List;
+import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TransactionAnalysisServiceTest {
@@ -67,6 +68,16 @@ class TransactionAnalysisServiceTest {
         assertEquals(result.size(), 2);
         assertEquals(result.get(0), 2011);
         assertEquals(result.get(1), 2012);
+    }
+
+    @Test
+    void shouldReturnTransactionUniqueTraders(){
+        Set<String> result = service.returnTransactionUniqueTraders(testData);
+        assertEquals(result.size(), 4);
+        assertTrue(result.contains("Brian"));
+        assertTrue(result.contains("Raoul"));
+        assertTrue(result.contains("Mario"));
+        assertTrue(result.contains("Alan"));
     }
 
 }

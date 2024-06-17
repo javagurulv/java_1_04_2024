@@ -11,4 +11,11 @@ class TransactionAnalysisService {
                  .collect(Collectors.toList());
     }
 
+    List<Transaction> returnTransactionForSelectedYear(List<Transaction> transactions, int year){
+        return transactions.stream()
+                .filter(t -> t.getYear() == year)
+                .collect(Collectors.toList());
+    }
+
+
 }

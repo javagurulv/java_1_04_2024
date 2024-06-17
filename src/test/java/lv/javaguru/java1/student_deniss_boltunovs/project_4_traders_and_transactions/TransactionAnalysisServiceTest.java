@@ -11,8 +11,14 @@ class TransactionAnalysisServiceTest {
 
     @Test
     void shouldReturnOnlyTransactionsForYear2011(){
-        List<Transaction> result = service.returnTransactionForYear2011(testData);
+        List<Transaction> result = service.returnTransactionForSelectedYear(testData, 2011);
         assertEquals(2, result.size());
+    }
+
+    @Test
+    void shouldReturnOnlyTransactionsForYear2012(){
+        List<Transaction> result = service.returnTransactionForSelectedYear(testData, 2012);
+        assertEquals(4, result.size());
     }
 
 

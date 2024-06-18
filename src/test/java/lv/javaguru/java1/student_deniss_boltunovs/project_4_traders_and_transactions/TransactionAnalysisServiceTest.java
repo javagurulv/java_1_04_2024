@@ -99,9 +99,40 @@ class TransactionAnalysisServiceTest {
 
     @Test
     void shouldReturnTransactionUniqueTraderFromSelectedCity(){
-        Set<String> result = service.returnUniqueTraderFromSelectedCity(testData, "Milan");
-        assertEquals(1, result.size());
-        assertTrue(result.contains("Mario"));
+        Set<String> tradersFromMilan = service.returnUniqueTraderFromSelectedCity(testData, "Milan");
+        Set<String> tradersFromCambridge = service.returnUniqueTraderFromSelectedCity(testData, "Cambridge");
+
+        ///// traders from Milan
+        assertEquals(1, tradersFromMilan.size());
+        assertTrue(tradersFromMilan.contains("Mario"));
+
+        //// traders from Cambridge
+        assertEquals(3, tradersFromCambridge.size());
+        assertTrue(tradersFromCambridge.contains("Raoul"));
+        assertTrue(tradersFromCambridge.contains("Alan"));
+        assertTrue(tradersFromCambridge.contains("Brian"));
+    }
+
+    @Test
+    void shouldReturnTransactionsTotalValueForSelectedYear(){
+        int value2011 = service.sumTransactionValueForSelectedYear(testData,2011);
+        int value2012 = service.sumTransactionValueForSelectedYear(testData,2012);
+        assertEquals(700, value2011);
+        assertEquals(3360,value2012);
+    }
+
+    @Test
+    void shouldReturnTransactionsCountForSelectedYear(){
+        long count2011 = service.countTransactionsForSelectedYear(testData,2011);
+        long count2012 = service.countTransactionsForSelectedYear(testData,2012);
+        assertEquals(2, count2011);
+        assertEquals(4, count2012);
+    }
+
+    @Test
+    void shouldReturnAverageTransactionValue(){
+        double result = service.averageTransactionValue(testData);
+        assertEquals(676.66, result,2);
     }
 
 }

@@ -88,4 +88,21 @@ class TransactionAnalysisService {
                 .collect(Collectors.toSet());
     }
 
+    int sumTransactionValueForSelectedYear(List<Transaction> transactions, int year){
+        return transactions.stream()
+                .filter(t -> t.getYear() == year)
+                .mapToInt(Transaction::getValue).sum();
+    }
+
+    long countTransactionsForSelectedYear(List<Transaction> transactions, int year){
+        return transactions.stream()
+                .filter(t -> t.getYear() == year).count();
+    }
+
+    double averageTransactionValue(List<Transaction> transactions){
+        double totalValue = transactions.stream()
+                          .mapToInt(Transaction::getValue).sum();
+        return totalValue / transactions.size();
+    }
+
 }

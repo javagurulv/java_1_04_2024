@@ -71,8 +71,8 @@ class TransactionAnalysisServiceTest {
     }
 
     @Test
-    void shouldReturnTransactionUniqueTraders(){
-        Set<String> result = service.returnUniqueTrader(testData);
+    void shouldReturnTransactionUniqueTraderNames(){
+        Set<String> result = service.returnUniqueTraderNames(testData);
         assertEquals(4, result.size());
         assertTrue(result.contains("Brian"));
         assertTrue(result.contains("Raoul"));
@@ -81,20 +81,27 @@ class TransactionAnalysisServiceTest {
     }
 
     @Test
-    void shouldReturnTransactionUniqueTraderCity(){
-        Set<String> result = service.returnUniqueTraderCity(testData);
+    void shouldReturnTransactionUniqueTraderCities(){
+        Set<String> result = service.returnUniqueTraderCities(testData);
         assertEquals(2, result.size());
         assertTrue(result.contains("Cambridge"));
         assertTrue(result.contains("Milan"));
     }
 
     @Test
-    void shouldReturnTransactionUniqueTraderForCityCambridge(){
-        Set<String> result = service.returnUniqueTraderForCityCambridge(testData);
+    void shouldReturnTransactionUniqueTraderFromCityCambridge(){
+        Set<String> result = service.returnUniqueTraderFromCityCambridge(testData);
         assertEquals(3, result.size());
         assertTrue(result.contains("Raoul"));
         assertTrue(result.contains("Alan"));
         assertTrue(result.contains("Brian"));
+    }
+
+    @Test
+    void shouldReturnTransactionUniqueTraderFromSelectedCity(){
+        Set<String> result = service.returnUniqueTraderFromSelectedCity(testData, "Milan");
+        assertEquals(1, result.size());
+        assertTrue(result.contains("Mario"));
     }
 
 }

@@ -58,24 +58,32 @@ class TransactionAnalysisService {
 //    }
 
 
-    Set<String> returnUniqueTrader(List<Transaction> transactions) {
+    Set<String> returnUniqueTraderNames(List<Transaction> transactions) {
          return transactions.stream()
                  .map(Transaction::getTrader)
                  .map(Trader::getName)
                  .collect(Collectors.toSet());
     }
 
-    Set<String> returnUniqueTraderCity(List<Transaction> transactions) {
+    Set<String> returnUniqueTraderCities(List<Transaction> transactions) {
         return transactions.stream()
                 .map(Transaction::getTrader)
                 .map(Trader::getCity)
                 .collect(Collectors.toSet());
     }
 
-    Set<String> returnUniqueTraderForCityCambridge(List<Transaction> transactions){
+    Set<String> returnUniqueTraderFromCityCambridge(List<Transaction> transactions){
         return transactions.stream()
                 .map(Transaction::getTrader)
-                .filter(tr -> tr.getCity().equals("Cambridge"))
+                .filter(trader -> trader.getCity().equals("Cambridge"))
+                .map(Trader::getName)
+                .collect(Collectors.toSet());
+    }
+
+    Set<String> returnUniqueTraderFromSelectedCity(List<Transaction> transactions, String city){
+        return transactions.stream()
+                .map(Transaction::getTrader)
+                .filter(trader -> trader.getCity().equals(city))
                 .map(Trader::getName)
                 .collect(Collectors.toSet());
     }

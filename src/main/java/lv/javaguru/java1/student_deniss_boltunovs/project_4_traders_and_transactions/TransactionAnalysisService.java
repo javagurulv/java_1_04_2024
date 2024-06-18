@@ -58,11 +58,20 @@ class TransactionAnalysisService {
 //    }
 
 
-    Set<String> returnTransactionUniqueTraders(List<Transaction> transactions) {
+    Set<String> returnUniqueTrader(List<Transaction> transactions) {
          return transactions.stream()
                  .map(Transaction::getTrader)
                  .map(Trader::getName)
                  .collect(Collectors.toSet());
     }
+
+    Set<String> returnUniqueTraderCity(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(Transaction::getTrader)
+                .map(Trader::getCity)
+                .collect(Collectors.toSet());
+    }
+
+
 
 }

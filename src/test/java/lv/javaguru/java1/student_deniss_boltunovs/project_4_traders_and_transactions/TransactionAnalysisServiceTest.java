@@ -25,59 +25,67 @@ class TransactionAnalysisServiceTest {
     @Test
     void shouldReturnTransactionSortedAsc() {
         List<Transaction> result = service.returnTransactionSortedAsc(testData);
-        assertEquals(result.get(0).getValue(), 300);
-        assertEquals(result.get(1).getValue(), 400);
-        assertEquals(result.get(2).getValue(), 700);
-        assertEquals(result.get(3).getValue(), 710);
-        assertEquals(result.get(4).getValue(), 950);
-        assertEquals(result.get(5).getValue(), 1000);
+        assertEquals(300, result.get(0).getValue());
+        assertEquals(400, result.get(1).getValue());
+        assertEquals(700, result.get(2).getValue());
+        assertEquals(710, result.get(3).getValue());
+        assertEquals(950, result.get(4).getValue());
+        assertEquals(1000,result.get(5).getValue());
     }
 
     @Test
     void shouldReturnTransactionSortedDesc() {
         List<Transaction> result = service.returnTransactionSortedDesc(testData);
-        assertEquals(result.get(0).getValue(), 1000);
-        assertEquals(result.get(1).getValue(), 950);
-        assertEquals(result.get(2).getValue(), 710);
-        assertEquals(result.get(3).getValue(), 700);
-        assertEquals(result.get(4).getValue(), 400);
-        assertEquals(result.get(5).getValue(), 300);
+        assertEquals(1000,result.get(0).getValue());
+        assertEquals(950, result.get(1).getValue());
+        assertEquals(710, result.get(2).getValue());
+        assertEquals(700, result.get(3).getValue());
+        assertEquals(400, result.get(4).getValue());
+        assertEquals(300, result.get(5).getValue());
     }
 
     @Test
     void shouldReturnTransactionForYear2011SortedDesc() {
         List<Transaction> result = service.returnTransactionForSelectedYearSortedAsc(testData, 2011);
-        assertEquals(result.get(0).getValue(), 300);
-        assertEquals(result.get(1).getValue(), 400);
+        assertEquals(300, result.get(0).getValue());
+        assertEquals(400, result.get(1).getValue());
     }
 
     @Test
     void shouldReturnTransactionYears() {
         List<Integer> result = service.returnTransactionYear(testData);
-        assertEquals(result.get(0), 2011);
-        assertEquals(result.get(1), 2012);
-        assertEquals(result.get(2), 2011);
-        assertEquals(result.get(3), 2012);
-        assertEquals(result.get(4), 2012);
-        assertEquals(result.get(5), 2012);
+        assertEquals(2011, result.get(0));
+        assertEquals(2012, result.get(1));
+        assertEquals(2011, result.get(2));
+        assertEquals(2012, result.get(3));
+        assertEquals(2012, result.get(4));
+        assertEquals(2012, result.get(5));
     }
 
     @Test
     void shouldReturnTransactionUniqueYears() {
         List<Integer> result = service.returnTransactionUniqueYear(testData);
-        assertEquals(result.size(), 2);
-        assertEquals(result.get(0), 2011);
-        assertEquals(result.get(1), 2012);
+        assertEquals(2, result.size());
+        assertEquals(2011, result.get(0));
+        assertEquals(2012, result.get(1));
     }
 
     @Test
     void shouldReturnTransactionUniqueTraders(){
-        Set<String> result = service.returnTransactionUniqueTraders(testData);
-        assertEquals(result.size(), 4);
+        Set<String> result = service.returnUniqueTrader(testData);
+        assertEquals(4, result.size());
         assertTrue(result.contains("Brian"));
         assertTrue(result.contains("Raoul"));
         assertTrue(result.contains("Mario"));
         assertTrue(result.contains("Alan"));
+    }
+
+    @Test
+    void shouldReturnTransactionUniqueTraderCity(){
+        Set<String> result = service.returnUniqueTraderCity(testData);
+        assertEquals(2, result.size());
+        assertTrue(result.contains("Cambridge"));
+        assertTrue(result.contains("Milan"));
     }
 
 }

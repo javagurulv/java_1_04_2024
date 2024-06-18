@@ -88,4 +88,13 @@ class TransactionAnalysisServiceTest {
         assertTrue(result.contains("Milan"));
     }
 
+    @Test
+    void shouldReturnTransactionUniqueTraderForCityCambridge(){
+        Set<String> result = service.returnUniqueTraderForCityCambridge(testData);
+        assertEquals(3, result.size());
+        assertTrue(result.contains("Raoul"));
+        assertTrue(result.contains("Alan"));
+        assertTrue(result.contains("Brian"));
+    }
+
 }

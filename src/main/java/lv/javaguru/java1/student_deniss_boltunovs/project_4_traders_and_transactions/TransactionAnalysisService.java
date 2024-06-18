@@ -72,6 +72,12 @@ class TransactionAnalysisService {
                 .collect(Collectors.toSet());
     }
 
-
+    Set<String> returnUniqueTraderForCityCambridge(List<Transaction> transactions){
+        return transactions.stream()
+                .map(Transaction::getTrader)
+                .filter(tr -> tr.getCity().equals("Cambridge"))
+                .map(Trader::getName)
+                .collect(Collectors.toSet());
+    }
 
 }

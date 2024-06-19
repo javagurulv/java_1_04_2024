@@ -11,11 +11,9 @@ class FraudDetector {
 
 
     FraudDetectionResult isFraud(Transaction transaction) {
-        int ruleIndex = 0;
-        for (int i = 0; i < fraudRules.length; i++) {
-            if (fraudRules[i].isFraud(transaction)) {
-                ruleIndex = i + 1;
-                return new FraudDetectionResult(true, "Rule" + ruleIndex);
+        for (FraudRule rule : fraudRules) {
+            if (rule.isFraud(transaction)) {
+                return new FraudDetectionResult(true, rule.getRuleName());
             }
         }
         return new FraudDetectionResult(false, null);

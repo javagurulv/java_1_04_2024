@@ -51,11 +51,11 @@ class TransactionAnalysisService {
                 .distinct().collect(Collectors.toList());
     }
 
-//    Set<Integer> returnTransactionUniqueYearV2(List<Transaction> transactions) {
-//        return transactions.stream()
-//                .map(Transaction::getYear)
-//                .collect(Collectors.toSet());
-//    }
+    Set<Integer> returnTransactionUniqueYearV2(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(Transaction::getYear)
+                .collect(Collectors.toSet());
+    }
 
 
     Set<String> returnUniqueTraderNames(List<Transaction> transactions) {
@@ -100,9 +100,16 @@ class TransactionAnalysisService {
     }
 
     double averageTransactionValue(List<Transaction> transactions){
+        return transactions.stream()
+                .mapToDouble(Transaction::getValue)
+                .average().orElse(0.0);
+    }
+
+    double averageTransactionValueV2(List<Transaction> transactions) {
         double totalValue = transactions.stream()
-                          .mapToInt(Transaction::getValue).sum();
+                .mapToInt(Transaction::getValue).sum();
         return totalValue / transactions.size();
     }
+
 
 }

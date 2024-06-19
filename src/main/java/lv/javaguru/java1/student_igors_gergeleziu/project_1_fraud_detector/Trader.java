@@ -9,7 +9,7 @@ class Trader {
     public Trader(String fullName, String city) {
         this.fullName = fullName;
         this.city = city;
-        this.country="";
+        this.country = "";
     }
 
     public Trader(String fullName, String city, String country) {

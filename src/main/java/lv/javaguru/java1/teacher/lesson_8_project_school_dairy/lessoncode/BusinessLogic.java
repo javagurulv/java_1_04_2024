@@ -16,7 +16,16 @@ class BusinessLogic {
         dairy.addMark(newMark);
     }
 
-    // find all marks by subject
+    public int findMarksBySubjectStream(String subject) {
+        return dairy.getMarks().stream()
+                .filter(mark -> mark.getSubject().equals(subject))
+                .map(mark -> mark.getMark())
+                .max(Integer::compareTo)
+                .orElseGet(() -> 0);
+    }
+
+
+        // find all marks by subject
     public List<Mark> findMarksBySubject(String subject) {
         List<Mark> subjectMarks = new ArrayList<>();
 

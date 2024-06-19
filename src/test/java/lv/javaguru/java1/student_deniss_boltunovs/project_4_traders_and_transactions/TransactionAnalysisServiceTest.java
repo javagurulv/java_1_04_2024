@@ -2,7 +2,6 @@ package lv.javaguru.java1.student_deniss_boltunovs.project_4_traders_and_transac
 
 import org.junit.jupiter.api.Test;
 import java.util.List;
-import java.util.OptionalDouble;
 import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 

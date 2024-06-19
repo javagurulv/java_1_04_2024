@@ -1,10 +1,7 @@
 package lv.javaguru.java1.student_maksims_latkovskis.level_8_project_school_diary.lessoncode;
 
-import lv.javaguru.java1.student_eyheni_salmin.lesson_2.class_work.IntegerCalculator;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 class BusinessLogics {
 

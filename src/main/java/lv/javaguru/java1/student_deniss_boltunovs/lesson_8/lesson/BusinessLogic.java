@@ -32,7 +32,7 @@ class BusinessLogic {
          return subjectMarks;
      }
 
-     int findBestMark(String subject){
+     int findMaxMark(String subject){
          List<Mark> marks = marksForSubject(subject);
          int maxMark = 0;
          for (Mark mark : marks) {
@@ -42,5 +42,30 @@ class BusinessLogic {
          }
          return maxMark;
      }
+
+    int findMinMark(String subject){
+        List<Mark> marks = marksForSubject(subject);
+        int minMark = marks.get(0).getMark();
+        for (Mark mark : marks) {
+            if (mark.getMark() < minMark) {
+                minMark = mark.getMark();
+            }
+        }
+        return minMark;
+    }
+
+    double findAverageMark(String subject){
+         List<Mark> marks = marksForSubject(subject);
+         return marks.stream()
+                 .mapToInt(Mark::getMark)
+                 .average().orElse(0.0);
+    }
+
+    double findTotalAverageMark(){
+         List<Mark> allMarks = diary.getMarks();
+         return allMarks.stream()
+                 .mapToInt(Mark::getMark)
+                 .average().orElse(0.0);
+    }
 
 }

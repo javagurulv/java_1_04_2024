@@ -132,7 +132,7 @@ class TransactionAnalysisServiceTest {
     @Test
     void shouldReturnAverageTransactionValue(){
         double result = service.averageTransactionValue(testData);
-        assertEquals(676.66, result,2);
+        assertEquals(676.66, result,0.02);
     }
 
 }

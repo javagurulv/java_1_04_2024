@@ -9,7 +9,7 @@ class IntegerList {
    private List<Integer> list;
 
     IntegerList() {
-        List<Integer> numbers = new ArrayList<Integer>();
+        List<Integer> numbers = new ArrayList<>();
         numbers.addAll(Arrays.asList(1,2,3,4,6));
         this.list = numbers;
     }

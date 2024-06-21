@@ -11,24 +11,20 @@ public class IntegerListDemo {
         Integer int3 = 3;
 
         ArrayList<Integer> integerList = new ArrayList<>();
-// Append to list, adds element as last item in the list
+        // Append to list, adds element as last item in the list
         integerList.add(int1);
         integerList.add(int2);
         integerList.add(int3);
-// Adds to list as the first item in the list
+        // Adds to list as the first item in the list
         integerList.add(0,int0);
 
-// List length
+        // List length
         System.out.println(integerList.size());
-// Find if the list is empty or not, returns boolean
+        // Find if the list is empty or not, returns boolean
         System.out.println(integerList.isEmpty());
 
         for (Integer integer : integerList) {
             System.out.println(integer);
         }
-
-
-
     }
-
 }

@@ -29,7 +29,7 @@ class StoreBusinessLogicTest {
 
         assertEquals(2, result.size());
         assertEquals(3, rating);
-        assertTrue(customer.equals("Carl"));
+        assertEquals( "Carl", customer);
     }
 
     @Test
@@ -43,7 +43,7 @@ class StoreBusinessLogicTest {
         int rating = productOven.get(1).getRating();
 
         assertEquals(2, productOven.size());
-        assertTrue(customer.equals("Julia"));
+        assertEquals( "Julia", customer);
         assertEquals(5, rating);
     }
 

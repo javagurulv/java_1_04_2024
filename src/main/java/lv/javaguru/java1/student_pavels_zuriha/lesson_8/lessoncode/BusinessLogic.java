@@ -48,13 +48,22 @@ class BusinessLogic {
         return worstMark;
     }
 
-    public double findAverageMark(String subject) {
+    public double findAverageMarkBySubject(String subject) {
         List<Mark> subjectMarks = findMarkBySubject(subject);
         int sumMarks = 0;
         for (Mark mark : subjectMarks) {
             sumMarks = sumMarks + mark.getSubjectMark();
         }
         return (double) sumMarks / subjectMarks.size();
+    }
+
+    public int findAverageMarkByAllSubjects() {
+        List<Mark> marks = dairy.getMarks();
+        int sumMarks = 0;
+        for (Mark mark : marks) {
+            sumMarks = sumMarks + mark.getSubjectMark();
+        }
+        return sumMarks / marks.size();
     }
 
 }

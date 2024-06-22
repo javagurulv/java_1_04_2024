@@ -7,6 +7,7 @@ class BusinessLogicTest {
         test.findBestMarkTest();
         test.findWorstMarkTest();
         test.findAverageMarkBySubjectTest();
+        test.findAverageMarkByAllSubjectsTest();
     }
 
     public void findBestMarkTest() {
@@ -40,8 +41,21 @@ class BusinessLogicTest {
         businessLogic.addMark("Eng", 6);
         businessLogic.addMark("Eng", 7);
         businessLogic.addMark("Math", 10);
-        double averageMark = businessLogic.findAverageMark("Eng");
+        double averageMark = businessLogic.findAverageMarkBySubject("Eng");
         if (averageMark == 6.5) {
+            System.out.println("OK");
+        } else {
+            System.out.println("Fail");
+        }
+    }
+
+    public void findAverageMarkByAllSubjectsTest() {
+        BusinessLogic businessLogic = new BusinessLogic();
+        businessLogic.addMark("Eng", 6);
+        businessLogic.addMark("Eng", 7);
+        businessLogic.addMark("Math", 8);
+        double averageMark = businessLogic.findAverageMarkByAllSubjects();
+        if (averageMark == 7) {
             System.out.println("OK");
         } else {
             System.out.println("Fail");

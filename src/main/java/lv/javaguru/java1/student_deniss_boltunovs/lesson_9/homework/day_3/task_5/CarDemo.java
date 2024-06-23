@@ -1,7 +1,5 @@
 package lv.javaguru.java1.student_deniss_boltunovs.lesson_9.homework.day_3.task_5;
 
-import lv.javaguru.java1.student_anton_pereloma.lesson_8.homework.day_4.PersonList;
-
 class CarDemo {
 
     public static void main(String[] args) {

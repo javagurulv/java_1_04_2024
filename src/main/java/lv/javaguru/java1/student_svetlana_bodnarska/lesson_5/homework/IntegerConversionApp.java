@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_svetlana_bodnarska.lesson_5.homework.level_1_intern.Task_1;
+package lv.javaguru.java1.student_svetlana_bodnarska.lesson_5.homework;
 
 import java.util.Scanner;
 

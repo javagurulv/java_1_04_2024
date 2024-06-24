@@ -17,11 +17,19 @@ public class ProductCatalogueDemo {
 
         String actionPhrase = "new";
         while (!actionPhrase.equalsIgnoreCase("exit")) {
+            System.out.println("Welcome to the catalogue:");
+                System.out.println("Here's our selection:");
+            for (int i = 0; i < merchandiseArrayList.size(); i++) {
+                System.out.println("Product ID#: " + merchandiseArrayList.get(i).getId());
+                System.out.println("-----------------------------------------");
+            }
             System.out.println("Type \"exit\" to stop");
             System.out.println("For new review type \"new\"");
             System.out.println("To show highest rating type \"high\"");
             System.out.println("To show lowest rating type \"low\"");
             System.out.println("To show average rating type \"average\"");
+            System.out.println("To show all reviews for a product type \"all\"");
+            System.out.println("-----------------------------------------");
 
             actionPhrase = scanner.next();
             if (actionPhrase.equalsIgnoreCase("new")) {
@@ -37,6 +45,7 @@ public class ProductCatalogueDemo {
                         int reviewRating = scanner.nextInt();
                         merchandiseArrayList.get(i).newReview(name, reviewText, reviewRating);
                         System.out.println("Review has been submitted");
+                        System.out.println("-----------------------------------------");
                     }
                 }
             } else if (actionPhrase.equalsIgnoreCase("high")) {
@@ -49,6 +58,7 @@ public class ProductCatalogueDemo {
                                 + productID
                                 + " is: "
                                 + merchandiseArrayList.get(i).findHighestRating());
+                        System.out.println("-----------------------------------------");
                     }
                 }
             } else if (actionPhrase.equalsIgnoreCase("low")) {
@@ -61,6 +71,7 @@ public class ProductCatalogueDemo {
                                 + productID
                                 + " is: "
                                 + merchandiseArrayList.get(i).findLowestRating());
+                        System.out.println("-----------------------------------------");
                     }
                 }
             } else if (actionPhrase.equalsIgnoreCase("average")) {
@@ -73,10 +84,23 @@ public class ProductCatalogueDemo {
                                 + productID
                                 + " is: "
                                 + merchandiseArrayList.get(i).findAverageRating());
+                        System.out.println("-----------------------------------------");
+                    }
+                }
+            } else if (actionPhrase.equalsIgnoreCase("all")) {
+                System.out.println("Enter product ID# to get all reviews ");
+                int productID = scanner.nextInt();
+                for (int i = 0; i < merchandiseArrayList.size(); i++) {
+                    if (productID == merchandiseArrayList.get(i).getId()) {
+                        merchandiseArrayList.get(i).returnAllReviewsAsText();
+                    } else {
+                        System.out.println("Not a valid product ID#");
+                        System.out.println("-----------------------------------------");
                     }
                 }
             } else if (actionPhrase.equalsIgnoreCase("exit")) {
                 actionPhrase = "exit";
+                System.out.println("-----------------------------------------");
                 System.out.println("You've exited the review application");
             } else {
                 System.out.println("Please type a valid option:");
@@ -85,6 +109,7 @@ public class ProductCatalogueDemo {
                 System.out.println("To show highest rating type \"high\"");
                 System.out.println("To show lowest rating type \"low\"");
                 System.out.println("To show average rating type \"average\"");
+                System.out.println("-----------------------------------------");
                 actionPhrase = scanner.next();
             }
 

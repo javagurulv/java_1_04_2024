@@ -1,9 +1,9 @@
 package lv.javaguru.java1.student_anton_pereloma.lesson_8.homework.day_5;
 
 class Review {
-        String author;
-        String reviewText;
-        double rating;
+        private String author;
+        private String reviewText;
+        private double rating;
 
         Review(String author, String reviewText, double rating) {
             this.author = author;
@@ -14,4 +14,13 @@ class Review {
         public String getAuthor() { return author; }
         public String getReviewText() { return reviewText; }
         public double getRating() { return rating; }
+        public void setAuthor(String authorName) {
+            author = authorName;
+        }
+        public void setReviewText(String newReviewText) {
+            reviewText = newReviewText;
+        }
+        public void setRating(double newRating) {
+            rating = newRating;
+        }
 }

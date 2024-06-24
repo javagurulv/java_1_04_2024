@@ -51,7 +51,7 @@ class Merchandise {
         return reviews.get(reviewNumber);
     }
 
-    public void newReview(String author, String reviewText, double rating) {
+    public void newReview(String author, String reviewText, int rating) {
         Review newReview = new Review(author,reviewText,rating);
         reviews.add(newReview);
     }

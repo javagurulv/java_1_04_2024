@@ -3,9 +3,9 @@ package lv.javaguru.java1.student_anton_pereloma.lesson_8.homework.day_5;
 class Review {
         private String author;
         private String reviewText;
-        private double rating;
+        private int rating;
 
-        Review(String author, String reviewText, double rating) {
+        Review(String author, String reviewText, int rating) {
             this.author = author;
             this.reviewText = reviewText;
             this.rating = rating;
@@ -20,7 +20,7 @@ class Review {
         public void setReviewText(String newReviewText) {
             reviewText = newReviewText;
         }
-        public void setRating(double newRating) {
+        public void setRating(int newRating) {
             rating = newRating;
         }
 }

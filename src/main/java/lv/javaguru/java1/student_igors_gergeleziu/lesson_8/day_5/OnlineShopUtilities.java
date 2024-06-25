@@ -17,13 +17,17 @@ class OnlineShopUtilities {
         }
     }
 
+    List<Review> getReviews() {
+        return shop.getReviews();
+    }
+
     void addReview(String nick, String reviewText, int rating, Product product) {
         Review newReview = new Review(nick, reviewText, rating, product);
         shop.addReview(newReview);
     }
 
-    void deleteReview(String nick, String title) {
-        shop.deleteReview(nick, title);
+    void deleteReview(String nick, String productTitle) {
+        shop.deleteReview(nick, productTitle);
     }
 
     List<Review> findReviewsByProduct(String productTitle) {

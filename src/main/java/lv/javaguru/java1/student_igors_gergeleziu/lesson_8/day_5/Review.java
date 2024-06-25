@@ -27,11 +27,9 @@ class Review {
 
     @Override
     public String toString() {
-        return "Review{" +
-                "nick='" + nick + '\'' +
-                ", reviewText='" + reviewText + '\'' +
-                ", rating=" + rating +
-                ", product=" + product +
-                '}';
+        return "Review by " + nick +
+                " for " + product + " [" +
+                reviewText + "] " +
+                "Rated: " + rating;
     }
 }

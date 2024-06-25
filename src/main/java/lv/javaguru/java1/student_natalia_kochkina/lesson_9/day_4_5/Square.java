@@ -1,4 +1,4 @@
-package lv.javaguru.java1.student_natalia_kochkina.lesson_9.day_4;
+package lv.javaguru.java1.student_natalia_kochkina.lesson_9.day_4_5;
 
 class Square extends Shape {
 

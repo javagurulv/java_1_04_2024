@@ -1,0 +1,6 @@
+Variable Arguments (Varargs) - in Java is a method that takes a variable number of arguments.
+
+public static void fun(int ... a)
+{
+   // method body
+}

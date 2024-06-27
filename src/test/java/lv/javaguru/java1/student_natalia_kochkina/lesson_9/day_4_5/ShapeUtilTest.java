@@ -16,7 +16,7 @@ class ShapeUtilTest {
         shapes[2] = new Rectangle("Rectangle", 4, 4);
         shapes[3] = new Triangle("Triangle", 4);
         double shapesArea = shapeUtil.calculateArea(shapes);
-        assertEquals(shapesArea, 89.17, 2);
+        assertEquals(shapesArea, 89.19, 0.01);
     }
 
     @Test
@@ -27,6 +27,6 @@ class ShapeUtilTest {
         shapes[2] = new Rectangle("Rectangle", 4, 4);
         shapes[3] = new Triangle("Triangle", 4);
         double shapesPerimeter = shapeUtil.calculatePerimeter(shapes);
-        assertEquals(shapesPerimeter, 69.13, 2);
+        assertEquals(shapesPerimeter, 69.13, 0.01);
     }
 }

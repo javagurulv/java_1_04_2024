@@ -10,22 +10,22 @@ class SquareTest {
     void calculateArea() {
         Square square1 = new Square("Square1", 5);
         double area1 = square1.calculateArea();
-        assertEquals(area1, 25, 2);
+        assertEquals(area1, 25, 0.01);
 
         Square square2 = new Square("Square2", 0);
         double area2 = square2.calculateArea();
-        assertEquals(area2, 0, 2);
+        assertEquals(area2, 0, 0.01);
     }
 
     @Test
     void calculatePerimeter() {
         Square square1 = new Square("Square1", 5);
         double perimeter1 = square1.calculatePerimeter();
-        assertEquals(perimeter1, 20, 2);
+        assertEquals(perimeter1, 20, 0.01);
 
         Square square2 = new Square("Square2", 0);
         double perimeter2 = square2.calculatePerimeter();
-        assertEquals(perimeter2, 0, 2);
+        assertEquals(perimeter2, 0, 0.01);
     }
 
 }

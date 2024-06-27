@@ -9,7 +9,11 @@ public class PositiveNumber {
 
         int number = scan.nextInt();
 
-        if (number > 0) System.out.println("Усе добра");
-        else return;
+        if (number > 0) {
+            System.out.println("Усе добра");
+        }
+
+        System.out.println("Усе");
     }
+
 }

@@ -1,7 +1,6 @@
 package lv.javaguru.java1.student_deniss_boltunovs.project_5_property_insurance_calculator;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 class InsuredSubObject {
 

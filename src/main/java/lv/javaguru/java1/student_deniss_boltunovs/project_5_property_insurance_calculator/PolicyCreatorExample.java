@@ -2,7 +2,6 @@ package lv.javaguru.java1.student_deniss_boltunovs.project_5_property_insurance_
 
 import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.List;
 
 class PolicyCreatorExample {
 

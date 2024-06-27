@@ -32,7 +32,7 @@ class BusinessLogicTest {
         bl.addMark("English", 7);
         bl.addMark("Math", 10);
         bl.addMark("Biology", 6);
-        assertEquals(bl.findAverageMarkBySubject("Math"), 7.5, 2);
+        assertEquals(bl.findAverageMarkBySubject("Math"), 7.5, 0.01);
     }
 
     @Test

@@ -58,7 +58,7 @@ class ReviewAnalysisServiceTest {
         service.addReview(new Review("User2", "banana", "Text2", 4));
         service.addReview(new Review("User3", "apple", "Text3", 5));
         service.addReview(new Review("User4", "orange", "Text4", 4));
-        assertEquals(service.findAverageGradeOfProduct("apple"), 4, 2);
+        assertEquals(service.findAverageGradeOfProduct("apple"), 4, 0.01);
     }
 
 }

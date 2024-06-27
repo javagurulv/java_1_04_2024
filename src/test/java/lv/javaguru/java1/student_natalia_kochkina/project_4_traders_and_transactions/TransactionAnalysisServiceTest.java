@@ -204,7 +204,7 @@ class TransactionAnalysisServiceTest {
         double average = service.calculateTransactionsAverageValue(
                 TransactionTestData.getTransactions()
         );
-        assertEquals(average, 676.66, 2);
+        assertEquals(average, 676.66, 0.01);
     }
 
 }

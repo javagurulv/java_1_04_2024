@@ -7,10 +7,12 @@ class PlayGame {
 
          game.addWord("Name");
          game.addWord("age");
+         game.addWord("Nine");
+         game.addWord("dog");
+
 
          game.printWords();
-
-
+         System.out.println("Count of words: " + game.wordsCount());
     }
 
 }

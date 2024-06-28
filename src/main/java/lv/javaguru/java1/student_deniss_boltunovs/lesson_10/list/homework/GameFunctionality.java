@@ -14,11 +14,16 @@ class GameFunctionality {
 
     void addWord(String word) {
          Word newWord = new Word(word);
-         wordBank.addNewWord(newWord);
+         wordBank.getWords().add(newWord)  ;
+//          addNewWord(newWord);
     }
 
     void printWords(){
         System.out.println(wordBank.getWords());
+    }
+
+    int wordsCount(){
+        return wordBank.getWords().size();
     }
 
 

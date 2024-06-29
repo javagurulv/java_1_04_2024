@@ -12,6 +12,10 @@ class BookDatabaseImpl implements BookDatabase {
         this.books = new ArrayList<>();
     }
 
+    BookDatabaseImpl(List<Book> newBooks) {
+        this.books = newBooks;
+    }
+
     List<Book> getBooks() {
         return books;
     }

@@ -37,7 +37,7 @@ class BookDatabaseImpl implements BookDatabase {
     @Override
     public boolean delete(Long bookId){
         for (Book book : books) {
-            if (book.getId() == bookId) {
+            if (book.getId().equals(bookId)) {
                 books.remove(book);
                 return true;
             }

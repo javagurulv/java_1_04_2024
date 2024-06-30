@@ -12,18 +12,21 @@ class BookDatabaseImplTestData {
         Book book3 = new Book("Mandy Wood", "Don't know");
         Book book4 = new Book("King Arthur", "Modern Theory");
         Book book5 = new Book("Jonathan Swift", "Gulliver's Travels");
+        Book book6 = new Book("Mandy Wood", "Don't know again");
 
         book1.setId(1L);
         book2.setId(2L);
         book3.setId(3L);
         book4.setId(4L);
         book5.setId(5L);
+        book6.setId(6L);
 
         testBooks.add(book1);
         testBooks.add(book2);
         testBooks.add(book3);
         testBooks.add(book4);
         testBooks.add(book5);
+        testBooks.add(book6);
 
         return testBooks;
     }

@@ -1,6 +1,6 @@
 package lv.javaguru.java1.student_deniss_boltunovs.lesson_10.map.homework.level_2;
 
-public class AuthorSearchCriteria implements SearchCriteria {
+class AuthorSearchCriteria implements SearchCriteria {
 
         private String authorToSearch;
 

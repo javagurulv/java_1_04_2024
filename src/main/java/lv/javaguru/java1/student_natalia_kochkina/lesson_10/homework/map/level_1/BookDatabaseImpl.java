@@ -30,6 +30,15 @@ class BookDatabaseImpl implements BookDatabase {
         return false;
     }
 
+    @Override
+    public boolean delete(Book book) {
+        if (books.contains(book)) {
+            books.remove(book);
+            return true;
+        }
+        return false;
+    }
+
     public List<Book> getBooks() {
         return books;
     }

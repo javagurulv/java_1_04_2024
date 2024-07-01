@@ -2,6 +2,7 @@ package lv.javaguru.java1.student_natalia_kochkina.lesson_10.homework.map.level_
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -66,6 +67,26 @@ class BookDatabaseImplTest {
         bookDatabase.save(new Book("Author3", "Title3"));
         Optional<Book> findingBook = bookDatabase.findById(4L);
         assertEquals(false, findingBook.isPresent());
+    }
+
+    @Test
+    void shouldFindBooksByAuthor1() {
+        bookDatabase.save(new Book("Author1", "Title1"));
+        bookDatabase.save(new Book("Author2", "Title2"));
+        bookDatabase.save(new Book("Author3", "Title3"));
+        bookDatabase.save(new Book("Author2", "Title4"));
+        List<Book> result = bookDatabase.findByAuthor("Author2");
+        assertEquals(2, result.size());
+    }
+
+    @Test
+    void shouldFindBooksByAuthor2() {
+        bookDatabase.save(new Book("Author1", "Title1"));
+        bookDatabase.save(new Book("Author2", "Title2"));
+        bookDatabase.save(new Book("Author3", "Title3"));
+        bookDatabase.save(new Book("Author2", "Title4"));
+        List<Book> result = bookDatabase.findByAuthor("Author4");
+        assertEquals(0, result.size());
     }
 
 }

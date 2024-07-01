@@ -3,6 +3,7 @@ package lv.javaguru.java1.student_natalia_kochkina.lesson_10.homework.map.level_
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 class BookDatabaseImpl implements BookDatabase {
 
@@ -48,6 +49,13 @@ class BookDatabaseImpl implements BookDatabase {
             }
         }
         return Optional.empty();
+    }
+
+    @Override
+    public List<Book> findByAuthor(String author) {
+        return books.stream()
+                .filter(book -> book.getAuthor().equals(author))
+                .collect(Collectors.toList());
     }
 
     public List<Book> getBooks() {

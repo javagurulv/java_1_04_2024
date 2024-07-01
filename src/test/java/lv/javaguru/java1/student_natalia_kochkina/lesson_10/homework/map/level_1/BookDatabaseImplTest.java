@@ -119,4 +119,44 @@ class BookDatabaseImplTest {
         assertEquals(4, result);
     }
 
+    @Test
+    void shouldDeleteBooksByAuthor1() {
+        bookDatabase.save(new Book("Author1", "Title1"));
+        bookDatabase.save(new Book("Author2", "Title2"));
+        bookDatabase.save(new Book("Author3", "Title3"));
+        bookDatabase.save(new Book("Author2", "Title4"));
+        bookDatabase.deleteByAuthor("Author2");
+        assertEquals(2, bookDatabase.getBooks().size());
+    }
+
+    @Test
+    void shouldDeleteBooksByAuthor2() {
+        bookDatabase.save(new Book("Author1", "Title1"));
+        bookDatabase.save(new Book("Author2", "Title2"));
+        bookDatabase.save(new Book("Author3", "Title3"));
+        bookDatabase.save(new Book("Author2", "Title4"));
+        bookDatabase.deleteByAuthor("Author5");
+        assertEquals(4, bookDatabase.getBooks().size());
+    }
+
+    @Test
+    void shouldDeleteBooksByTitle1() {
+        bookDatabase.save(new Book("Author1", "Title1"));
+        bookDatabase.save(new Book("Author2", "Title2"));
+        bookDatabase.save(new Book("Author3", "Title3"));
+        bookDatabase.save(new Book("Author2", "Title4"));
+        bookDatabase.deleteByTitle("Title2");
+        assertEquals(3, bookDatabase.getBooks().size());
+    }
+
+    @Test
+    void shouldDeleteBooksByTitle2() {
+        bookDatabase.save(new Book("Author1", "Title1"));
+        bookDatabase.save(new Book("Author2", "Title2"));
+        bookDatabase.save(new Book("Author3", "Title3"));
+        bookDatabase.save(new Book("Author2", "Title4"));
+        bookDatabase.deleteByTitle("Title5");
+        assertEquals(4, bookDatabase.getBooks().size());
+    }
+
 }

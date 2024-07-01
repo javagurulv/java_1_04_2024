@@ -109,4 +109,14 @@ class BookDatabaseImplTest {
         assertEquals(0, result.size());
     }
 
+    @Test
+    void shouldCountAllBooks() {
+        bookDatabase.save(new Book("Author1", "Title1"));
+        bookDatabase.save(new Book("Author2", "Title2"));
+        bookDatabase.save(new Book("Author3", "Title3"));
+        bookDatabase.save(new Book("Author2", "Title4"));
+        int result = bookDatabase.countAllBooks();
+        assertEquals(4, result);
+    }
+
 }

@@ -65,6 +65,11 @@ class BookDatabaseImpl implements BookDatabase {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public int countAllBooks() {
+        return books.size();
+    }
+
     public List<Book> getBooks() {
         return books;
     }

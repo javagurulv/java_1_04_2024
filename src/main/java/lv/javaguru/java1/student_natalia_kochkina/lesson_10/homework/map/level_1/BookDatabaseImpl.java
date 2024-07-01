@@ -58,6 +58,13 @@ class BookDatabaseImpl implements BookDatabase {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<Book> findByTitle(String title) {
+        return books.stream()
+                .filter(book -> book.getTitle().equals(title))
+                .collect(Collectors.toList());
+    }
+
     public List<Book> getBooks() {
         return books;
     }

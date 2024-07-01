@@ -89,4 +89,24 @@ class BookDatabaseImplTest {
         assertEquals(0, result.size());
     }
 
+    @Test
+    void shouldFindBooksByTitle1() {
+        bookDatabase.save(new Book("Author1", "Title1"));
+        bookDatabase.save(new Book("Author2", "Title2"));
+        bookDatabase.save(new Book("Author3", "Title3"));
+        bookDatabase.save(new Book("Author2", "Title4"));
+        List<Book> result = bookDatabase.findByTitle("Title3");
+        assertEquals(1, result.size());
+    }
+
+    @Test
+    void shouldFindBooksByTitle2() {
+        bookDatabase.save(new Book("Author1", "Title1"));
+        bookDatabase.save(new Book("Author2", "Title2"));
+        bookDatabase.save(new Book("Author3", "Title3"));
+        bookDatabase.save(new Book("Author2", "Title4"));
+        List<Book> result = bookDatabase.findByTitle("Title5");
+        assertEquals(0, result.size());
+    }
+
 }

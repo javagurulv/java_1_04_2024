@@ -1,31 +1,15 @@
 package lv.javaguru.java1.student_natalia_kochkina.lesson_10.homework.list;
 
-class WordListService {
+interface WordListService {
 
-    private WordList words;
+    void addWord(String word);
 
-    public WordListService() {
-        this.words = new WordList();
-    }
+    int getSize();
 
-    public void addWord(String word) {
-        words.getWords().add(word);
-    }
+    String getWord(int index);
 
-    public int getSize() {
-        return words.getWords().size();
-    }
+    void removeWord(int index);
 
-    public String getWord(int index) {
-        return words.getWords().get(index);
-    }
-
-    public void removeWord(int index) {
-        words.getWords().remove(index);
-    }
-
-    public boolean containsWord(String word) {
-        return words.getWords().contains(word);
-    }
+    boolean containsWord(String word);
 
 }

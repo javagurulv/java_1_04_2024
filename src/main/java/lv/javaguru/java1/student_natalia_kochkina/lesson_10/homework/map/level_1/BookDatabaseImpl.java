@@ -14,9 +14,24 @@ class BookDatabaseImpl implements BookDatabase {
     @Override
     public Long save(Book book) {
         books.add(book);
-        Long index = Long.valueOf(books.size());
+        Long index = (long) books.size();
         book.setId(index);
         return index;
+    }
+
+    @Override
+    public boolean delete(Long bookId) {
+        for (Book book : books) {
+            if (book.getId().equals(bookId)) {
+                books.remove(book);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public List<Book> getBooks() {
+        return books;
     }
 
 }

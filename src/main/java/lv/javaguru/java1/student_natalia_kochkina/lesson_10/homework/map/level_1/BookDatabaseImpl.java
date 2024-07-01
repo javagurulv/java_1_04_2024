@@ -2,6 +2,7 @@ package lv.javaguru.java1.student_natalia_kochkina.lesson_10.homework.map.level_
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 class BookDatabaseImpl implements BookDatabase {
 
@@ -37,6 +38,16 @@ class BookDatabaseImpl implements BookDatabase {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public Optional<Book> findById(Long bookId) {
+        for (Book book : books) {
+            if (book.getId().equals(bookId)) {
+                return Optional.of(book);
+            }
+        }
+        return Optional.empty();
     }
 
     public List<Book> getBooks() {
